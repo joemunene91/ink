@@ -41,7 +41,6 @@ const logBtn = document.getElementById('log-btn');
 const showToth = document.getElementById('showtoasts');
 const showSet = document.getElementById('settings');
 
-const emptyPar = document.getElementById('empty-p');
 
 const showLink = document.getElementById('showlink');
 
@@ -49,8 +48,6 @@ const phoneNumberField = document.getElementById('inputLife');
 
 const codeField = document.getElementById('code');
 const signInWithPhoneButton = document.getElementById('signInWithPhone');
-
-const codeEmail = document.getElementById('code-email');
 
 const voiceDiv = document.getElementById('voice-div');
 const voiceImg = document.getElementById('voice-img');
@@ -340,26 +337,6 @@ auth.onAuthStateChanged(user => {
 			theP.innerHTML = `
 				<span>${user.email}</span>.
 			`;
-		} 
-	});
-
-	fetch('https://ipapi.co/json/')
-	.then(function(response) {
-		return response.json();
-	})
-	.then(function(data) { 
-		if(user.email && user.phoneNumber) {
-			codeEmail.innerHTML = 'Verify - Email';
-			codeEmail.setAttribute('data-bs-target', '#emailModal');
-			emptyPar.innerHTML = `Always verify your email address.`;
-		} else if(user.email && !user.phoneNumber) {
-			codeEmail.innerHTML = 'Phone Invoice';
-			codeEmail.addEventListener('click', phoneShow);
-			emptyPar.innerHTML = `Bank logs can be sent via <span>SMS</span>`;
-		} else if(user.phoneNumber && !user.email) {
-			codeEmail.innerHTML = 'Email Invoice';
-			codeEmail.addEventListener('click', emailShow);
-			emptyPar.innerHTML = `Bank logs can be sent via <span>email</span>`;
 		} 
 	});
 
