@@ -915,15 +915,11 @@ td {
     color: #121d33;
     font-weight: 500 !important;
 }
-#escoz,
-#escoz-3 {
+#escoz {
     font-weight: 600;
     font-family: "Montserrat", sans-serif;
     font-size: 19px;
     color: rgba(18, 29, 51, 1) !important;
-}
-#escoz-3 {
-    margin: 0 auto !important;
 }
 .progress {
     background: rgba(255, 255, 255, 0.17) !important;
@@ -2354,39 +2350,6 @@ td {
 ::placeholder {
     color: rgba(255, 255, 255, 0.73);
 }
-#todo-form {
-    display: flex !important;
-    width: 100% !important;
-}
-#todo-btn {
-    width: 30% !important;
-    height: 50px !important;
-    font-size: 23px !important;
-}
-#todo-input {
-    width: 65% !important;
-    margin: 0 auto 0 0 !important;
-    padding: 24px 10px !important;
-    color: rgba(255, 255, 255, 0.92) !important;
-    height: 50px !important;
-    font-size: 21px !important;
-    background: rgba(18, 29, 51, 0.375) !important;
-}
-#todo-input::placeholder {
-    color: #fff !important;
-}
-@media screen and (max-width: 767px) {
-    #todo-btn {
-        height: 47px !important;
-        width: 32% !important;
-    }
-    #todo-input {
-        height: 47px !important;
-        padding: 20px 10px !important;
-        width: 64% !important;
-    }
-}
-
 
 
 
@@ -2687,54 +2650,7 @@ ul.countdown li p {
     margin: 21px auto 3px !important;
     width: 100%;
 }
-.custom-file-input ~ .custom-file-label[data-browse]::after {
-    content: attr(data-browse);
-}
-.custom-file-label {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-    height: 39.3px !important;
-    padding: 7px !important;
-    font-size: 20px !important;
-    font-weight: 600 !important;
-    margin-bottom: 14px !important;
-    width: 100% !important;
-    border-radius: 0 !important;
-    margin-top: 10px !important;
-}
-.custom-file-label::after {
-    position: absolute;
-    top: -1.7px;
-    right: -1.7px;
-    height: 39.3px !important;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    text-align: center !important;
-    align-items: center !important;
-    font-size: 18px;
-    font-weight: 700 !important;
-    color: #121d33;
-    content: "Browse";
-    width: 30%;
-}
-@media (max-width: 576px) {
-    .custom-file-label::after {
-        width: 28%;
-    }
-}
-@media (max-width: 380px) {
-    .custom-file-label::after {
-        width: 30%;
-    }
-}
-@media (max-width: 374px) {
-    .custom-file-label::after {
-        width: 32%;
-    }
-}
+
 .ticketz label,
 #vpnModal label {
     font-size: 16.3px !important;
@@ -2853,7 +2769,7 @@ ul.countdown li p {
 #load-2 {
     text-align: center !important;
     font-size: 20px !important;
-    line-height: 53px !important;
+    line-height: 55px !important;
 }
 #get-p3,
 #get-p1,
@@ -2968,7 +2884,7 @@ ul.countdown li p {
     #get-p2 {
         text-align: center !important;
         font-size: 19px !important;
-        line-height: 50px !important;
+        line-height: 52px !important;
     }
 }
 #money-p1,
@@ -4030,11 +3946,6 @@ blink.nav-blink {
         line-height: 35px;
         padding: 6px 10px;
     }
-}
-.upload-modal {
-    margin-top: -10px !important;
-    padding-top: 0 !important;
-    border-top: none !important;
 }
 
 #their-name {

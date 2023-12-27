@@ -277,15 +277,6 @@ blink {
   box-shadow: 0 0 0 0.7px rgba(22, 160, 134, 0.7) !important;
 }
 
-.custom-file-label {
-  background: rgba(22, 160, 134, 0.07) !important;
-  color: #16a086 !important;
-  border: 0.7px solid rgba(22, 160, 134, 0.21);
-  box-shadow: 0 0 0 0.7px rgba(22, 160, 134, 0.28);
-}
-.custom-file-label::after {
-  border: 1.7px solid rgba(22, 160, 134, 0.92) !important;
-}
 
 
 .owl-theme .owl-dots .owl-dot.active span,
@@ -320,8 +311,6 @@ blink {
 #get-email,
 #get-phone,
 #log-btn,
-#todo-btn, 
-.custom-file-label::after,
 .lesnar,
 .gold,
 #vpn,
