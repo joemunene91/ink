@@ -173,10 +173,10 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 }
 
 
-document.getElementById('balance1').innerHTML = '$3,275';
+document.getElementById('balance1').innerHTML = '$3,274';
 document.getElementById('balance2').innerHTML = '$5,602';
 document.getElementById('balance3').innerHTML = '$5,490';
-document.getElementById('balance4').innerHTML = '$3,604';
+document.getElementById('balance4').innerHTML = '$3,605';
 document.getElementById('balance5').innerHTML = '$5,402';
 document.getElementById('balance6').innerHTML = '$3,149';
 document.getElementById('balance7').innerHTML = '$5,087';
