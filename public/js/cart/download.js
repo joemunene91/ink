@@ -158,6 +158,10 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     document.getElementById('down-file').innerHTML = 'Empty Cart';
     document.getElementById('anon-check').innerHTML = `Banklogs <img src="img/partners/home.png">`;
     document.getElementById('anon-check').setAttribute('href', 'home');
+    document.getElementById('save-1').innerHTML = `
+        Your cart is currently empty, <br>
+        add some logs to cart. 
+    `;
     document.getElementById('anon-p').innerHTML = `
         Your cart is currently empty, <br>
         add some bank logs to cart. 
@@ -206,7 +210,7 @@ for(j=0; j< jobs.length; j++) {
     var theJob = jobs[j];
     var thePrize = theJob.parentElement.children[1].children[2].innerText;
     
-    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 37.5).toFixed(0)).toLocaleString();
+    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString();
 
     theJob.innerHTML = '$'+ thePr;
 }

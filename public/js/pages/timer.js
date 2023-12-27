@@ -75,6 +75,10 @@ auth.onAuthStateChanged(user => {
                         Your cart is currently empty, <br>
                         add some bank logs to cart. 
                     `;
+                    document.getElementById('save-1').innerHTML = `
+                        Your cart is currently empty, <br>
+                        add some logs to cart. 
+                    `;
                     document.getElementById('usage-p').innerHTML = `
                         Cart: $0, Total: $0.
                     `;
