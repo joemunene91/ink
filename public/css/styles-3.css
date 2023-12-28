@@ -381,9 +381,7 @@ blink {
 span#uidr,
 span#uidy,
 span#uidz,
-span#uids-h,
-span#uids,
-#emailModal span#uids {
+span#uids {
   color: rgb(128, 185, 214) !important;
 }
 #showlink,

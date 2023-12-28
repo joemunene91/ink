@@ -280,10 +280,6 @@ const signInAnony = () => {
 				IP address: <span>${data.ip}</span> <br>
 				Region: ${data.city}, ${data.country_name}.
 			`;
-
-			document.getElementById('mail-p2').innerHTML = `
-				<span id="uids">${auth.currentUser.uid}</span>.
-			`;
 		});
 
 		if(platform.manufacturer !== null) {
@@ -353,10 +349,6 @@ auth.onAuthStateChanged(user => {
 			document.getElementById('mail-p1').innerHTML = `
 				IP address: <span>${data.ip}</span> <br>
 				Region: ${data.city}, ${data.country_name}.
-			`;
-
-			document.getElementById('mail-p2').innerHTML = `
-				<span id="uids">${auth.currentUser.uid}</span>.
 			`;
 		});
 

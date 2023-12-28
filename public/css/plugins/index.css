@@ -633,3 +633,9 @@ blink {
         top: 18vh !important;
     }
 }
+#contact-check {
+  letter-spacing: 1.3px !important;
+  cursor: pointer !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+}
