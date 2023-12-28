@@ -3967,10 +3967,7 @@ blink.nav-blink {
 span#uida {
     color: yellow !important;
 }
-.pacity-home {
-    opacity: 0.9 !important;
-    filter: blur(0.1px) !important;
-}
+
 .thezoo {
     margin-top: -11px !important;
     margin-bottom: 7px !important;
