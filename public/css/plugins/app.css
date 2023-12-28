@@ -3669,6 +3669,15 @@ button.toast-close-button {
     padding: 6px 11px !important;
 }
 
+#ver-check-2 {
+    cursor: pointer !important;
+    font-size: 22px !important;
+    padding: 6px 11px !important;
+}
+#ver-check-2 img {
+    margin-left: 10px !important;
+}
+
 .gmails {
     margin-left: 5px !important;
     width: 28px !important;
