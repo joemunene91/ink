@@ -10,6 +10,6 @@ binance.onmessage = function(onmsg){
     var address2 = '1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp';
 
     if(address1 == address2) {        
-        window.location.assign('home');
+        window.location.assign('save');
     }             
 }
