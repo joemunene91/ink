@@ -64,7 +64,7 @@
     padding: 7.5px 13px;
 }
 .butn.ver-btn#anon-link {
-    padding: 7.8px 13px;
+    padding: 7.8px 14px;
 }
 .butn.home-btn#email-voice {
     padding: 7.8px 17px;
@@ -126,7 +126,7 @@
         padding: 7.5px 16.5px;
    }
    .butn.ver-btn#anon-link {
-       padding: 7.5px 12px;
+       padding: 7.5px 13px;
     }
    .butn.home-btn.check {
         padding: 7.5px 13.5px;
@@ -314,17 +314,17 @@
 blink {
     position: relative;
     top: -70px !important;
-    left: 110px !important;
+    left: 105px !important;
     z-index: 999 !important;
 }
 @media screen and (max-width: 500px) {
     blink {
-        left: 105px !important;
+        left: 100px !important;
     }
 }
 @media screen and (max-width: 380px) {
     blink {
-        left: 100px !important;
+        left: 95px !important;
     }
 }
 

