@@ -89,20 +89,13 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 5000
+            timeOut: 7000
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
-
-        setTimeout(() => {
-            if(!(user.email && user.phoneNumber)) {
-                $('#exampleModal').modal('hide');
-                $('#discountModal').modal('show');
-            }
-        }, 7000);
 
     });
 
