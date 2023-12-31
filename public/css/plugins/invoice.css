@@ -368,22 +368,22 @@ blink.oisc {
 blink.tisc {
     position: relative !important;
     top: -70px !important;
-    left: 117px !important;
+    left: 112px !important;
     z-index: 999 !important;
 }
 @media screen and (max-width: 500px) {
     blink.tisc {
-        left: 112px !important;
+        left: 107px !important;
     }
 }
 @media screen and (max-width: 390px) {
     blink.tisc {
-        left: 100px !important;
+        left: 97px !important;
     }
 }
 @media screen and (max-width: 380px) {
     blink.tisc {
-        left: 103px !important;
+        left: 95px !important;
     }
 }
 
@@ -586,8 +586,5 @@ blink.verif {
     }    
 }
 #madrid {
-    border-radius: 50% !important;
-}
-#madrid-2 {
     border-radius: 50% !important;
 }

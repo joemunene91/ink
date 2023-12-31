@@ -564,70 +564,71 @@ const signUpFunction = () => {
 	};
 
 	if(email.includes('@')) {
-		if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-			const googleProvider = new firebase.auth.GoogleAuthProvider;
-			const theUser = auth.currentUser;
-			theUser.linkWithPopup(googleProvider).then(() => {
-				theUser.updateProfile({
-					displayName: theUser.providerData[0].displayName, 
-					photoURL: theUser.providerData[0].photoURL,
-					isAnonymous: false
-				}).then(() => {
-					window.location.assign('invoice');
-				});
-			}).catch(error => {
-				var shortCutFunction = 'success';
-				var msg = `
-					${error.message}
-				`;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-			});
-		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
-			const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-			const theUser = auth.currentUser;
-			theUser.linkWithPopup(yahooProvider).then(() => {
-				theUser.updateProfile({
-					displayName: theUser.providerData[0].displayName, 
-					photoURL: theUser.providerData[0].photoURL,
-					isAnonymous: false
-				}).then(() => {
-					window.location.assign('invoice');
-				});
-			}).catch(error => {
-				var shortCutFunction = 'success';
-				var msg = `
-					${error.message}
-				`;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-			});
-		} else {
-			auth.sendSignInLinkToEmail(email, actionCodeSettings)
-			.then(() => {
-				var shortCutFunction = 'success';
-				var msg = `
-					A verification link has been sent to:   <hr class="to-hr hr15-bot">
-					${email}<hr class="hr10-nil">
-				`;
+		auth.sendSignInLinkToEmail(email, actionCodeSettings)
+		.then(() => {
 
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-	
-				window.localStorage.setItem('emailForSignIn', email);
-			}).catch(error => {
+			var shortCutFunction = 'success';
+			var msg = `
+				A verification link has been sent to:   <hr class="to-hr hr15-bot">
+				${email}<hr class="hr10-nil">
+			`;
+
+			toastr.options =  {
+				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+			};
+			var $toast = toastr[shortCutFunction](msg);
+			$toastlast = $toast;
+
+			window.localStorage.setItem('emailForSignIn', email);
+		}).catch(error => {
+			if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
+				const googleProvider = new firebase.auth.GoogleAuthProvider;
+				const theUser = auth.currentUser;
+				theUser.linkWithPopup(googleProvider).then(() => {
+					theUser.updateProfile({
+						displayName: theUser.providerData[0].displayName, 
+						photoURL: theUser.providerData[0].photoURL,
+						isAnonymous: false
+					}).then(() => {
+						window.location.assign('invoice');
+					});
+				}).catch(error => {
+					var shortCutFunction = 'success';
+					var msg = `
+						${error.message}
+					`;
+					toastr.options =  {
+						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+					};
+					var $toast = toastr[shortCutFunction](msg);
+					$toastlast = $toast;
+				});
+			} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
+				const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+				const theUser = auth.currentUser;
+				theUser.linkWithPopup(yahooProvider).then(() => {
+					theUser.updateProfile({
+						displayName: theUser.providerData[0].displayName, 
+						photoURL: theUser.providerData[0].photoURL,
+						isAnonymous: false
+					}).then(() => {
+						window.location.assign('invoice');
+					});
+				}).catch(error => {
+					var shortCutFunction = 'success';
+					var msg = `
+						${error.message}
+					`;
+					toastr.options =  {
+						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+					};
+					var $toast = toastr[shortCutFunction](msg);
+					$toastlast = $toast;
+				});
+			} else {
 				var shortCutFunction = 'success';
 				var msg = `${error.message}`;
 				toastr.options =  {
@@ -636,8 +637,8 @@ const signUpFunction = () => {
 				};
 				var $toast = toastr[shortCutFunction](msg);
 				$toastlast = $toast;
-			});
-		}
+			}
+		});
 	} else if(email.includes('+') && (email.length >= 10)) { 
 
 		window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container', {

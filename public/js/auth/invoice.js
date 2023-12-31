@@ -58,7 +58,6 @@ const voiceImg = document.getElementById('voice-img');
 const verifyH4 = document.getElementById('verify-h4');
 
 const madrid = document.getElementById('madrid');
-const madrid2 = document.getElementById('madrid-2');
 
 const heySave1 = document.getElementById('save-1');
 const heySave2 = document.getElementById('save-2');
@@ -91,7 +90,6 @@ auth.onAuthStateChanged(user => {
 		thePic.style.display = 'inline-block';
 
 		madrid.setAttribute("src", user.photoURL);
-		madrid2.setAttribute("src", user.photoURL);
 	} else if (!user.photoURL) {
 		if(user.phoneNumber) {
 			avatarHolder.setAttribute("src", 'img/partners/phone.png');
@@ -181,6 +179,8 @@ auth.onAuthStateChanged(user => {
 
 		showLink.addEventListener('click', phoneShow);
 		voiceDiv.addEventListener('click', phoneShow);
+
+		document.getElementById('email-verify').addEventListener('click', phoneShow);
 
 		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
 			jinaHolder2.innerHTML = 'Link Phone Number';
@@ -405,6 +405,7 @@ document.getElementById('phone-voice').addEventListener('click', phoneShow);
 document.getElementById('email-voice').addEventListener('click', emailShow);
 
 document.getElementById('code-verify').addEventListener('click', emailShow);
+document.getElementById('email-verify').addEventListener('click', phoneShow);
 
 
 
