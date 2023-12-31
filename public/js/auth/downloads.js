@@ -134,8 +134,6 @@ auth.onAuthStateChanged(user => {
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
 
-		document.getElementById('settings').setAttribute('data-bs-target', '#exampleModal');
-
 		jinaHolder.value = user.phoneNumber;
 		jinaHolder3.value = user.phoneNumber;
 
@@ -212,12 +210,10 @@ auth.onAuthStateChanged(user => {
 		showToth.addEventListener('click', phoneShow);
 		showSet.addEventListener('click', phoneShow);
 
-		document.getElementById('settings').addEventListener('click', phoneShow);
-
 		showLink.addEventListener('click', phoneShow);
 
 		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
-			jinaHolder2.innerHTML = 'Link Phone Number';
+			jinaHolder2.innerHTML = 'Get Phone Invoice';
 		}
 
 	} else if(!user.email && user.phoneNumber) {
@@ -256,10 +252,8 @@ auth.onAuthStateChanged(user => {
 		showLink.addEventListener('click', emailShow);
 		voiceDiv.addEventListener('click', emailShow);
 
-		document.getElementById('settings').addEventListener('click', emailShow);
-
 		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
-			jinaHolder2.innerHTML = 'Link Email Address';
+			jinaHolder2.innerHTML = 'Get Email Invoice';
 		}
 
 	} else if(user.isAnonymous) {

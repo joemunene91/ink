@@ -183,7 +183,7 @@ auth.onAuthStateChanged(user => {
 		document.getElementById('email-verify').addEventListener('click', phoneShow);
 
 		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
-			jinaHolder2.innerHTML = 'Link Phone Number';
+			jinaHolder2.innerHTML = 'Get Phone Invoice';
 		}
 
 	} else if(!user.email && user.phoneNumber) {
@@ -209,7 +209,7 @@ auth.onAuthStateChanged(user => {
 		document.getElementById('code-verify').addEventListener('click', emailShow);
 
 		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
-			jinaHolder2.innerHTML = 'Link Email Address';
+			jinaHolder2.innerHTML = 'Get Email Invoice';
 		}
 	} else if(user.isAnonymous) {
 		anonInvoice.style.display = 'flex';

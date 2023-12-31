@@ -8,6 +8,11 @@ auth.onAuthStateChanged(user => {
 
     var toastbtc = '';
 
+    var closeSave = document.getElementById('close-save');
+    var closeExam = document.getElementById('close-exam');
+
+    var biden = false;
+
     if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
@@ -89,13 +94,15 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 7000
+            timeOut: 5000
         };
         if (!msg) {
             msg = getMessage();
         }
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
+
+        biden = true;
 
     });
 
@@ -120,13 +127,23 @@ auth.onAuthStateChanged(user => {
         var $toast = toastr[shortCutFunction](msg, title);
         $toastlast = $toast;
 
-        setTimeout(() => {
-            if(!(user.email && user.phoneNumber)) {
-                $('#saveModal').modal('hide');
-                $('#discountModal').modal('show');
-            }
-        }, 7000);
+        biden = true;
 
     });
+
+    closeExam.addEventListener('click', showNotify);
+    closeSave.addEventListener('click', showNotify);
+
+    function showNotify() {
+        if(biden) {
+            setTimeout(() => {
+                if(!(user.email && user.phoneNumber)) {
+                    $('#discountModal').modal('show');
+                }
+            }, 3000);
+        }
+
+        biden = false;
+    }
 
 });
