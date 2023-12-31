@@ -58,7 +58,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("chase014").innerHTML = "Buy: $" + parseFloat((document.getElementById("chase14").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('chime01')) {
-    (document.getElementById("chime1").innerHTML = "$" + (3670).toLocaleString()),
+    (document.getElementById("chime1").innerHTML = "$" + (3649).toLocaleString()),
     (document.getElementById("chime2").innerHTML = "$" + (4520).toLocaleString()),
     (document.getElementById("chime3").innerHTML = "$" + (5132).toLocaleString()),
     (document.getElementById("chime4").innerHTML = "$" + (5809).toLocaleString()),
