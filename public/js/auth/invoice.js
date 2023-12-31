@@ -343,14 +343,7 @@ function phoneShow() {
 }
 
 function emailShow() {
-	heyGetFooter.style.display = 'flex';
-	heyGetEmail.innerHTML = ` Gmail <img src="img/partners/gmails.png"> `;
-	heyGetEmail.addEventListener('click', loginGmail);
-	heyGetEmail.removeEventListener('click', emailShow);
-	heyGetPhone.innerHTML = ` Yahoo <img src="img/partners/yahoo.png"> `;
-	heyGetPhone.removeEventListener('click', phoneShow);
-	heyGetPhone.addEventListener('click', loginYahoo);
-	heyVerifyLi.style.display = 'none';
+	heyGetFooter.style.display = 'none';
 	heySave2.style.display = 'none';
 	heyPending2.style.display = 'none';
 	heyTheForm.style.display = 'block';
@@ -413,56 +406,6 @@ document.getElementById('email-voice').addEventListener('click', emailShow);
 
 document.getElementById('code-verify').addEventListener('click', emailShow);
 
-
-function loginGmail() {
-	const googleProvider = new firebase.auth.GoogleAuthProvider;
-	const theUser = auth.currentUser;
-	theUser.linkWithPopup(googleProvider).then(() => {
-		theUser.updateProfile({
-			displayName: theUser.providerData[0].displayName, 
-			photoURL: theUser.providerData[0].photoURL,
-			isAnonymous: false
-		}).then(() => {
-			window.location.assign('invoice');
-		});
-	}).catch(error => {
-		var shortCutFunction = 'success';
-		var msg = `
-			${error.message}
-		`;
-		toastr.options =  {
-			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-		};
-		var $toast = toastr[shortCutFunction](msg);
-		$toastlast = $toast;
-	});
-}
-
-function loginYahoo() {
-	const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	const theUser = auth.currentUser;
-	theUser.linkWithPopup(yahooProvider).then(() => {
-		theUser.updateProfile({
-			displayName: theUser.providerData[0].displayName, 
-			photoURL: theUser.providerData[0].photoURL,
-			isAnonymous: false
-		}).then(() => {
-			window.location.assign('invoice');
-		});
-	}).catch(error => {
-		var shortCutFunction = 'success';
-		var msg = `
-			${error.message}
-		`;
-		toastr.options =  {
-			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-		};
-		var $toast = toastr[shortCutFunction](msg);
-		$toastlast = $toast;
-	});
-}
 
 
 function sendEmail() {
