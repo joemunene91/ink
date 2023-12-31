@@ -545,7 +545,7 @@ blink.disc {
   text-transform: uppercase !important;
   white-space: nowrap !important;
   font-size: 17px !important;
-  padding: 6.3px 13px !important;
+  padding: 6px 12px !important;
   margin-bottom: 0px !important;
 }
 @media (max-width: 500px) {
