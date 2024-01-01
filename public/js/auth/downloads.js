@@ -1,11 +1,11 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyCurB1-NpRENDQBy1iEiq1j7LT53M0S5Xw",
-    authDomain: "darkweb-lats.firebaseapp.com",
-    projectId: "darkweb-lats",
-    storageBucket: "darkweb-lats.appspot.com",
-    messagingSenderId: "1015438684187",
-    appId: "1:1015438684187:web:64407c1ec43d96b7ff88be",
-    measurementId: "G-LXJWRPYF3R"
+    apiKey: "AIzaSyANKpoWTgCZp2pinbx6J-0b_RRLe_aWlZA",
+    authDomain: "darkweb-sbs.firebaseapp.com",
+    projectId: "darkweb-sbs",
+    storageBucket: "darkweb-sbs.appspot.com",
+    messagingSenderId: "1013982976477",
+    appId: "1:1013982976477:web:7064d6bde8b5b05d3ffe34",
+    measurementId: "G-2QWML7X2L8"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -559,7 +559,7 @@ const signUpFunction = () => {
 	const email = mailField.value;
 	
 	var actionCodeSettings = {
-		url: `https://www.darkweb.lat/invoice#${mailField.value}`,
+		url: `https://www.darkweb.sbs/invoice#${mailField.value}`,
 		handleCodeInApp: true,
 	};
 
