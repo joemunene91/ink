@@ -16,12 +16,12 @@ binance.onmessage = function(onmsg){
             <hr class="to-hr">
             Add $50 to complete the download.
             <hr>
-            Contact: darkweb.ink@proton.me.
+            Contact: darkweb-logs@proton.me.
         `;
         toastr.options =  {
             closeButton: true, debug: false, newestOnTop: true, progressBar: true,
             positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-            timeOut: 7000
+            timeOut: 13000
         };
         var $toast = toastr[shortCutFunction](msg);
         $toastlast = $toast;
