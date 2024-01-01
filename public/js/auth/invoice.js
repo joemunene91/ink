@@ -1,11 +1,11 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyANKpoWTgCZp2pinbx6J-0b_RRLe_aWlZA",
-    authDomain: "darkweb-sbs.firebaseapp.com",
-    projectId: "darkweb-sbs",
-    storageBucket: "darkweb-sbs.appspot.com",
-    messagingSenderId: "1013982976477",
-    appId: "1:1013982976477:web:7064d6bde8b5b05d3ffe34",
-    measurementId: "G-2QWML7X2L8"
+    apiKey: "AIzaSyDMyCaKL89Z4Gq8tKOCf0zPikW4dsbNB8c",
+	authDomain: "darkweb-ink.firebaseapp.com",
+	projectId: "darkweb-ink",
+	storageBucket: "darkweb-ink.appspot.com",
+	messagingSenderId: "388288804218",
+	appId: "1:388288804218:web:b2cc83de3104492f27d2c3",
+	measurementId: "G-5XRV3CJBNX"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -464,7 +464,7 @@ const signUpFunction = () => {
 	}
 
 	var actionCodeSettings = {
-		url: `https://www.darkweb.sbs/invoice#${mailField.value}`,
+		url: `https://www.darkweb.ink/invoice#${mailField.value}`,
 		handleCodeInApp: true,
 	};
 
@@ -668,7 +668,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		if(!user1) {
 			auth.signInWithEmailLink(email, window.location.href)
 			.then(() => {
-				window.location.href = 'https://www.darkweb.sbs/invoice';
+				window.location.href = 'https://www.darkweb.ink/invoice';
 			})
 			.then(() => {
 				window.location.reload();
@@ -686,7 +686,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		} else if(user1.isAnonymous) {
 			auth.currentUser.linkWithCredential(credential)
 			.then(() => {
-				window.location.href = 'https://www.darkweb.sbs/invoice';
+				window.location.href = 'https://www.darkweb.ink/invoice';
 			})
 			.then(() => {
 				window.location.reload();
@@ -704,7 +704,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		} else if(user1.phoneNumber){
 			auth.currentUser.linkWithCredential(credential)
 			.then(() => {
-				window.location.href = 'https://www.darkweb.sbs/invoice';
+				window.location.href = 'https://www.darkweb.ink/invoice';
 			})
 			.then(() => {
 				window.location.reload();
