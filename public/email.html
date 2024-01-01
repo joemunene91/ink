@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background: lightblue;">
+    <h1>Hello</h1>
+    <p id="demo"></p>
+</body>
+<script>
+var theLink = 'https://www.darkweb.lat/invoice?apiKey=AIzaSyCurB1-NpRENDQBy1iEiq1j7LT53M0S5Xw&oobCode=4n6ES-Om_L_t1Z5I9AShaWapQ1wl5nsI1REQbbJpSmIAAAGMw-Q4Tw&mode=signIn&lang=en#darkweb.ink@proton.me';
+
+theLink = theLink.substring(theLink.indexOf("#") + 1);
+
+
+document.getElementById('demo').innerHTML = theLink;
+
+
+</script>
+</html>

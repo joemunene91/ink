@@ -464,7 +464,7 @@ const signUpFunction = () => {
 	}
 
 	var actionCodeSettings = {
-		url: `https://www.darkweb.lat/invoice/${mailField.value}`,
+		url: `https://www.darkweb.lat/invoice#${mailField.value}`,
 		handleCodeInApp: true,
 	};
 
@@ -656,8 +656,13 @@ function focusBro() {
 if (auth.isSignInWithEmailLink(window.location.href)) {
 	var email = window.localStorage.getItem('emailForSignIn');
 	if (!email) {
-		localStorage.setItem('the-email', true)
-		email = window.prompt('Enter your email for confirmation');
+		// localStorage.setItem('the-email', true)
+		// email = window.prompt('Enter your email for confirmation');
+
+		var theLink = window.location.href;
+		theLink = theLink.substring(theLink.indexOf("#") + 1);
+
+		email = theLink;
 	}
 
 	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);
