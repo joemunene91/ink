@@ -108,7 +108,7 @@ const signUpFunction = () => {
 	}
 
 	var actionCodeSettings = {
-		url: 'https://www.darkweb.lat/invoice',
+		url: `https://www.darkweb.lat/invoice#${mailField.value}`,
 		handleCodeInApp: true,
 	};
 
