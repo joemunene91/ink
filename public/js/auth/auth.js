@@ -67,23 +67,23 @@ auth.onAuthStateChanged(user => {
 	if (!user) {
 		window.location.assign('index');
 	}
-	if (user.photoURL) {
-		avatarHolder.setAttribute("src", user.photoURL);
-		avatarHolder.style.display = 'block';
-		thePic.setAttribute("src", user.photoURL);
-		thePic.style.display = 'inline-block';
-	} else if (!user.photoURL) {
-		if(user.phoneNumber) {
-			avatarHolder.setAttribute("src", 'img/partners/phone.png');
-			avatarHolder.style.display = 'block';
-			avatarHolder.style.borderWidth = 0;
-			avatarHolder.style.borderRadius = 0;
-			thenoPic.style.display = 'inline-block';
-		} else {
-			logoHolder.style.display = 'block';
-			thenoPic.style.display = 'inline-block';
-		}
-	}
+	// if (user.photoURL) {
+	// 	avatarHolder.setAttribute("src", user.photoURL);
+	// 	avatarHolder.style.display = 'block';
+	// 	thePic.setAttribute("src", user.photoURL);
+	// 	thePic.style.display = 'inline-block';
+	// } else if (!user.photoURL) {
+	// 	if(user.phoneNumber) {
+	// 		avatarHolder.setAttribute("src", 'img/partners/phone.png');
+	// 		avatarHolder.style.display = 'block';
+	// 		avatarHolder.style.borderWidth = 0;
+	// 		avatarHolder.style.borderRadius = 0;
+	// 		thenoPic.style.display = 'inline-block';
+	// 	} else {
+	// 		logoHolder.style.display = 'block';
+	// 		thenoPic.style.display = 'inline-block';
+	// 	}
+	// }
 	if(user.email && user.phoneNumber) {
 		if (user.displayName && user.email) {
 			verifyH4.innerHTML = user.displayName;

@@ -2218,12 +2218,6 @@ td {
 #the-id::-webkit-scrollbar {
     height: 3px !important;
 }
-#the-pic {
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    float: left !important;
-}
 
 #jinaHolder3 {
     margin: 5px !important;
@@ -2272,9 +2266,10 @@ td {
 #canvas2 {
     border-radius: 50%;
     float: right !important;
+    margin-right: 4px !important;
 }
 
-#the-nopic {
+#vpn-pic {
     border-radius: 0;
     width: 67px;
     height: 67px;
