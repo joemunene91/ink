@@ -76,6 +76,12 @@ const dataVoice = document.getElementById('data-voice');
 
 const auth = firebase.auth();
 
+setTimeout(() => {
+	if(window.location.href.includes('@')) {
+		window.location.reload();
+	}
+}, 3000);
+
 auth.onAuthStateChanged(user => {
 	if (!user) {
 		if(!auth.isSignInWithEmailLink(window.location.href)) {
