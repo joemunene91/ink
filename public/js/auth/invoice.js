@@ -664,7 +664,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 				toastr.options =  {
 					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-					timeOut: 3000
+					timeOut: 1500
 				};
 				var $toast = toastr[shortCutFunction](msg);
 				$toastlast = $toast;
@@ -674,7 +674,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 					if(window.location.href.includes('@')) {
 						window.location.href = 'https://www.darkweb.ink/invoice';
 					}
-				}, 3000);
+				}, 1500);
 			})
 			.catch((error) => {
 				var shortCutFunction = 'success';
@@ -697,7 +697,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 				toastr.options =  {
 					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-					timeOut: 3000
+					timeOut: 1500
 				};
 				var $toast = toastr[shortCutFunction](msg);
 				$toastlast = $toast;
@@ -707,7 +707,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 					if(window.location.href.includes('@')) {
 						window.location.href = 'https://www.darkweb.ink/invoice';
 					}
-				}, 3000);
+				}, 1500);
 			})
 			.catch((error) => {
 				var shortCutFunction = 'success';
