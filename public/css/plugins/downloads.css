@@ -520,10 +520,10 @@ blink.disc {
 
 
 .butn#code-email {
-  padding: 7.65px 17px;
+  padding: 7.65px 15px;
 }
 .butn.home-btn#code-home {
-  padding: 7.65px 12px;
+  padding: 7.65px 13px;
 }
 
 @media (min-width: 1092px) {

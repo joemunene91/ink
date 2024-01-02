@@ -181,9 +181,8 @@ auth.onAuthStateChanged(user => {
 		phoneInvoice.style.display = 'flex';
 		yourPhone.innerText = user.phoneNumber;
 
-		voiceDiv.innerHTML = 'EMAIL ADDRESS';
+		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
-
 
 		if(user.phoneNumber.length > 10) {
 			showLink.innerHTML = `${user.phoneNumber.substring(0, 10)}.. <img src="img/partners/check.png">`;

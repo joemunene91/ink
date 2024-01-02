@@ -143,7 +143,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = user.phoneNumber;
 		jinaHolder3.value = user.phoneNumber;
 
-		voiceDiv.innerHTML = 'EMAIL ADDRESS';
+		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
 
 		if(user.phoneNumber.length > 10) {

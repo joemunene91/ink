@@ -425,15 +425,15 @@ section .dataTables_wrapper dataTables_length {
 }
 @media screen and (min-width: 992px) {
     .masonry-4 {
-        -moz-column-count: 12;
-        -webkit-column-count: 12;
-        column-count: 12;
+        -moz-column-count: 13;
+        -webkit-column-count: 13;
+        column-count: 13;
     }
 }
 @media screen and (min-width: 1200px) {
     .masonry-4 {
-        -moz-column-count: 19;
-        -webkit-column-count: 19;
-        column-count: 19;
+        -moz-column-count: 20;
+        -webkit-column-count: 20;
+        column-count: 20;
     }
 }

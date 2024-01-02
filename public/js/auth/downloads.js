@@ -218,7 +218,7 @@ auth.onAuthStateChanged(user => {
 			showLink.innerHTML = `${user.phoneNumber} <img src="img/partners/check.png">`;
 		}
 
-		voiceDiv.innerHTML = 'EMAIL ADDRESS';
+		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
