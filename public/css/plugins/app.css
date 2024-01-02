@@ -2250,9 +2250,17 @@ td {
     top: 24%;
     left: 25.3%;
     right: 25.3%;
+    font-size: 23px !important;
     opacity: 1 !important;
     padding: 9px 0 !important;
     cursor: pointer !important;
+}
+@media screen and (max-width: 570px) {
+    #settings {
+        font-size: 22.5px !important;
+        left: 24.7%;
+        right: 24.7%;
+    }
 }
 #settings img {
     width: 33px !important;
@@ -2265,11 +2273,11 @@ td {
     border-radius: 50%;
     float: right !important;
 }
-#the-nopic2,
+
 #the-nopic {
     border-radius: 0;
-    width: 70px;
-    height: 70px;
+    width: 67px;
+    height: 67px;
     float: left !important;
 }
 ::placeholder {
