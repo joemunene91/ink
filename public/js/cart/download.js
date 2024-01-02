@@ -177,33 +177,33 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
 
 document.getElementById('balance1').innerHTML = '$3,875';
-document.getElementById('balance2').innerHTML = '$5,602';
-document.getElementById('balance3').innerHTML = '$5,490';
+document.getElementById('balance2').innerHTML = '$4,602';
+document.getElementById('balance3').innerHTML = '$4,490';
 document.getElementById('balance4').innerHTML = '$3,615';
-document.getElementById('balance5').innerHTML = '$5,402';
+document.getElementById('balance5').innerHTML = '$4,402';
 document.getElementById('balance6').innerHTML = '$3,940';
-document.getElementById('balance7').innerHTML = '$5,087';
-document.getElementById('balance8').innerHTML = '$5,259';
+document.getElementById('balance7').innerHTML = '$4,087';
+document.getElementById('balance8').innerHTML = '$4,259';
 document.getElementById('balance9').innerHTML = '$3,820';
 
 document.getElementById('balance10').innerHTML = '$3,705';
-document.getElementById('balance11').innerHTML = '$5,214';
-document.getElementById('balance12').innerHTML = '$5,390';
+document.getElementById('balance11').innerHTML = '$4,214';
+document.getElementById('balance12').innerHTML = '$4,390';
 document.getElementById('balance13').innerHTML = '$3,842';
-document.getElementById('balance14').innerHTML = '$5,439';
-document.getElementById('balance15').innerHTML = '$5,228';
+document.getElementById('balance14').innerHTML = '$4,439';
+document.getElementById('balance15').innerHTML = '$4,228';
 document.getElementById('balance16').innerHTML = '$3,910';
-document.getElementById('balance17').innerHTML = '$5,104';
+document.getElementById('balance17').innerHTML = '$4,104';
 document.getElementById('balance18').innerHTML = '$3,724';
 document.getElementById('balance19').innerHTML = '$3,825';
 
-document.getElementById('balance20').innerHTML = '$5,270';
-document.getElementById('balance21').innerHTML = '$5,309';
-document.getElementById('balance22').innerHTML = '$5,183';
+document.getElementById('balance20').innerHTML = '$4,270';
+document.getElementById('balance21').innerHTML = '$4,309';
+document.getElementById('balance22').innerHTML = '$4,183';
 document.getElementById('balance23').innerHTML = '$3,604';
 document.getElementById('balance24').innerHTML = '$3,860';
 document.getElementById('balance25').innerHTML = '$3,904';
-document.getElementById('balance26').innerHTML = '$5,329';
+document.getElementById('balance26').innerHTML = '$4,329';
 document.getElementById('balance27').innerHTML = '$3,608';
 
 
