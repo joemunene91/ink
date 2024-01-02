@@ -119,7 +119,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         2 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
@@ -137,7 +137,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         3 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
@@ -167,7 +167,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         4 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
@@ -186,7 +186,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         5 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
@@ -206,7 +206,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         6 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
@@ -234,7 +234,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         7 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
@@ -253,7 +253,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         8 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
@@ -271,7 +271,7 @@ auth.onAuthStateChanged(user => {
                     var shortCutFunction = 'success';
                     var msg = `
                         9 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Complete the $${coastNumber} payment.       <hr class="hr10-nil"> 
+                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
