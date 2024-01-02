@@ -670,113 +670,78 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);
 
 	auth.onAuthStateChanged(user1 => {
-			if(!user1) {
-				if(!(localStorage.getItem('phoneGuy'))) {
-					auth.signInWithEmailLink(email, window.location.href)
-					.then(() => {
-						var shortCutFunction = 'success';
-						var msg = `
-							Login Success: <br> <hr class="to-hr hr15-bot">  
-							${email}                             <hr class="hr10-nil">
-						`;
-						toastr.options =  {
-							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-							timeOut: 1500
-						};
-						var $toast = toastr[shortCutFunction](msg);
-						$toastlast = $toast;
-					})
-					.then(() => {
-						setTimeout(() => {
-							if(window.location.href.includes('@')) {
-								window.location.href = 'https://www.darkweb.lat/invoice';
-							}
-						}, 1500);
-					})
-					.catch((error) => {
-						var shortCutFunction = 'success';
-						var msg = `${error.message}`;
-						toastr.options =  {
-							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-						};
-						var $toast = toastr[shortCutFunction](msg);
-						$toastlast = $toast;
-					});
-				} else {
-					auth.signInWithEmailLink(email, window.location.href)
-					.then(() => {
-						var shortCutFunction = 'success';
-						var msg = `
-							Login Success: <br> <hr class="to-hr hr15-bot">  
-							${email}                             <hr class="hr10-nil">
-						`;
-						toastr.options =  {
-							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-							timeOut: 1500
-						};
-						var $toast = toastr[shortCutFunction](msg);
-						$toastlast = $toast;
-					})
-					.then(() => {
-						auth.currentUser.updateProfile({
-							phoneNumber: localStorage.getItem('phoneGuy')
-						})
-					})
-					.then(() => {
-						setTimeout(() => {
-							if(window.location.href.includes('@')) {
-								window.location.href = 'https://www.darkweb.lat/invoice';
-							}
-						}, 1500);
-					})
-					.catch((error) => {
-						var shortCutFunction = 'success';
-						var msg = `${error.message}`;
-						toastr.options =  {
-							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-						};
-						var $toast = toastr[shortCutFunction](msg);
-						$toastlast = $toast;
-					});
-				}
-			} else if(user1) {
-				auth.currentUser.linkWithCredential(credential)
-				.then(() => {
-					var shortCutFunction = 'success';
-					var msg = `
-						Login Success: <br> <hr class="to-hr hr15-bot">  
-						${email}                             <hr class="hr10-nil">
-					`;
-					toastr.options =  {
-						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-						timeOut: 1500
-					};
-					var $toast = toastr[shortCutFunction](msg);
-					$toastlast = $toast;
+		if(!user1) {
+			auth.signInWithEmailLink(email, window.location.href)
+			.then(() => {
+				var shortCutFunction = 'success';
+				var msg = `
+					Login Success: <br> <hr class="to-hr hr15-bot">  
+					${email}                             <hr class="hr10-nil">
+				`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+					timeOut: 1500
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			})
+			.then(() => {
+				auth.currentUser.updateProfile({
+					phoneNumber: localStorage.getItem('phoneGuy')
 				})
-				.then(() => {
-					setTimeout(() => {
-						if(window.location.href.includes('@')) {
-							window.location.href = 'https://www.darkweb.lat/invoice';
-						}
-					}, 1500);
-				})
-				.catch((error) => {
-					var shortCutFunction = 'success';
-					var msg = `${error.message}`;
-					toastr.options =  {
-						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-					};
-					var $toast = toastr[shortCutFunction](msg);
-					$toastlast = $toast;
-				});
-			} 
+			})
+			.then(() => {
+				setTimeout(() => {
+					if(window.location.href.includes('@')) {
+						window.location.href = 'https://www.darkweb.lat/invoice';
+					}
+				}, 1500);
+			})
+			.catch((error) => {
+				var shortCutFunction = 'success';
+				var msg = `${error.message}`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			});
+		} else if(user1) {
+			auth.currentUser.linkWithCredential(credential)
+			.then(() => {
+				var shortCutFunction = 'success';
+				var msg = `
+					Login Success: <br> <hr class="to-hr hr15-bot">  
+					${email}                             <hr class="hr10-nil">
+				`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+					timeOut: 1500
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			})
+			.then(() => {
+				setTimeout(() => {
+					if(window.location.href.includes('@')) {
+						window.location.href = 'https://www.darkweb.lat/invoice';
+					}
+				}, 1500);
+			})
+			.catch((error) => {
+				var shortCutFunction = 'success';
+				var msg = `${error.message}`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			});
+		} 
 	});
 }
 
