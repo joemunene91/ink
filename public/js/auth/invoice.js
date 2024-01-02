@@ -669,8 +669,6 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 			auth.signInWithEmailLink(email, window.location.href)
 			.then(() => {
 				window.location.href = 'https://www.darkweb.ink/invoice';
-			})
-			.then(() => {
 				window.location.reload();
 			})
 			.catch((error) => {
@@ -687,8 +685,6 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 			auth.currentUser.linkWithCredential(credential)
 			.then(() => {
 				window.location.href = 'https://www.darkweb.ink/invoice';
-			})
-			.then(() => {
 				window.location.reload();
 			})
 			.catch((error) => {
