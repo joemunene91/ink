@@ -614,6 +614,12 @@ blink {
    }
 }
 
+@media screen and (max-width: 1370px) {
+	.the-display-none {
+		display: none !important;
+  }
+}
+
 .gmails {
     margin-left: 7.5px !important;
     width: 28px !important;

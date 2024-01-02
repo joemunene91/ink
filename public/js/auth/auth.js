@@ -409,7 +409,6 @@ const signUpFunction = () => {
 	if(email.includes('@')) {
 		auth.sendSignInLinkToEmail(email, actionCodeSettings)
 		.then(() => {
-
 			var shortCutFunction = 'success';
 			var msg = `
 				A verification link has been sent to:   <hr class="to-hr hr15-bot">
