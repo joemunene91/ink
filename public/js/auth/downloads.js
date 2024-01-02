@@ -277,8 +277,6 @@ auth.onAuthStateChanged(user => {
 				var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
 				totali = totali + (price4 * 1);
 			});
-		
-			heyInvoiceType.innerHTML = `Send $${totali.toLocaleString()} BTC`;
 
 			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
 				const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
@@ -420,7 +418,6 @@ function phoneShow() {
 				totali = totali + (price4 * 1);
 			});
 		
-			heyInvoiceType.innerHTML = `Send $${totali.toLocaleString()} BTC`;
 			heySave3.innerHTML = `
 				Bank logs can also be sent via <br> <span>SMS</span> to your phone.`;
 		
@@ -491,7 +488,6 @@ function emailShow() {
 				totali = totali + (price4 * 1);
 			});
 		
-			heyInvoiceType.innerHTML = `Send $${totali.toLocaleString()} BTC`;
 			heySave3.innerHTML = ` Bank logs can also be sent via <br> <span>email</span> to your inbox.`;
 		
 			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {

@@ -430,8 +430,6 @@ section#logsection2 .dataTables_wrapper dataTables_length {
   }
   #showlink {
       margin-right: 150px;
-      padding-left: 13px !important;
-      padding-right: 13px !important;
   }
 }
 
@@ -451,8 +449,6 @@ section#logsection2 .dataTables_wrapper dataTables_length {
   }
   #showlink {
       margin-right: 250px;
-      padding-left: 13px !important;
-      padding-right: 13px !important;
   }
 }
 @media (max-width: 480px) {
@@ -465,8 +461,6 @@ section#logsection2 .dataTables_wrapper dataTables_length {
   }
   #showlink {
       margin-right: 27px;
-      padding-left: 10px !important;
-      padding-right: 10px !important;
   }
 }
 @media (max-width: 400px) {
@@ -479,8 +473,6 @@ section#logsection2 .dataTables_wrapper dataTables_length {
   }
   #showlink {
       margin-right: 17px;
-      padding-left: 10px !important;
-      padding-right: 10px !important;
   }
 }
 @media (max-width: 380px) {
@@ -493,8 +485,6 @@ section#logsection2 .dataTables_wrapper dataTables_length {
   }
   #showlink {
       margin-right: 17px;
-      padding-left: 8px !important;
-      padding-right: 8px !important;
   }
 }
 @media (max-width: 370px) {
@@ -508,8 +498,6 @@ section#logsection2 .dataTables_wrapper dataTables_length {
 
   #showlink {
       margin-right: 12px;
-      padding-left: 5px !important;
-      padding-right: 5px !important;
   }
 }
 

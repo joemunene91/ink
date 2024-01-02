@@ -304,8 +304,6 @@ function updateCartTotal() {
         const banking1 = (JSON.parse(localStorage.getItem('banklogs'))[0].info1);
         const banking2 = (JSON.parse(localStorage.getItem('banklogs'))[0].info2);
         const banking3 = (JSON.parse(localStorage.getItem('banklogs'))[0].info3);
-        const banking4 = (JSON.parse(localStorage.getItem('banklogs'))[0].info4);
-        const banking5 = (JSON.parse(localStorage.getItem('banklogs'))[0].info5);
 
         const theBanklog = document.getElementsByClassName('the-banklog')[0];
 
@@ -382,6 +380,7 @@ function updateCartTotal() {
         modalAmount.innerHTML = `
             Send $ <span id="omanyala" class="countup">${parseInt(total).toLocaleString()}</span> 
         `;
+        document.getElementById('invoice-type').innerHTML = `Send $${parseInt(total).toLocaleString()} BTC`;
         document.getElementById('disb').style.display = 'none';
     } else if(JSON.parse(localStorage.getItem('banklogs')).length > 1) {
         var Loginz = (JSON.parse(localStorage.getItem('banklogs')));
@@ -441,6 +440,8 @@ function updateCartTotal() {
             $<span id="omanyala" class="countup">${parseInt(disTot).toLocaleString()}</span>
         `;
         document.getElementById('bitcoin-logo').style.display = 'none';
+
+        document.getElementById('invoice-type').innerHTML = `Send $${parseInt(disTot).toLocaleString()} BTC`;
     } 
 
 localStorage.setItem('banktotal',total);
