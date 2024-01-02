@@ -370,6 +370,13 @@ function updateCartTotal() {
         jinaHolder2.innerHTML = bankLog;
 
 
+        var bankLogz = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
+
+        var n = bankLogz.indexOf('[');
+        var bankLogz3 = bankLogz.substring(0, n != -1 ? n : bankLogz.length);
+
+        jinaHolder2.innerHTML = bankLogz3 + ' Log';
+        
 
         usaP.innerHTML = `
             ${banking1} , ${banking2} , ${banking3}
