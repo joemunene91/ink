@@ -658,7 +658,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 			.then(() => {
 				var shortCutFunction = 'success';
 				var msg = `
-					Logged in as: <br> <hr class="to-hr hr15-bot">  
+					Login Success: <br> <hr class="to-hr hr15-bot">  
 					${email}                             <hr class="hr10-nil">
 				`;
 				toastr.options =  {
@@ -691,7 +691,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 			.then(() => {
 				var shortCutFunction = 'success';
 				var msg = `
-					Logged in as: <br> <hr class="to-hr hr15-bot">  
+					Login Success: <br> <hr class="to-hr hr15-bot">  
 					${email}                             <hr class="hr10-nil">
 				`;
 				toastr.options =  {
