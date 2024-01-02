@@ -73,6 +73,15 @@ auth.onAuthStateChanged(user => {
 		vpnHolder.setAttribute("src", user.photoURL);
 		vpnHolder.classList.add('logo-50');
 	} 
+
+	if(localStorage.getItem('phoneGuy')) {
+		user.updateProfile({
+			phoneNumber: localStorage.getItem('phoneGuy')
+		}).then(() => {
+			window.location.reload();
+		});
+	}
+	
 	if(user.email && user.phoneNumber) {
 		if (user.displayName && user.email) {
 			verifyH4.innerHTML = user.displayName;
