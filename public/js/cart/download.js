@@ -357,6 +357,9 @@ function updateCartTotal() {
 
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');
+
+            theLogo.classList.add('logo-50');
+            theLogo2.classList.add('logo-50');
         } else {
             anonCheck.innerHTML = `
                 Download <img src=${bankImg}>

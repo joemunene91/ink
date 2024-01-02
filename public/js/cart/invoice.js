@@ -178,6 +178,9 @@ function updateCartTotal() {
 
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');
+
+            theLogo.classList.add('logo-50');
+            theLogo2.classList.add('logo-50');
         } 
 
     } else if((JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
