@@ -76,11 +76,6 @@ const dataVoice = document.getElementById('data-voice');
 
 const auth = firebase.auth();
 
-setTimeout(() => {
-	if(window.location.href.includes('@')) {
-		window.location.href = 'https://www.darkweb.ink/invoice';
-	}
-}, 7000);
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
@@ -663,16 +658,23 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 			.then(() => {
 				var shortCutFunction = 'success';
 				var msg = `
-					You have logged in as: <br> <hr class="to-hr hr15-bot">  
+					Logged in as: <br> <hr class="to-hr hr15-bot">  
 					${email}                             <hr class="hr10-nil">
 				`;
 				toastr.options =  {
 					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-					timeOut: 7000
+					timeOut: 3000
 				};
 				var $toast = toastr[shortCutFunction](msg);
 				$toastlast = $toast;
+			})
+			.then(() => {
+				setTimeout(() => {
+					if(window.location.href.includes('@')) {
+						window.location.href = 'https://www.darkweb.ink/invoice';
+					}
+				}, 3000);
 			})
 			.catch((error) => {
 				var shortCutFunction = 'success';
@@ -689,16 +691,23 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 			.then(() => {
 				var shortCutFunction = 'success';
 				var msg = `
-					You have logged in as: <br> <hr class="to-hr hr15-bot">  
+					Logged in as: <br> <hr class="to-hr hr15-bot">  
 					${email}                             <hr class="hr10-nil">
 				`;
 				toastr.options =  {
 					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-					timeOut: 7000
+					timeOut: 3000
 				};
 				var $toast = toastr[shortCutFunction](msg);
 				$toastlast = $toast;
+			})
+			.then(() => {
+				setTimeout(() => {
+					if(window.location.href.includes('@')) {
+						window.location.href = 'https://www.darkweb.ink/invoice';
+					}
+				}, 3000);
 			})
 			.catch((error) => {
 				var shortCutFunction = 'success';
