@@ -683,25 +683,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 				var $toast = toastr[shortCutFunction](msg);
 				$toastlast = $toast;
 			});
-		} else if(user1.isAnonymous) {
-			auth.currentUser.linkWithCredential(credential)
-			.then(() => {
-				window.location.href = 'https://www.darkweb.ink/invoice';
-			})
-			.then(() => {
-				window.location.reload();
-			})
-			.catch((error) => {
-				var shortCutFunction = 'success';
-				var msg = `${error.message}`;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-			});
-		} else if(user1.phoneNumber){
+		} else if(user1) {
 			auth.currentUser.linkWithCredential(credential)
 			.then(() => {
 				window.location.href = 'https://www.darkweb.ink/invoice';
