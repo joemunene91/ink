@@ -10,9 +10,9 @@
     background-color: rgba(0, 115, 173, 0.2) !important;
   }
 }
-#avatar {
+#avatar,
+.logo-50 {
   border: 1.4px solid rgba(0, 115, 173, 0.7);
-  border-radius: 50%;
 }
 .form-control::placeholder{
   color: rgb(14, 51, 82, 0.9)

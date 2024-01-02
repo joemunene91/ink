@@ -16,9 +16,9 @@
 #preloader:after {
   border: 3px solid #d0ad55;
 }
-#avatar {
+#avatar,
+.logo-50 {
   border: 1.4px solid rgba(208, 173, 85, 0.7);
-  border-radius: 50%;
 }
 .form-control::placeholder{
   color: rgb(66, 65, 60, 0.9)
