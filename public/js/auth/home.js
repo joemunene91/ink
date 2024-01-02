@@ -72,7 +72,14 @@ auth.onAuthStateChanged(user => {
 		vpnHolder.setAttribute("src", user.photoURL);
 		vpnHolder.classList.add('logo-50');
 	} 
-	if(user.email && user.phoneNumber) {
+
+	if(user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
+
+		if(!localStorage.getItem('phoneGuy')) {
+			localStorage.setItem('phoneGuy', user.phoneNumber);
+		}
+
+		var thePhoneNo = localStorage.getItem('phoneGuy');
 
 		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
@@ -93,8 +100,8 @@ auth.onAuthStateChanged(user => {
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
 
-		jinaHolder.value = user.phoneNumber;
-		jinaHolder3.value = user.phoneNumber;
+		jinaHolder.value = thePhoneNo;
+		jinaHolder3.value = thePhoneNo;
 
 	} else if(user.email && !user.phoneNumber) {
 		var themail = user.email;

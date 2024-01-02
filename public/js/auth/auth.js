@@ -74,15 +74,15 @@ auth.onAuthStateChanged(user => {
 		vpnHolder.classList.add('logo-50');
 	} 
 
-	if(localStorage.getItem('phoneGuy')) {
-		user.updateProfile({
-			phoneNumber: localStorage.getItem('phoneGuy')
-		}).then(() => {
-			window.location.reload();
-		});
-	}
 	
-	if(user.email && user.phoneNumber) {
+	if(user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
+
+		if(!localStorage.getItem('phoneGuy')) {
+			localStorage.setItem('phoneGuy', user.phoneNumber);
+		}
+
+		var thePhoneNo = localStorage.getItem('phoneGuy');
+
 		if (user.displayName && user.email) {
 			verifyH4.innerHTML = user.displayName;
 		} else if (!user.displayName && user.email) {
@@ -101,8 +101,8 @@ auth.onAuthStateChanged(user => {
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
 
-		jinaHolder.value = user.phoneNumber;
-		jinaHolder3.value = user.phoneNumber;
+		jinaHolder.value = thePhoneNo;
+		jinaHolder3.value = thePhoneNo;
 	} else if(user.email && !user.phoneNumber) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
