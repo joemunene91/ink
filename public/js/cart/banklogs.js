@@ -125,8 +125,8 @@ if (document.getElementById('boa01')) {
     (document.getElementById("citi014").innerHTML = "Buy: $" + parseFloat((document.getElementById("citi14").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('hunt01')) {
-    (document.getElementById("hunt1").innerHTML = "$" + (3289).toLocaleString()),
-    (document.getElementById("hunt2").innerHTML = "$" + (4183).toLocaleString()),
+    (document.getElementById("hunt1").innerHTML = "$" + (3279).toLocaleString()),
+    (document.getElementById("hunt2").innerHTML = "$" + (4157).toLocaleString()),
     (document.getElementById("hunt3").innerHTML = "$" + (4731).toLocaleString()),
     (document.getElementById("hunt4").innerHTML = "$" + (5482).toLocaleString()),
     (document.getElementById("hunt5").innerHTML = "$" + (6250).toLocaleString()),

@@ -77,7 +77,7 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     }
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    setBtn.innerHTML = `Cart: $0.0 <img src="img/partners/bitcoin.png">`;
+    setBtn.innerHTML = `Cart: $0 <img src="img/partners/bitcoin.png" style="margin-left: 13px !important">`;
 
     if (window.innerWidth > 1092) {
         modalDialog.style.top = '7vh';

@@ -70,17 +70,12 @@ function changeImage() {
       }
   
       var theC = document.getElementById('colors');
-      var theLog = document.getElementById('logo');
-  
-      var theLog1 = document.getElementById('cart-logo');
-      var theLog2 = document.getElementById('vpn-img');
+      var theLog = document.getElementById('cart-logo');
       var cxE = document.getElementById('code-email');
   
       if (window.innerWidth > 768) {
         theC.setAttribute('href', 'css/styles-7.css');
         theLog.setAttribute('src', 'img/logos/logo7.png');
-        theLog1.setAttribute('src', 'img/logos/logo7.png');
-        theLog2.setAttribute('src', 'img/logos/logo7.png');
   
         document.getElementById('nav1').setAttribute('href', 'img/logos/logo7.png');
         document.getElementById('nav2').setAttribute('href', 'img/logos/logo7.png');

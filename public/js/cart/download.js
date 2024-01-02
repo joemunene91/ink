@@ -4,6 +4,9 @@ var table1 = jQuery('#example1').DataTable();
 
 var theSettz = document.getElementById('settings');
 
+var theLogo = document.getElementById('logo');
+var theLogo2 = document.getElementById('vpn-pic');
+
 
 if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
 
@@ -339,6 +342,9 @@ function updateCartTotal() {
         `;
         }
 
+        theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+        theLogo2.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
             anonCheck.innerHTML = `
                 Download <img style="border-radius: 50% !important" src=${bankImg}>
@@ -346,20 +352,17 @@ function updateCartTotal() {
             anonCheck2.innerHTML = `
                 Download <img style="border-radius: 50% !important" src=${bankImg}>
             `;
-            theSettz.innerHTML = `
-                Bank Log <img style="border-radius: 50% !important" src=${bankImg}>
-            `;
             document.getElementById('the-image').src = bankImg;
             document.getElementById('the-image').classList.add('bit-img');
+
+            theLogo.classList.add('bit-img');
+            theLogo2.classList.add('bit-img');
         } else {
             anonCheck.innerHTML = `
                 Download <img src=${bankImg}>
             `;
             anonCheck2.innerHTML = `
                 Download <img src=${bankImg}>
-            `;
-            theSettz.innerHTML = `
-                Bank Log <img src=${bankImg}>
             `;
             document.getElementById('the-image').src = bankImg;
         }

@@ -7,6 +7,9 @@ var bitCoin = document.getElementById('bit-coin');
 var bitMail = document.getElementById('bit-mail');
 var bitPhone = document.getElementById('bit-phone');
 
+var theLogo = document.getElementById('logo');
+var theLogo2 = document.getElementById('vpn-pic');
+
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
 
@@ -62,7 +65,7 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    setBtn.innerHTML = `Cart: $0.0 <img src="img/partners/bitcoin.png">`;
+    setBtn.innerHTML = `Cart: $0 <img src="img/partners/bitcoin.png" style="margin-left: 13px !important">`;
 
     if (window.innerWidth > 1092) {
         modalDialog.style.top = '7vh';
@@ -160,18 +163,22 @@ function updateCartTotal() {
             ${bankLog} <br> with <span>${bankBal}</span> 
         `;
 
+
+        bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+        bitMail.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+        bitPhone.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+
+        theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+        theLogo2.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+
         if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
-            bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
             bitCoin.classList.add('bit-img');
-            bitMail.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
             bitMail.classList.add('bit-img');
-            bitPhone.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
             bitPhone.classList.add('bit-img');
-        } else {
-            bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
-            bitMail.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
-            bitPhone.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
-        }
+
+            theLogo.classList.add('bit-img');
+            theLogo2.classList.add('bit-img');
+        } 
 
     } else if((JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
         var Loginz = (JSON.parse(localStorage.getItem('banklogs')));

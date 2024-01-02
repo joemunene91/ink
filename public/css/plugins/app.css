@@ -2385,24 +2385,24 @@ td {
 .bro-text {
     position: absolute !important;
     background: rgba(18, 29, 51, 0.85) !important;
-    inset: 5px !important;
+    inset: 7px !important;
     opacity: 0.37 !important;
     transition-duration: 0.7s !important;
     border: 1.4px solid rgba(18, 29, 51, 1) !important;
     text-align: center !important;
 }
-.bro-text p:after {
-    content: "" !important;
-    display: block !important;
-    width: 70px !important;
-    height: 1px !important;
-    margin: 5px auto 0 auto !important;
-}
 .bro-text p {
     color: rgba(255, 255, 255, 1) !important;
     margin-top: 13px !important;
-    font-size: 17px !important;
+    font-size: 20px !important;
     font-weight: 600 !important;
+}
+.bro-text p:after {
+    content: "" !important;
+    display: block !important;
+    width: 100px !important;
+    height: 1.7px !important;
+    margin: 7px auto 0 auto !important;
 }
 .bro:hover .bro-text {
     opacity: 1 !important;
@@ -2412,7 +2412,7 @@ td {
         margin: 3px auto !important;
     }
     .bro-text p {
-        font-size: 13px !important;
+        font-size: 17px !important;
         margin-top: 7px !important;
     }
 }
@@ -4038,4 +4038,7 @@ span#uida {
 }
 .logo-50 {
     border-radius: 50% !important;
+}
+img.levt-10 {
+    margin-left: 100px !important;
 }

@@ -47,9 +47,7 @@
     });
 
     var theC = document.getElementById('colors');
-    var theLog = document.getElementById('logo');
-    var theLog1 = document.getElementById('cart-logo');
-    var theLog2 = document.getElementById('vpn-img');
+    var theLog = document.getElementById('cart-logo');
 
 
     var cxC = document.getElementById('than-verify');
@@ -60,8 +58,7 @@
     if (window.innerWidth > 768) {
         theC.setAttribute('href', 'css/styles-8.css');
         theLog.setAttribute('src', 'img/logos/logo8.png');
-        theLog1.setAttribute('src', 'img/logos/logo8.png');
-        theLog2.setAttribute('src', 'img/logos/logo8.png');
+
 
         document.getElementById('nav1').setAttribute('href', 'img/logos/logo8.png');
         document.getElementById('nav2').setAttribute('href', 'img/logos/logo8.png');
