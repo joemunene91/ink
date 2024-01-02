@@ -397,10 +397,17 @@ const signUpFunction = () => {
 			})
 	}
 
-	var actionCodeSettings = {
-		url: `https://www.darkweb.ink/invoice#${mailField.value}`,
-		handleCodeInApp: true,
-	};
+	if(auth.currentUser.phoneNumber) {
+		var actionCodeSettings = {
+			url: `https://www.darkweb.ink/invoice#${mailField.value}#${auth.currentUser.phoneNumber}`,
+			handleCodeInApp: true,
+		};
+	} else {
+		var actionCodeSettings = {
+			url: `https://www.darkweb.ink/invoice#${mailField.value}`,
+			handleCodeInApp: true,
+		};
+	}
 
 	if(email.includes('@')) {
 		auth.sendSignInLinkToEmail(email, actionCodeSettings)
