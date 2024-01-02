@@ -2197,12 +2197,12 @@ td {
 #the-ip {
     font-size: 18px !important;
     font-weight: 600;
-    margin-bottom: 15px !important;
+    margin-bottom: 17px !important;
     width: 100% !important;
     box-shadow: 0 1.4px 4.2px 0 #121d33 !important;
     border-radius: 0 !important;
     background: rgba(18, 29, 51, 0.3) !important;
-    padding: 7px 0 !important;
+    padding: 10px 0 !important;
 }
 #the-date,
 #the-ip {
@@ -2247,11 +2247,11 @@ td {
 #settings {
     position: absolute;
     white-space: nowrap;
-    top: 18%;
-    left: 25.2%;
-    right: 25.2%;
+    top: 24%;
+    left: 25.3%;
+    right: 25.3%;
     opacity: 1 !important;
-    padding: 8.5px 0 !important;
+    padding: 9px 0 !important;
     cursor: pointer !important;
 }
 #settings img {
@@ -4028,4 +4028,8 @@ span#uida {
 }
 .tut:hover {
   box-shadow: 0 3px 7px 0 rgba(73, 192, 208, 0.7);
+}
+.modal-body#first-modal {
+    border-bottom: none !important;
+    padding: 10px 1px !important
 }
