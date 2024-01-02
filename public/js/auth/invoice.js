@@ -661,10 +661,18 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		if(!user1) {
 			auth.signInWithEmailLink(email, window.location.href)
 			.then(() => {
-				window.location.href = 'https://www.darkweb.ink/invoice';
-			})
-			.then(() => {
-				window.location.reload();
+				var shortCutFunction = 'success';
+				var msg = `
+					You have logged in as: <br> <hr class="to-hr hr15-bot">  
+					${email}                             <hr class="hr10-nil">
+				`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+					timeOut: 7000
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
 			})
 			.catch((error) => {
 				var shortCutFunction = 'success';
@@ -679,10 +687,18 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		} else if(user1) {
 			auth.currentUser.linkWithCredential(credential)
 			.then(() => {
-				window.location.href = 'https://www.darkweb.ink/invoice';
-			})
-			.then(() => {
-				window.location.reload();
+				var shortCutFunction = 'success';
+				var msg = `
+					You have logged in as: <br> <hr class="to-hr hr15-bot">  
+					${email}                             <hr class="hr10-nil">
+				`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+					timeOut: 7000
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
 			})
 			.catch((error) => {
 				var shortCutFunction = 'success';
