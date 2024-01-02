@@ -650,83 +650,133 @@ function focusBro() {
 
 if (auth.isSignInWithEmailLink(window.location.href)) {
 	var email = window.localStorage.getItem('emailForSignIn');
+	var phoneGuy = '';
 	if (!email) {
 		var theLink = window.location.href;
-		theLink = theLink.substring(theLink.indexOf("#") + 1);
+		var noTimes = theLink.split('#').length-1;
 
-		email = theLink;
+		if(noTimes > 1) {
+			theLink = theLink.substring(theLink.indexOf("#") + 1);
+			email = theLink.split('#')[0];
+		
+			phoneGuy = theLink.substring(theLink.indexOf("#") + 1);
+			localStorage.setItem('phoneGuy', phoneGuy);
+		} else {
+			theLink = theLink.substring(theLink.indexOf("#") + 1);
+			email = theLink;
+		}
 	}
 
 	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);
 
 	auth.onAuthStateChanged(user1 => {
-		if(!user1) {
-			auth.signInWithEmailLink(email, window.location.href)
-			.then(() => {
-				var shortCutFunction = 'success';
-				var msg = `
-					Login Success: <br> <hr class="to-hr hr15-bot">  
-					${email}                             <hr class="hr10-nil">
-				`;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-					timeOut: 1500
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-			})
-			.then(() => {
-				setTimeout(() => {
-					if(window.location.href.includes('@')) {
-						window.location.href = 'https://www.darkweb.ink/invoice';
-					}
-				}, 1500);
-			})
-			.catch((error) => {
-				var shortCutFunction = 'success';
-				var msg = `${error.message}`;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-			});
-		} else if(user1) {
-			auth.currentUser.linkWithCredential(credential)
-			.then(() => {
-				var shortCutFunction = 'success';
-				var msg = `
-					Login Success: <br> <hr class="to-hr hr15-bot">  
-					${email}                             <hr class="hr10-nil">
-				`;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-					timeOut: 1500
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-			})
-			.then(() => {
-				setTimeout(() => {
-					if(window.location.href.includes('@')) {
-						window.location.href = 'https://www.darkweb.ink/invoice';
-					}
-				}, 1500);
-			})
-			.catch((error) => {
-				var shortCutFunction = 'success';
-				var msg = `${error.message}`;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
-			});
-		} 
+			if(!user1) {
+				if(!(localStorage.getItem('phoneGuy'))) {
+					auth.signInWithEmailLink(email, window.location.href)
+					.then(() => {
+						var shortCutFunction = 'success';
+						var msg = `
+							Login Success: <br> <hr class="to-hr hr15-bot">  
+							${email}                             <hr class="hr10-nil">
+						`;
+						toastr.options =  {
+							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+							timeOut: 1500
+						};
+						var $toast = toastr[shortCutFunction](msg);
+						$toastlast = $toast;
+					})
+					.then(() => {
+						setTimeout(() => {
+							if(window.location.href.includes('@')) {
+								window.location.href = 'https://www.darkweb.ink/invoice';
+							}
+						}, 1500);
+					})
+					.catch((error) => {
+						var shortCutFunction = 'success';
+						var msg = `${error.message}`;
+						toastr.options =  {
+							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+						};
+						var $toast = toastr[shortCutFunction](msg);
+						$toastlast = $toast;
+					});
+				} else {
+					auth.signInWithEmailLink(email, window.location.href)
+					.then(() => {
+						var shortCutFunction = 'success';
+						var msg = `
+							Login Success: <br> <hr class="to-hr hr15-bot">  
+							${email}                             <hr class="hr10-nil">
+						`;
+						toastr.options =  {
+							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+							timeOut: 1500
+						};
+						var $toast = toastr[shortCutFunction](msg);
+						$toastlast = $toast;
+					})
+					.then(() => {
+						auth.currentUser.updateProfile({
+							phoneNumber: localStorage.getItem('phoneGuy')
+						})
+					})
+					.then(() => {
+						setTimeout(() => {
+							if(window.location.href.includes('@')) {
+								window.location.href = 'https://www.darkweb.ink/invoice';
+							}
+						}, 1500);
+					})
+					.catch((error) => {
+						var shortCutFunction = 'success';
+						var msg = `${error.message}`;
+						toastr.options =  {
+							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+						};
+						var $toast = toastr[shortCutFunction](msg);
+						$toastlast = $toast;
+					});
+				}
+			} else if(user1) {
+				auth.currentUser.linkWithCredential(credential)
+				.then(() => {
+					var shortCutFunction = 'success';
+					var msg = `
+						Login Success: <br> <hr class="to-hr hr15-bot">  
+						${email}                             <hr class="hr10-nil">
+					`;
+					toastr.options =  {
+						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
+						timeOut: 1500
+					};
+					var $toast = toastr[shortCutFunction](msg);
+					$toastlast = $toast;
+				})
+				.then(() => {
+					setTimeout(() => {
+						if(window.location.href.includes('@')) {
+							window.location.href = 'https://www.darkweb.ink/invoice';
+						}
+					}, 1500);
+				})
+				.catch((error) => {
+					var shortCutFunction = 'success';
+					var msg = `${error.message}`;
+					toastr.options =  {
+						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+					};
+					var $toast = toastr[shortCutFunction](msg);
+					$toastlast = $toast;
+				});
+			} 
 	});
 }
 
