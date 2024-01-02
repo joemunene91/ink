@@ -11,15 +11,14 @@ firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
 const logoHolder = document.getElementById("logo");
-const avatarHolder = document.getElementById("avatar");
+const vpnHolder = document.getElementById("vpn-img");
 const jinaHolder = document.getElementById("jinaHolder");
 
 const jinaHolder3 = document.getElementById('jinaHolder3');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
 const theId = document.getElementById('the-id');
-const thePic = document.getElementById('the-pic');
-const thenoPic = document.getElementById('the-nopic');
+
 const theDate = document.getElementById('the-date');
 const labelDate = document.getElementById('label-date');
 
@@ -79,22 +78,12 @@ auth.onAuthStateChanged(user => {
 		window.location.assign('index');
 	}
 	if (user.photoURL) {
-		avatarHolder.setAttribute("src", user.photoURL);
-		avatarHolder.style.display = 'block';
-		thePic.setAttribute("src", user.photoURL);
-		thePic.style.display = 'inline-block';
-	} else if (!user.photoURL) {
-		if(user.phoneNumber) {
-			avatarHolder.setAttribute("src", 'img/partners/phone.png');
-			avatarHolder.style.display = 'block';
-			avatarHolder.style.borderWidth = 0;
-			avatarHolder.style.borderRadius = 0;
-			thenoPic.style.display = 'inline-block';
-		} else {
-			logoHolder.style.display = 'block';
-			thenoPic.style.display = 'inline-block';
-		}
-	}
+		logoHolder.setAttribute("src", user.photoURL);
+		logoHolder.classList.add('logo-50');
+
+		vpnHolder.setAttribute("src", user.photoURL);
+		vpnHolder.classList.add('logo-50');
+	} 
 	if(user.email && user.phoneNumber) {
 		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
 		verCheck.addEventListener('click', sendEmail);

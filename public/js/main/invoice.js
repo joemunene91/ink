@@ -49,7 +49,7 @@
     var theC = document.getElementById('colors');
     var theLog = document.getElementById('logo');
     var theLog1 = document.getElementById('cart-logo');
-    var theLog2 = document.getElementById('the-nopic');
+    var theLog2 = document.getElementById('vpn-img');
 
 
     var cxC = document.getElementById('than-verify');
