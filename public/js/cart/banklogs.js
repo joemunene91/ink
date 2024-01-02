@@ -321,8 +321,8 @@ if (document.getElementById('boa01')) {
     (document.getElementById("wells011").innerHTML = "Buy: $" + parseFloat((document.getElementById("wells11").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString()),
     (document.getElementById("wells012").innerHTML = "Buy: $" + parseFloat((document.getElementById("wells12").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString())
 } else if (document.getElementById('wood01')) {
-    (document.getElementById("wood1").innerHTML = "$" + (3419).toLocaleString()),
-    (document.getElementById("wood2").innerHTML = "$" + (4237).toLocaleString()),
+    (document.getElementById("wood1").innerHTML = "$" + (3429).toLocaleString()),
+    (document.getElementById("wood2").innerHTML = "$" + (4137).toLocaleString()),
     (document.getElementById("wood3").innerHTML = "$" + (4758).toLocaleString()),
     (document.getElementById("wood4").innerHTML = "$" + (5320).toLocaleString()),
     (document.getElementById("wood5").innerHTML = "$" + (6150).toLocaleString()),
