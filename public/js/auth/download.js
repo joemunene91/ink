@@ -84,7 +84,15 @@ auth.onAuthStateChanged(user => {
 		vpnHolder.setAttribute("src", user.photoURL);
 		vpnHolder.classList.add('logo-50');
 	} 
-	if(user.email && user.phoneNumber) {
+	if(user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
+
+		if(!localStorage.getItem('phoneGuy')) {
+			localStorage.setItem('phoneGuy', user.phoneNumber);
+		}
+
+		var thePhoneNo = localStorage.getItem('phoneGuy');
+
+
 		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
 		verCheck.addEventListener('click', sendEmail);
 
@@ -104,13 +112,13 @@ auth.onAuthStateChanged(user => {
 					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML =  `
 						${user.displayName} 
 						<hr id="hr-table">
-						${user.phoneNumber.slice(0, -3)}...
+						${thePhoneNo.slice(0, -3)}...
 					`;
 				} else {
 					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
 						${theaddress} 
 						<hr id="hr-table">
-						${user.phoneNumber.slice(0, -3)}...
+						${thePhoneNo.slice(0, -3)}...
 					`;
 				}
 			}
@@ -123,8 +131,8 @@ auth.onAuthStateChanged(user => {
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
 
-		jinaHolder.value = user.phoneNumber;
-		jinaHolder3.value = user.phoneNumber;
+		jinaHolder.value = thePhoneNo;
+		jinaHolder3.value = thePhoneNo;
 
 		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
 			jinaHolder2.innerHTML = user.email;
