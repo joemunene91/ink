@@ -3635,6 +3635,9 @@ button.toast-close-button {
 #bit-phone {
     border-radius: 50% !important;
 }
+#bit-sms {
+    border-radius: 50% !important;
+}
 
 
 #email-save {

@@ -6,6 +6,7 @@ var anonLink = document.getElementById('anon-link');
 var bitCoin = document.getElementById('bit-coin');
 var bitMail = document.getElementById('bit-mail');
 var bitPhone = document.getElementById('bit-phone');
+var bitSms = document.getElementById('bit-sms');
 
 var theLogo = document.getElementById('logo');
 var theLogo2 = document.getElementById('vpn-pic');
@@ -167,6 +168,7 @@ function updateCartTotal() {
         bitCoin.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
         bitMail.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
         bitPhone.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
+        bitSms.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
 
         theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
         theLogo2.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
@@ -175,6 +177,7 @@ function updateCartTotal() {
             bitCoin.classList.add('bit-img');
             bitMail.classList.add('bit-img');
             bitPhone.classList.add('bit-img');
+            bitSms.classList.add('bit-img');
 
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');
