@@ -78,9 +78,9 @@ const auth = firebase.auth();
 
 setTimeout(() => {
 	if(window.location.href.includes('@')) {
-		window.location.reload();
+		window.location.href = 'https://www.darkweb.ink';
 	}
-}, 3000);
+}, 1000);
 
 auth.onAuthStateChanged(user => {
 	if (!user) {
