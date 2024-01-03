@@ -470,6 +470,10 @@ const signUpFunction = () => {
 	}
 
 	if(email.includes('@')) {
+        const googleProvider = new firebase.auth.GoogleAuthProvider;
+        const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+        const theUser = auth.currentUser;
+
 		auth.sendSignInLinkToEmail(email, actionCodeSettings)
 		.then(() => {
 			var shortCutFunction = 'success';
@@ -486,13 +490,10 @@ const signUpFunction = () => {
 			window.localStorage.setItem('emailForSignIn', email);
 		}).catch(() => {
 			if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-				const googleProvider = new firebase.auth.GoogleAuthProvider;
-				const theUser = auth.currentUser;
 				theUser.linkWithPopup(googleProvider).then(() => {
 					theUser.updateProfile({
 						displayName: theUser.providerData[0].displayName, 
-						photoURL: theUser.providerData[0].photoURL,
-						isAnonymous: false
+						photoURL: theUser.providerData[0].photoURL
 					}).then(() => {
 						window.location.reload();
 					});
@@ -507,8 +508,6 @@ const signUpFunction = () => {
 					$toastlast = $toast;
 				});
 			} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
-				const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
-				const theUser = auth.currentUser;
 				theUser.linkWithPopup(yahooProvider).then(() => {
 					theUser.updateProfile({
 						displayName: theUser.providerData[0].displayName, 
