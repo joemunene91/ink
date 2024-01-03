@@ -53,7 +53,7 @@
             navText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
             responsive: {
                 0: {
-                    items: 2,
+                    items: 4,
                     margin: 10
                 },
                 768: {

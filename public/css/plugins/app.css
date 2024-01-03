@@ -2117,12 +2117,7 @@ td {
     color: rgba(255, 255, 255, 0.3);
 }
 
-#faq .modal-content {
-    background: rgba(18, 29, 51, 0.73) !important;
-}
-#faq .modal-body {
-    background: transparent !important;
-}
+
 .port .butn {
     background-color: rgba(18, 29, 51, 0.3) !important;
     color: #fff;

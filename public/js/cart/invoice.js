@@ -153,8 +153,10 @@ function updateCartTotal() {
 
         if(bankLog3.includes('Huntington') || bankLog3.includes('Woodforest')) {
             document.getElementById('jinaHolder').value = bankLog3.replace('Bank', '');
+            document.getElementById('jinaHolder3').value = bankLog3.replace('Bank', '');
         } else {
             document.getElementById('jinaHolder').value = bankLog3;
+            document.getElementById('jinaHolder3').value = bankLog3;
         }
 
         document.getElementById('jinaHolder2').innerHTML = '[' + bankLog2.replace(']', ' ACCOUNT]'); 
@@ -208,6 +210,7 @@ function updateCartTotal() {
 
 
         document.getElementById('jinaHolder').value = '2 Bank Logs';
+        document.getElementById('jinaHolder3').value = '2 Bank Logs';
         
 
         document.getElementById('jinaHolder2').innerHTML = 'With 10% Discount'; 
