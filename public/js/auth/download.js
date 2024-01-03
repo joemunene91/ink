@@ -782,9 +782,6 @@ jinaHolder3.addEventListener("change", () => {
 		alert('Display Name Updated Successfully !');
 		jinaHolder.value = jinaHolder3.value;
 	})
-	.catch(error => {
-		jinaHolder3.focus();
-	})
 });
 
 

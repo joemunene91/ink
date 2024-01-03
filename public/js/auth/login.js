@@ -164,9 +164,6 @@ const signUpFunction = () => {
 				$('#verifyModal').modal('show');
 				$('#discountModal').modal('hide');
 			})
-			.catch(error => {
-				console.log('hello');
-			});		
 
 	} else {
 		var shortCutFunction = 'success';
