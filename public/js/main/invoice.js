@@ -51,8 +51,8 @@
                     margin: 30
                 },
                 1200: {
-                    items: 7,
-                    margin: 20
+                    items: 9,
+                    margin: 17
                 }
             }
         });
