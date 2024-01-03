@@ -472,22 +472,19 @@ const signUpFunction = () => {
 	if(email.includes('@')) {
 		auth.sendSignInLinkToEmail(email, actionCodeSettings)
 		.then(() => {
-
 			var shortCutFunction = 'success';
 			var msg = `
 				A verification link has been sent to:   <hr class="to-hr hr15-bot">
 				${email}<hr class="hr10-nil">
 			`;
-
 			toastr.options =  {
 				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
 			};
 			var $toast = toastr[shortCutFunction](msg);
 			$toastlast = $toast;
-
 			window.localStorage.setItem('emailForSignIn', email);
-		}).catch(error => {
+		}).catch(() => {
 			if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
 				const googleProvider = new firebase.auth.GoogleAuthProvider;
 				const theUser = auth.currentUser;
@@ -500,11 +497,8 @@ const signUpFunction = () => {
 						window.location.reload();
 					});
 				}).catch(error => {
-	
 					var shortCutFunction = 'success';
-					var msg = `
-						${error.message}
-					`;
+					var msg = ` ${error.message} `;
 					toastr.options =  {
 						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
@@ -524,11 +518,8 @@ const signUpFunction = () => {
 						window.location.reload();
 					});
 				}).catch(error => {
-	
 					var shortCutFunction = 'success';
-					var msg = `
-						${error.message}
-					`;
+					var msg = ` ${error.message} `;
 					toastr.options =  {
 						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
@@ -538,7 +529,7 @@ const signUpFunction = () => {
 				});
 			} else {
 				var shortCutFunction = 'success';
-				var msg = `${error.message}`;
+				var msg = ` Try the phone invoice. `;
 				toastr.options =  {
 					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
