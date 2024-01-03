@@ -491,12 +491,7 @@ const signUpFunction = () => {
 		}).catch(() => {
 			if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
 				theUser.linkWithPopup(googleProvider).then(() => {
-					theUser.updateProfile({
-						displayName: theUser.providerData[0].displayName, 
-						photoURL: theUser.providerData[0].photoURL
-					}).then(() => {
-						window.location.reload();
-					});
+					window.location.reload()
 				}).catch(error => {
 					var shortCutFunction = 'success';
 					var msg = ` ${error.message} `;
@@ -507,6 +502,25 @@ const signUpFunction = () => {
 					var $toast = toastr[shortCutFunction](msg);
 					$toastlast = $toast;
 				});
+
+				// auth.signInWithPopup(googleProvider).then(() => {
+				// 	auth.currentUser.sendEmailVerification();
+				// 	window.location.assign('home');
+				// }).catch(error => {
+				// 	var shortCutFunction = 'success';
+				// 	var msg = `${error.message}`;
+				// 	toastr.options = {
+				// 		closeButton: true,
+				// 		debug: false,
+				// 		newestOnTop: true,
+				// 		progressBar: true,
+				// 		positionClass: 'toast-top-full-width',
+				// 		preventDuplicates: true,
+				// 		onclick: null
+				// 	};
+				// 	var $toast = toastr[shortCutFunction](msg);
+				// 	$toastlast = $toast;
+				// });
 			} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
 				theUser.linkWithPopup(yahooProvider).then(() => {
 					theUser.updateProfile({
