@@ -481,6 +481,7 @@ const signUpFunction = () => {
 				A verification link has been sent to:   <hr class="to-hr hr15-bot">
 				${email}<hr class="hr10-nil">
 			`;
+			localStorage.setItem('verify-sent', true);
 			toastr.options =  {
 				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
@@ -488,54 +489,59 @@ const signUpFunction = () => {
 			var $toast = toastr[shortCutFunction](msg);
 			$toastlast = $toast;
 			window.localStorage.setItem('emailForSignIn', email);
-		}).catch(() => {
-			if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-				// theUser.linkWithPopup(googleProvider).then(() => {
-				// 	window.location.reload()
-		
-
-				auth.signInWithPopup(googleProvider).then(() => {
-					auth.currentUser.sendEmailVerification();
-					window.location.assign('home');
-				}).catch(error => {
-					var shortCutFunction = 'success';
-					var msg = ` ${error.message} `;
-					toastr.options =  {
-						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-					};
-					var $toast = toastr[shortCutFunction](msg);
-					$toastlast = $toast;
-				});
-			} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
-				theUser.linkWithPopup(yahooProvider).then(() => {
-					theUser.updateProfile({
-						displayName: theUser.providerData[0].displayName, 
-						photoURL: theUser.providerData[0].photoURL,
-						isAnonymous: false
-					}).then(() => {
-						window.location.reload();
+		})
+		.then(() => {
+			if(!localStorage.getItem('verify-sent')) {
+				if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
+					theUser.linkWithPopup(googleProvider).then(() => {
+						theUser.updateProfile({
+							displayName: theUser.providerData[0].displayName, 
+							photoURL: theUser.providerData[0].photoURL,
+							isAnonymous: false
+						}).then(() => {
+							window.location.reload();
+						});
+					}).catch(error => {
+						var shortCutFunction = 'success';
+						var msg = ` ${error.message} `;
+						toastr.options =  {
+							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+						};
+						var $toast = toastr[shortCutFunction](msg);
+						$toastlast = $toast;
 					});
-				}).catch(error => {
-					var shortCutFunction = 'success';
-					var msg = ` ${error.message} `;
-					toastr.options =  {
-						closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-						positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-					};
-					var $toast = toastr[shortCutFunction](msg);
-					$toastlast = $toast;
-				});
-			} else {
-				var shortCutFunction = 'success';
-				var msg = ` Try the phone invoice. `;
-				toastr.options =  {
-					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-				};
-				var $toast = toastr[shortCutFunction](msg);
-				$toastlast = $toast;
+				} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
+					theUser.linkWithPopup(yahooProvider).then(() => {
+						theUser.updateProfile({
+							displayName: theUser.providerData[0].displayName, 
+							photoURL: theUser.providerData[0].photoURL,
+							isAnonymous: false
+						}).then(() => {
+							window.location.reload();
+						});
+					}).catch(error => {
+						var shortCutFunction = 'success';
+						var msg = ` ${error.message} `;
+						toastr.options =  {
+							closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+							positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+						};
+						var $toast = toastr[shortCutFunction](msg);
+						$toastlast = $toast;
+					});
+				}
 			}
+		})
+		.catch(() => {
+			var shortCutFunction = 'success';
+			var msg = ` Try the phone invoice. `;
+			toastr.options =  {
+				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+			};
+			var $toast = toastr[shortCutFunction](msg);
+			$toastlast = $toast;
 		});
 	} else if(email.includes('+') && (email.length >= 10)) { 
 
