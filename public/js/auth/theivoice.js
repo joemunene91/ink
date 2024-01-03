@@ -490,6 +490,16 @@ const signUpFunction = () => {
 			$toastlast = $toast;
 			window.localStorage.setItem('emailForSignIn', email);
 		})
+		.catch(error => {
+			var shortCutFunction = 'success';
+			var msg = ` ${error.message} `;
+			toastr.options =  {
+				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+			};
+			var $toast = toastr[shortCutFunction](msg);
+			$toastlast = $toast;
+		})
 		.then(() => {
 			if(!localStorage.getItem('verify-sent')) {
 				if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
@@ -532,16 +542,6 @@ const signUpFunction = () => {
 					});
 				}
 			}
-		})
-		.catch(error => {
-			var shortCutFunction = 'success';
-			var msg = ` ${error.message} `;
-			toastr.options =  {
-				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
-				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
-			};
-			var $toast = toastr[shortCutFunction](msg);
-			$toastlast = $toast;
 		});
 	} else if(email.includes('+') && (email.length >= 10)) { 
 
