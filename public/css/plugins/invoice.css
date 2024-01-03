@@ -607,9 +607,18 @@ blink.verif {
 
 
 
-
 .bro-text {
 	opacity: 0 !important;
+}
+.bro-text p {
+    margin-top: 5px !important;
+    font-size: 15px !important;
+}
+@media screen and (max-width: 506px) {
+    .bro-text p {
+        font-size: 13px !important;
+        margin-top: 13px !important;
+    }
 }
 .port {
     border-radius: 0;
@@ -629,16 +638,16 @@ blink.verif {
 }
 .port h4 a {
     color: rgba(255, 255, 255, 0.73) !important;
-    font-size: 15.5px;
+    font-size: 17.5px;
     font-weight: 600 !important;
     text-transform: uppercase !important;
 }
 .port h4 a.boa {
-    font-size: 15px;
+    font-size: 16.5px;
 }
 .port a img {
     width: 100% !important;
-    height: 120px;
+    height: 135px;
 }
 @media screen and (max-width: 996px) {
     .port a img {
