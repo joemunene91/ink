@@ -432,12 +432,7 @@ blink {
 }
 
 #style-switcher{
-  top: 56%;
-}
-@media (max-width:592px){
-  #style-switcher{
-      top: 70%;
-  }
+  top: 32%;
 }
 
 @media screen and (min-width: 729px) {
