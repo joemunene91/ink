@@ -197,24 +197,14 @@
             }
         }
     }
-    ;var navbar_init = function() {
-        $('.switcher-setting').on('click', function() {
-            toggleFullScreen();
-            return false;
-        });
-    };
-    navbar_init();
+    // var navbar_init = function() {
+    //     $('.switcher-setting').on('click', function() {
+    //         toggleFullScreen();
+    //         return false;
+    //     });
+    // };
+    // navbar_init();
 }
 )(jQuery);
 
-function changeImage() {
-    var image = document.getElementById('theIcon');
-    if(image.classList.contains('fa-toggle-on')){
-        image.classList.remove('fa-toggle-on')
-        image.classList.add('fa-toggle-off');
-    } else if(image.classList.contains('fa-toggle-off')){
-        image.classList.remove('fa-toggle-off')
-        image.classList.add('fa-toggle-on');
-    }
-}
 

@@ -498,12 +498,7 @@ span#uids {
   background: rgb(158, 201, 104);
 }
 
-.fa-toggle-on {
-  color: #86bc42;
-  border: 1.4px solid rgba(134, 188, 66, 0.3);
-}
-.fa-toggle-off {
-  color: #86bc42;
+.logo-img {
   border: 1.4px solid rgba(134, 188, 66, 0.3);
 }
 #style-switcher {

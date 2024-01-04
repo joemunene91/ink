@@ -469,12 +469,7 @@ span#uids {
 }
 
 
-.fa-toggle-on {
-  color: #16a086;
-  border: 1.4px solid rgba(22, 160, 134, 0.3);
-}
-.fa-toggle-off {
-  color: #16a086;
+.logo-img {
   border: 1.4px solid rgba(22, 160, 134, 0.3);
 }
 #style-switcher {
