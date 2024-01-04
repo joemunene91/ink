@@ -231,6 +231,7 @@ blink {
 .navbar-nav li.nav-small.open a::after {
   background: rgb(219, 242, 246);
 }
+#style-switcher h2,
 .port a.butn,
 #jinaHolder,
 #jinaHolder2,

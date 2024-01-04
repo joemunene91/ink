@@ -397,28 +397,8 @@ blink {
 .accordion-style h5 {
     margin-bottom: 0;
 }
-.logo-img {
-    font-size: 43px;
-    background: rgba(18, 29, 51, 0.5) !important;
-    padding: 3px;
-    border-right: none;
-    border-radius: 50% 0 0 50%;
-    cursor: pointer;
-}
-@media screen and (max-width: 567px) {
-    .logo-img {
-        font-size: 37px;
-        background: rgba(18, 29, 51, 0.5) !important;
-        padding: 3px;
-        border-right: none;
-        border-radius: 50% 0 0 50%;
-        cursor: pointer;
-    }
-}
-#style-switcher {
-    background: rgba(18, 29, 51, 0.85) !important;
-    border-right: none;
-}
+
+
 .lesnar {
     padding: 0 !important;
     color: #121d33;
@@ -4044,3 +4024,129 @@ span#uida {
 img.levt-10 {
     margin-left: 100px !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.logo-img {
+    font-size: 43px;
+    background: rgba(18, 29, 51, 0.9) !important;
+    padding: 3px;
+    border-right: none;
+    border-radius: 50% 0 0 50%;
+    cursor: pointer;
+}
+@media screen and (max-width: 567px) {
+    .logo-img {
+        font-size: 37px;
+        background: rgba(18, 29, 51, 0.9) !important;
+        padding: 3px;
+        border-right: none;
+        border-radius: 50% 0 0 50%;
+        cursor: pointer;
+    }
+}
+
+#style-switcher {
+    background: rgba(18, 29, 51, 0.9) !important;
+    border-right: none;
+}
+
+#style-switcher ul{
+    margin:0;
+   padding:0 
+ }
+ #style-switcher.active{
+   right:0
+ }
+ #style-switcher .switcher-setting{
+   background:0 0;
+   border-radius:0 !important;
+   display:block;
+   height:60px;
+   position:absolute;
+   right:410px;
+   top: 40%;
+   width:55px
+ }
+
+  #style-switcher{
+   right:-410px;
+   position:fixed;
+   top:40%;
+   padding:20px 10px 0;
+   width:410px;
+   z-index:9999;
+   background:#121d33;
+   border-radius:0 !important
+ }
+  #style-switcher>div{
+   float:left;
+   width:100%
+ }
+ #style-switcher>div:last-child{
+   margin-bottom:0
+ }
+  #style-switcher h2{
+   font-size:22px;
+   margin: 0px 0 40px;
+   text-align:center;
+   line-height:normal;
+   text-transform:uppercase
+ }
+  .colors{
+   padding-left:7px
+ }
+  .colors{
+   list-style:none;
+   margin:0 0 10px;
+   overflow:hidden
+ }
+  .colors li{
+    float:left;
+   margin-bottom:60px;
+    padding-left:20px;
+   text-align:center;
+   width: 25% 
+ }
+  .colors li img {
+    cursor:pointer;
+   display:block;
+   height: 55px;
+   width: 55px 
+ }
+
+ @media screen and (max-width:567px){
+    #style-switcher{
+      right:-87vw;
+      width:87vw;
+      padding:21px 10px
+    }
+    #style-switcher .switcher-setting{
+      right:calc(87vw - 6px)
+    }
+    #style-switcher h2{
+      font-size:17px;
+      margin:-17px 0 21px;
+      text-align:center;
+      line-height:normal;
+      text-transform:uppercase
+    }
+  }
