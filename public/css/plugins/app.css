@@ -4047,7 +4047,7 @@ img.levt-10 {
 
 .logo-img {
     font-size: 43px;
-    background: rgba(18, 29, 51, 0.9) !important;
+    background: rgba(18, 29, 51, 0.87) !important;
     padding: 3px;
     border-right: none;
     border-radius: 50% 0 0 50%;
@@ -4056,7 +4056,6 @@ img.levt-10 {
 @media screen and (max-width: 567px) {
     .logo-img {
         font-size: 37px;
-        background: rgba(18, 29, 51, 0.9) !important;
         padding: 3px;
         border-right: none;
         border-radius: 50% 0 0 50%;
@@ -4065,7 +4064,7 @@ img.levt-10 {
 }
 
 #style-switcher {
-    background: rgba(18, 29, 51, 0.9) !important;
+    background: rgba(18, 29, 51, 0.87) !important;
     border-right: none;
 }
 
