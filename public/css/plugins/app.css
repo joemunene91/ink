@@ -4116,7 +4116,7 @@ img.levt-10 {
  }
   .colors{
    list-style:none;
-   margin:0 0 10px;
+   margin:0 0px;
    overflow:hidden
  }
   .colors li{
@@ -4135,18 +4135,33 @@ img.levt-10 {
 
  @media screen and (max-width:567px){
     #style-switcher{
-      right:-87vw;
-      width:87vw;
-      padding:21px 10px
+      right:-85vw;
+      width:85vw;
+      padding:21px 10px 0px
     }
     #style-switcher .switcher-setting{
-      right:calc(87vw - 6px)
+      right:calc(85vw - 6px)
     }
     #style-switcher h2{
-      font-size:17px;
-      margin:-17px 0 21px;
+      font-size: 20px;
+      margin: 0 0 30px;
       text-align:center;
       line-height:normal;
       text-transform:uppercase
     }
+
+    .colors li{
+        float:left;
+       margin-bottom:50px;
+        padding-left:20px;
+       text-align:center;
+       width: 25% 
+     }
+      .colors li img {
+        cursor:pointer;
+       display:block;
+       height: 47px;
+       width: 47px 
+     }
+    
   }
