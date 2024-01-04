@@ -1762,6 +1762,7 @@ td {
 }
 .jina-div {
     display: grid;
+    cursor: pointer !important;
 }
 
 #verifyModal .modal-dialog,
