@@ -4140,7 +4140,7 @@ img.levt-10 {
       padding:21px 10px 0px
     }
     #style-switcher .switcher-setting{
-      right:calc(85vw - 6px)
+      right:calc(85vw - 1px)
     }
     #style-switcher h2{
       font-size: 20px;
@@ -4160,8 +4160,8 @@ img.levt-10 {
       .colors li img {
         cursor:pointer;
        display:block;
-       height: 47px;
-       width: 47px 
+       height: 48px;
+       width: 48px 
      }
     
   }
