@@ -321,9 +321,9 @@ const signInWithGoogle = () => {
 };
 signGoogle.addEventListener("click", signInWithGoogle);
 
-if(!localStorage.getItem('ink-darkweb')) {
+if(!localStorage.getItem('darkweb-ink')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('ink-darkweb', true);
+	localStorage.setItem('darkweb-ink', true);
 }
 
 
