@@ -1699,7 +1699,7 @@ td {
     #discountModal .modal-dialog,
     #emailModal .modal-dialog {
         top: 19vh !important;
-        max-width: 80vw !important;
+        max-width: 81.3vw !important;
     }
 }
 @media screen and (max-width: 420px) {
@@ -1889,7 +1889,7 @@ td {
 
 
 #vpnModal .modal-body {
-    padding: 0 7px !important;
+    padding: 0 5x !important;
 }
 
 #invoice-table .modal-header,
@@ -4033,7 +4033,7 @@ span#uida {
 }
 .modal-body#first-modal {
     border-bottom: none !important;
-    padding: 10px 1px !important
+    padding: 8px 1px !important
 }
 .logo-50 {
     border-radius: 50% !important;

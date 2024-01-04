@@ -684,7 +684,7 @@ blink.verif {
 }
 @media screen and (max-width: 506px) {
     .port a img {
-        height: 121px;
+        height: 120px;
     }
     .port h4 a {
         font-size: 15px;
