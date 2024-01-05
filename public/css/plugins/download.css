@@ -97,11 +97,11 @@ section#logsection2 .dataTables_wrapper dataTables_length {
 
 
 #style-switcher{
-    top: 24%;
+    top: 40%;
 }
 @media (max-width:592px){
     #style-switcher{
-        top: 19%;
+        top: 11%;
     }
 }
 

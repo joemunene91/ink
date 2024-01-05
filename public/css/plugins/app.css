@@ -4079,7 +4079,7 @@ img.levt-10 {
    background:0 0;
    border-radius:0 !important;
    display:block;
-   height:60px;
+   height:55px;
    position:absolute;
    right:410px;
    top: 40%;
@@ -4090,7 +4090,7 @@ img.levt-10 {
    right:-410px;
    position:fixed;
    top:40%;
-   padding:20px 10px 0;
+   padding: 20px 10px 20px;
    width:410px;
    z-index:9999;
    background:#121d33;
@@ -4103,13 +4103,6 @@ img.levt-10 {
  #style-switcher>div:last-child{
    margin-bottom:0
  }
-  #style-switcher h2{
-   font-size:22px;
-   margin: 0px 0 40px;
-   text-align:center;
-   line-height:normal;
-   text-transform:uppercase
- }
   .colors{
    padding-left:7px
  }
@@ -4120,7 +4113,8 @@ img.levt-10 {
  }
   .colors li{
     float:left;
-   margin-bottom:60px;
+    margin-top: 30px;
+   margin-bottom: 30px;
     padding-left:20px;
    text-align:center;
    width: 25% 
@@ -4134,33 +4128,33 @@ img.levt-10 {
 
  @media screen and (max-width:567px){
     #style-switcher{
-      right:-85vw;
-      width:85vw;
-      padding:17px 10px 0px
+      right:-82vw;
+      width:82vw;
+      padding:10px 10px;
     }
     #style-switcher .switcher-setting{
-      right:calc(85vw - 1px)
+      right:calc(82vw - 1px)
     }
-    #style-switcher h2{
-      font-size: 20px;
-      margin: 0 0 30px;
-      text-align:center;
-      line-height:normal;
-      text-transform:uppercase
-    }
+
+    #style-switcher .switcher-setting{
+        height:50px;
+        width:50px
+      }
+     
 
     .colors li{
         float:left;
-       margin-bottom:50px;
-        padding-left:20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+         padding-left:20px;
        text-align:center;
        width: 25% 
      }
       .colors li img {
         cursor:pointer;
        display:block;
-       height: 48px;
-       width: 48px 
+       height: 45px;
+       width: 45px 
      }
     
   }

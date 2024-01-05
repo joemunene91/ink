@@ -400,26 +400,6 @@ e("#preloader").fadeOut("normall", function() {
   });
 
   });
-e(".switcher-setting").on("click", function() {
-  return (
-    document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement ?
-    document.exitFullscreen ?
-    document.exitFullscreen() :
-    document.msExitFullscreen ?
-    document.msExitFullscreen() :
-    document.mozCancelFullScreen ?
-    document.mozCancelFullScreen() :
-    document.webkitExitFullscreen && document.webkitExitFullscreen() :
-    document.documentElement.requestFullscreen ?
-    document.documentElement.requestFullscreen() :
-    document.documentElement.msRequestFullscreen ?
-    document.documentElement.msRequestFullscreen() :
-    document.documentElement.mozRequestFullScreen ?
-    document.documentElement.mozRequestFullScreen() :
-    document.documentElement.webkitRequestFullscreen && document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT),
-    !1
-  );
-});
 })(jQuery);
 
 
