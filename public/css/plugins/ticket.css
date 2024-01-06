@@ -299,9 +299,9 @@ section .dataTables_wrapper dataTables_length {
 }
 @media screen and (min-width: 1200px) {
     .masonry-4 {
-        -moz-column-count: 19;
-        -webkit-column-count: 19;
-        column-count: 19;
+        -moz-column-count: 21;
+        -webkit-column-count: 21;
+        column-count: 21;
     }
 }
 
