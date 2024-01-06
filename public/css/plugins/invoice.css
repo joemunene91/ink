@@ -64,7 +64,7 @@
     padding: 7.5px 13px;
 }
 .butn.ver-btn#anon-link {
-    padding: 7.8px 16px;
+    padding: 7.8px 14px;
 }
 .butn.home-btn#email-voice {
     padding: 7.8px 17px;
@@ -81,10 +81,10 @@
   
 .butn.home-btn#than-check,
 .butn.home-btn.link-btn#email-check {
-    padding: 7.8px 14px !important;
+    padding: 7.8px 12px !important;
 }
 .butn.home-btn.link-btn#phone-check {
-    padding: 7.8px 12px !important;
+    padding: 7.8px 10px !important;
 }
 .muher {
     margin-left: 5px !important;
@@ -126,7 +126,7 @@
         padding: 7.5px 16.5px;
    }
    .butn.ver-btn#anon-link {
-       padding: 7.5px 13.5px;
+       padding: 7.5px 11px;
     }
    .butn.home-btn.check {
         padding: 7.5px 13.5px;
@@ -139,10 +139,10 @@
     }
     .butn.home-btn#than-check,
     .butn.home-btn.link-btn#email-check {
-        padding: 7.5px 12px !important;
+        padding: 7.5px 10px !important;
     }
     .butn.home-btn.link-btn#phone-check {
-        padding: 7.5px 10px !important;
+        padding: 7.5px 9px !important;
     }
     .butn#than-verify {
         padding: 7.5px 12px;
