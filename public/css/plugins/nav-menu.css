@@ -286,7 +286,7 @@ header.scrollHeader .navbar-default {
  }
   .navbar-nav li.nav-small {
     display: flex !important;
-    padding: 0.5px 0.5px 0.5px 3px;
+    padding: 0.1px 0.1px 0.1px 3px;
  }
  .navbar-nav li.nav-small.open {
   flex-direction: column;
