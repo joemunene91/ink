@@ -188,7 +188,7 @@ function addItemToCart(price, balance, account,website, image,info1,info2,info3,
                     Cart is full, checkout the <br>
                     2 bank logs. 
                     <hr class="to-hr hr15-bot">  
-                    There's a 10% discount. 
+                    There's a 15% discount. 
                     <hr class="hr10-nil">
                 `;
                 toastr.options =  {
@@ -336,7 +336,7 @@ function updateCartTotal() {
             `;
         }
         theSave2.innerHTML = `
-            10% <span>discount</span> on 2 bank logs.
+            15% <span>discount</span> on 2 bank logs.
         `;
         theSave3.innerHTML = `
             Bank log files can be sent via <br> 

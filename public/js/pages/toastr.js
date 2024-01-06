@@ -94,7 +94,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 5000
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
@@ -119,7 +119,7 @@ auth.onAuthStateChanged(user => {
             positionClass: 'toast-top-full-width',
             preventDuplicates: true,
             onclick: null,
-            timeOut: 5000
+            timeOut: 6000
         };
         if (!msg) {
             msg = getMessage();
@@ -140,7 +140,7 @@ auth.onAuthStateChanged(user => {
                 if(!(user.email && user.phoneNumber)) {
                     $('#discountModal').modal('show');
                 }
-            }, 3000);
+            }, 2000);
         }
 
         biden = false;
