@@ -405,17 +405,12 @@ function updateCartTotal() {
                 <hr style="opacity: 0 !important; margin-bottom: -10px !important; margin-top: -7px !important">
             `;
             logItems.prepend(logRow);
-
-
-            var logRow2 = document.createElement('p');
-            var logItems2 = document.getElementById('anon-b');
-            logRow2.innerHTML = `
-                <hr class="thehr thezoo"> 
-                ${Loginz[i].account}  <br> <span>${Loginz[i].balance}</span>. 
-                <hr style="opacity: 0 !important; margin-bottom: -10px !important; margin-top: -7px !important">
-            `;
-            logItems2.prepend(logRow2);
         }
+
+        anonB.innerHTML = `
+            ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)} , <br>
+            ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}
+        `;
 
         document.getElementsByClassName('thezoo')[0].style.display = 'none';
     
