@@ -319,9 +319,9 @@ const signInWithGoogle = () => {
 };
 signGoogle.addEventListener("click", signInWithGoogle);
 
-if(!localStorage.getItem('darkweb-ink')) {
+if(!localStorage.getItem('darkwebink')) {
 	localStorage.setItem('banklogs', []);
-	localStorage.setItem('darkweb-ink', true);
+	localStorage.setItem('darkwebink', true);
 }
 
 
