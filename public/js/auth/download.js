@@ -132,9 +132,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
 
-		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
-			jinaHolder2.innerHTML = user.email;
-		}
+		jinaHolder2.innerHTML = user.email;
 
 	} else if(user.email && !user.phoneNumber) {
 		if (user.displayName && user.email) {
@@ -169,7 +167,7 @@ auth.onAuthStateChanged(user => {
 						<hr id="hr-table">
 						<button class="butn" id="log-btn" data-bs-toggle="modal" 
 						data-bs-target="#discountModal" onClick="phoneShow()">
-							INVOICE
+							PHONE ID
 						</button>
 					`
 				} else {
@@ -178,7 +176,7 @@ auth.onAuthStateChanged(user => {
 						<hr id="hr-table">
 						<button class="butn" id="log-btn" data-bs-toggle="modal" 
 						data-bs-target="#discountModal" onClick="phoneShow()">
-							INVOICE
+							PHONE ID
 						</button>
 					`
 				}
@@ -218,7 +216,7 @@ auth.onAuthStateChanged(user => {
 					<hr id="hr-table">
 					<button class="butn" id="log-btn" data-bs-toggle="modal" 
 					data-bs-target="#discountModal" onClick="emailShow()">
-						INVOICE
+						EMAIL ID
 					</button>
 				`
 			}

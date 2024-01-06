@@ -124,9 +124,7 @@ auth.onAuthStateChanged(user => {
 		thanEmail.innerText = user.email;
 		thanPhone.innerText = thePhoneNo;
 
-		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
-			jinaHolder2.innerHTML = user.email;
-		}
+		jinaHolder2.innerHTML = user.email;
 
 	} else if(user.email && !user.phoneNumber) {
 		var themail = user.email;
