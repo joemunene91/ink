@@ -1,5 +1,5 @@
 if (document.getElementById('boa01')) {
-    (document.getElementById('boa1').innerHTML = "$" + (4219).toLocaleString()),
+    (document.getElementById('boa1').innerHTML = "$" + (4319).toLocaleString()),
     (document.getElementById('boa2').innerHTML = "$" + (5167).toLocaleString()),
     (document.getElementById('boa3').innerHTML = "$" + (5789).toLocaleString()),
     (document.getElementById('boa4').innerHTML = "$" + (6427).toLocaleString()),
@@ -152,7 +152,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("hunt012").innerHTML = "Buy: $" + parseFloat((document.getElementById("hunt12").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString())
 
 } else if (document.getElementById('nfcu01')) {
-    (document.getElementById("nfcu1").innerHTML = "$" + (4125).toLocaleString()),
+    (document.getElementById("nfcu1").innerHTML = "$" + (4374).toLocaleString()),
     (document.getElementById("nfcu2").innerHTML = "$" + (4860).toLocaleString()),
     (document.getElementById("nfcu3").innerHTML = "$" + (5670).toLocaleString()),
     (document.getElementById("nfcu4").innerHTML = "$" + (6374).toLocaleString()),
