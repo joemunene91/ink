@@ -286,7 +286,7 @@ header.scrollHeader .navbar-default {
  }
   .navbar-nav li.nav-small {
     display: flex !important;
-    padding: 0 0 0 3px;
+    padding: 0.5px 0.5px 0.5px 3px;
  }
  .navbar-nav li.nav-small.open {
   flex-direction: column;
@@ -385,9 +385,9 @@ header.scrollHeader .navbar-default {
     height: 53px !important;
  }
   .navbar-nav li.nav-small a {
-    font-size: 17.3px !important;
-    margin: 8px 5px !important;
-    padding: 11.5px 7px;
+    font-size: 17.5px !important;
+    margin: 10px 5px !important;
+    padding: 12px 7px;
  }
 }
 @media screen and (max-width: 420px) {
@@ -397,7 +397,7 @@ header.scrollHeader .navbar-default {
  }
   .navbar-nav li.nav-small a {
     font-size: 17.2px !important;
-    margin: 7.5px 5px !important;
+    margin: 9.5px 5px !important;
     padding: 11px 7px;
  }
 }
@@ -408,8 +408,8 @@ header.scrollHeader .navbar-default {
  }
   .navbar-nav li.nav-small a {
     font-size: 17.1px !important;
-    margin: 7px 5px !important;
-    padding: 10.5px 7px;
+    margin: 9px 5px !important;
+    padding: 11px 7px;
  }
 }
 @media screen and (max-width: 380px) {
@@ -419,7 +419,7 @@ header.scrollHeader .navbar-default {
  }
   .navbar-nav li.nav-small a {
     font-size: 16.6px !important;
-    margin: 7px 5px !important;
+    margin: 8px 5px !important;
     padding: 10px 7px;
  }
 }
