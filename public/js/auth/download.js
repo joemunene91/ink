@@ -185,26 +185,10 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 
-		if(user.displayName) {
-			if(user.displayName.length > 8) {
-				showLink.innerHTML = `${user.displayName.substring(0, 8)}... <img src="img/partners/check.png">`;
-			} else {
-				showLink.innerHTML = `${user.displayName} <img src="img/partners/check.png">`;
-			}
-		} else {
-			var themailz = user.email;
-			var theaddressz = themailz.substring(0, themailz.indexOf('@'));
-
-			if(theaddressz.length > 7) {
-				showLink.innerHTML = `${theaddressz.substring(0, 7)}... <img src="img/partners/check.png">`;
-			} else {
-				showLink.innerHTML = `${theaddressz} <img src="img/partners/check.png">`;
-			}
-		}
+		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 
 		showToth.addEventListener('click', phoneShow);
-
-		showLink.addEventListener('click', phoneShow);
 
 		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
 			jinaHolder2.innerHTML = 'Get Phone Invoice';

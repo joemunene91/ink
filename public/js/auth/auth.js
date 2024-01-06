@@ -124,24 +124,8 @@ auth.onAuthStateChanged(user => {
 		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
 		verCheck.addEventListener('click', sendEmail);
 
-		if(user.displayName) {
-			if(user.displayName.length > 8) {
-				showLink.innerHTML = `${user.displayName.substring(0, 8)}... <img src="img/partners/check.png">`;
-			} else {
-				showLink.innerHTML = `${user.displayName} <img src="img/partners/check.png">`;
-			}
-		} else {
-			var themailz = user.email;
-			var theaddressz = themailz.substring(0, themailz.indexOf('@'));
-
-			if(theaddressz.length > 7) {
-				showLink.innerHTML = `${theaddressz.substring(0, 7)}... <img src="img/partners/check.png">`;
-			} else {
-				showLink.innerHTML = `${theaddressz} <img src="img/partners/check.png">`;
-			}
-		}
-		
-		showLink.addEventListener('click', phoneShow);
+		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
+		showLink.setAttribute('data-bs-target', '#emailModal');
 	} else if(!user.email && user.phoneNumber) {
 		jinaHolder.value = user.phoneNumber;
 		jinaHolder3.value = user.phoneNumber;
