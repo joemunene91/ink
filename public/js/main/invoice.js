@@ -68,6 +68,8 @@
     var cxE = document.getElementById('code-email');
     var cxV = document.getElementById('code-verify');
 
+    var csImg = document.getElementsByClassName('logo-img')[0];
+
     if (window.innerWidth > 768) {
         theC.setAttribute('href', 'css/styles-8.css');
         theLog.setAttribute('src', 'img/logos/logo8.png');
@@ -89,6 +91,8 @@
 
         cxV.classList.remove('ver-btn');
         cxV.classList.add('phone-btn');
+
+        csImg.setAttribute('src', 'img/logos/logo8.png');
 
     } 
 

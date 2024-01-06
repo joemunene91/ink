@@ -70,6 +70,8 @@ e("#preloader").fadeOut("normall", function() {
     var theLog = document.getElementById('cart-logo');
     var cxE = document.getElementById('code-email');
 
+    var csImg = document.getElementsByClassName('logo-img')[0];
+
     if (window.innerWidth > 768) {
       theC.setAttribute('href', 'css/styles-7.css');
       theLog.setAttribute('src', 'img/logos/logo7.png');
@@ -81,6 +83,8 @@ e("#preloader").fadeOut("normall", function() {
 
       cxE.classList.remove('phone-btn');
       cxE.classList.add('ver-btn');
+
+      csImg.setAttribute('src', 'img/logos/logo7.png');
     } 
 
     let itemz = [];
