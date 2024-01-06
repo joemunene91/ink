@@ -71,9 +71,6 @@
                         <li class="nav-large nav-1200">
                             <a href="rbc" class="nav-rbc"></a>
                         </li>
-                        <li class="nav-large nav-1200">
-                            <a href="td" class="nav-td"></a>
-                        </li>
                         <li class="nav-large">
                             <a href="truist" class="nav-truist"></a>
                         </li> 
@@ -100,18 +97,18 @@
                         <li class="nav-small">
                             <img src="img/partners/citi.png" class="bord-50">
                             <a href="citi" class="butn"> Citi Bank </a>
-                        </li>
-                        <li class="nav-small">
-                            <img src="img/partners/huntington.png">
-                            <a href="huntington" class="butn"> Huntington </a>
-                        </li>
+                        </li>                                                                                    
 
                         <li class="nav-small open">
                             <div style="display: flex;">
                                 <img src="img/partners/bank.png">
                                 <a class="butn"> More Banks </a>
                             </div>
-                            <ul>                                                                                                                                                          
+                            <ul>        
+                                <li class="nav-small">
+                                    <img src="img/partners/huntington.png">
+                                    <a href="huntington" class="butn"> Huntington </a>
+                                </li>                                                                                                                                                                                                                                      
                                 <li class="nav-small">
                                     <img src="img/carousel/rbc.png">
                                     <a href="rbc" class="butn"> R.B.C Bank </a>
@@ -119,10 +116,10 @@
                                 <li class="nav-small">
                                     <img src="img/partners/scotia.png">
                                     <a  href="scotia" class="butn"> Scotia Bank <blink class="nav-blink">New</blink> </a>
-                                </li>                                                                                                                                                                   
+                                </li>                                                                                               
                                 <li class="nav-small">
-                                    <img src="img/partners/td.png">
-                                    <a href="td" class="butn"> T.D Bank </a>
+                                    <img src="img/partners/truists.jpg" class="bord-50">
+                                    <a href="truist" class="butn"> Truist Bank </a>
                                 </li> 
                             </ul>
                         </li>
@@ -133,12 +130,8 @@
                         </li>
                         <li class="nav-small">
                             <img src="img/partners/pnclogo.png">
-                            <a  href="pnc" class="butn"> P.N.C Bank <blink class="nav-blink">New</blink> </a>
+                            <a  href="pnc" class="butn"> P.N.C Bank </a>
                         </li>
-                        <li class="nav-small">
-                            <img src="img/partners/truistlogo.png">
-                            <a href="truist" class="butn"> Truist Bank </a>
-                        </li> 
                         <li class="nav-small">
                             <img src="img/partners/wells.png">
                             <a href="wellsfargo" class="butn"> Wells Fargo <blink class="nav-blink">New</blink> </a>
@@ -271,33 +264,10 @@
     
     <div class="gallery text-center width-100 product-grid">
 
-        <div class="col-lg-3 col-xl-2 col-md-3 col-6 items checking wow fadeInRight">
-            <div class="pricing-list highlight">
-                <div class="pricing-list-price">
-                    <h2 class="text-white" id="pnc1"></h2>
-                    <img src="img/partners/pnclogo.png" class="borderp">
-                </div>
-                <ul>
-                    <li class="text-white">https://www.onlinebanking.pnc.com/</li>
-                    <li class="text-white">Username + Password</li>
-                    <li class="text-white">Name + Address</li>
-                    <li class="text-white">Email access</li>
-                    <li class="text-white">Social Security No.</li>
-                    <li class="text-white">Account& Routing No</li>
-                    <li class="text-white">Date of Birth</li>
-                    <li class="text-white">P.N.C Bank <br> [CHECKING ACCOUNT]</li>
-                    <button type="submit" class="butn white" id="pnc01" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        
-                    </button>
-                </ul>
-                <blink>New</blink>
-            </div>
-        </div>
-
         <div class="col-lg-3 col-xl-2 col-md-3 col-6 items savings wow fadeInRight" data-wow-delay="0.4s">
             <div class="pricing-list">
                 <div class="pricing-list-price">
-                    <h2 id="pnc2"></h2>
+                    <h2 id="pnc1"></h2>
                     <img src="img/partners/pnclogo.png" class="borderp">
                 </div>
                 <ul>
@@ -309,8 +279,31 @@
                     <li>Account& Routing No</li>
                     <li>Date of Birth</li>
                     <li>P.N.C Bank <br> [SAVINGS ACCOUNT]</li>
-                    <button type="submit" class="butn" id="pnc02" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="submit" class="butn" id="pnc01" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     
+                    </button>
+                </ul>
+                <blink>New</blink>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xl-2 col-md-3 col-6 items checking wow fadeInRight">
+            <div class="pricing-list highlight">
+                <div class="pricing-list-price">
+                    <h2 class="text-white" id="pnc2"></h2>
+                    <img src="img/partners/pnclogo.png" class="borderp">
+                </div>
+                <ul>
+                    <li class="text-white">https://www.onlinebanking.pnc.com/</li>
+                    <li class="text-white">Username + Password</li>
+                    <li class="text-white">Name + Address</li>
+                    <li class="text-white">Email access</li>
+                    <li class="text-white">Social Security No.</li>
+                    <li class="text-white">Account& Routing No</li>
+                    <li class="text-white">Date of Birth</li>
+                    <li class="text-white">P.N.C Bank <br> [CHECKING ACCOUNT]</li>
+                    <button type="submit" class="butn white" id="pnc02" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        
                     </button>
                 </ul>
             </div>
@@ -338,33 +331,10 @@
             </div>
         </div>
 
-        <div class="col-lg-3 col-xl-2 col-md-3 col-6 items checking wow fadeInRight" data-wow-delay="0.6s">
-            <div class="pricing-list highlight">
-                <div class="pricing-list-price">
-                    <h2 class="text-white" id="pnc4"></h2>
-                    <img src="img/partners/pnclogo.png" class="borderp">
-                </div>
-                <ul>
-                    <li class="text-white">https://www.onlinebanking.pnc.com/</li>
-                    <li class="text-white">Username + Password</li>
-                    <li class="text-white">Name + Address</li>
-                    <li class="text-white">Email access</li>
-                    <li class="text-white">Social Security No.</li>
-                    <li class="text-white">Account& Routing No</li>
-                    <li class="text-white">Date of Birth</li>
-                    <li class="text-white">P.N.C Bank <br> [CHECKING ACCOUNT]</li>
-                    <button type="submit" class="butn white" id="pnc04" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        
-                    </button>
-                </ul>
-                <blink>Vouch</blink>
-            </div>
-        </div>
-
         <div class="col-lg-3 col-xl-2 col-md-3 col-6 items savings wow fadeInRight" data-wow-delay="0.4s">
             <div class="pricing-list">
                 <div class="pricing-list-price">
-                    <h2 id="pnc5"></h2>
+                    <h2 id="pnc4"></h2>
                     <img src="img/partners/pnclogo.png" class="borderp">
                 </div>
                 <ul>
@@ -376,11 +346,34 @@
                     <li>Account& Routing No</li>
                     <li>Date of Birth</li>
                     <li>P.N.C Bank <br> [SAVINGS ACCOUNT]</li>
-                    <button type="submit" class="butn" id="pnc05" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="submit" class="butn" id="pnc04" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         
                     </button>
                 </ul>
-                <blink>New</blink>
+                <blink>Vouch</blink>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xl-2 col-md-3 col-6 items checking wow fadeInRight" data-wow-delay="0.6s">
+            <div class="pricing-list highlight">
+                <div class="pricing-list-price">
+                    <h2 class="text-white" id="pnc5"></h2>
+                    <img src="img/partners/pnclogo.png" class="borderp">
+                </div>
+                <ul>
+                    <li class="text-white">https://www.onlinebanking.pnc.com/</li>
+                    <li class="text-white">Username + Password</li>
+                    <li class="text-white">Name + Address</li>
+                    <li class="text-white">Email access</li>
+                    <li class="text-white">Social Security No.</li>
+                    <li class="text-white">Account& Routing No</li>
+                    <li class="text-white">Date of Birth</li>
+                    <li class="text-white">P.N.C Bank <br> [CHECKING ACCOUNT]</li>
+                    <button type="submit" class="butn white" id="pnc05" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        
+                    </button>
+                </ul>
+                <blink>Vouch</blink>
             </div>
         </div>
         
