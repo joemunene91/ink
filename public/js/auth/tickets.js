@@ -268,7 +268,7 @@ function phoneShow() {
 				heyPending2.style.display = 'block';
 				heySave3.innerHTML = ` Logs can be sent via <span>SMS</span> `;
 				heySave2.innerHTML = `
-					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
+					${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
 					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)} </span>. <hr class="hr-logins">
 				`;
 			}
@@ -327,9 +327,9 @@ function emailShow() {
 				`;
 				heySave2.style.display = 'block';
 				heyPending2.style.display = 'block';
-				heySave3.innerHTML = ` Logs can be sent via <span>SMS</span> `;
+				heySave3.innerHTML = ` Logs can be sent via <span>mail</span> `;
 				heySave2.innerHTML = `
-					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
+					${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
 					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)} </span>. <hr class="hr-logins">
 				`;
 			}
