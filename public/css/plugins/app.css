@@ -2044,7 +2044,7 @@ td {
 }
 .navbar-nav > li.nav-large {
     border-radius: 50% !important;
-    margin: 4px 14px !important;
+    margin: 4px 11px !important;
 }  
 .navbar-nav li.nav-large a {
     width: 63px !important;
@@ -2080,15 +2080,6 @@ td {
 }
 .nav-wood {
     background: url(../../img/carousel/woodforest.jpg) no-repeat center center/cover;
-}
-
-@media screen and (max-width: 1370px) {
-    .nav-1200 {
-        display: none !important;
-    }
-}
-.nav-td {
-    background: url(../../img/carousel/td.png) no-repeat center center/cover;
 }
 .nav-rbc {
     background: url(../../img/carousel/rbc.png) no-repeat center center/cover;
