@@ -2,8 +2,6 @@ let items = [];
 
 var table1 = jQuery('#example1').DataTable();
 
-var theSettz = document.getElementById('settings');
-
 var theLogo = document.getElementById('logo');
 var theLogo2 = document.getElementById('vpn-pic');
 
@@ -423,10 +421,6 @@ function updateCartTotal() {
     
         document.getElementById('usage-p').style.display = 'none';
         document.getElementById('usage-hr').style.display = 'none';
-
-        theSettz.innerHTML = `
-            Bank Logs <img src="img/partners/check.png">
-        `;
 
         anonCheck.innerHTML = `
             Download

@@ -38,8 +38,6 @@ const signUp = document.getElementById('email-phone');
 const logBtn = document.getElementById('log-btn');
 
 const showToth = document.getElementById('showtoasts');
-const showSet = document.getElementById('settings');
-
 
 const showLink = document.getElementById('showlink');
 
@@ -205,7 +203,6 @@ auth.onAuthStateChanged(user => {
 		}
 
 		showToth.addEventListener('click', phoneShow);
-		showSet.addEventListener('click', phoneShow);
 
 		showLink.addEventListener('click', phoneShow);
 
@@ -244,7 +241,6 @@ auth.onAuthStateChanged(user => {
 		}
 
 		showToth.addEventListener('click', emailShow);
-		showSet.addEventListener('click', emailShow);
 
 		showLink.addEventListener('click', emailShow);
 		voiceDiv.addEventListener('click', emailShow);
