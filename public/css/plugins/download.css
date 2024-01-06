@@ -544,15 +544,9 @@ blink.disc {
 #log-btn {
   text-transform: uppercase !important;
   white-space: nowrap !important;
-  font-size: 17px !important;
-  padding: 6px 12px !important;
+  font-size: 16.8px !important;
+  padding: 5.8px 11.8px;
   margin-bottom: 0px !important;
-}
-@media (max-width: 500px) {
-  #log-btn {
-    font-size: 16.5px !important;
-    padding: 5.5px 11px !important;
-  }
 }
 
 
