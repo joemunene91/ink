@@ -128,8 +128,6 @@ const signUpFunction = () => {
 			};
 			var $toast = toastr[shortCutFunction](msg);
 			$toastlast = $toast;
-
-			window.localStorage.setItem('emailForSignIn', email);
 		})
 		.catch(error => {
 			var shortCutFunction = 'success';

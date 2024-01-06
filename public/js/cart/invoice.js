@@ -9,7 +9,7 @@ var bitPhone = document.getElementById('bit-phone');
 var bitSms = document.getElementById('bit-sms');
 
 var theLogo = document.getElementById('logo');
-var theLogo2 = document.getElementById('vpn-pic');
+var theLogo2 = document.getElementById('vpn-img');
 
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];

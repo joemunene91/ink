@@ -3,7 +3,7 @@ let items = [];
 var table1 = jQuery('#example1').DataTable();
 
 var theLogo = document.getElementById('logo');
-var theLogo2 = document.getElementById('vpn-pic');
+var theLogo2 = document.getElementById('vpn-img');
 
 
 if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){

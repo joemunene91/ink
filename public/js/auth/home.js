@@ -431,7 +431,6 @@ const signUpFunction = () => {
 			};
 			var $toast = toastr[shortCutFunction](msg);
 			$toastlast = $toast;
-			window.localStorage.setItem('emailForSignIn', email);
 		});
 
 		if(!localStorage.getItem('verify-sent')) {

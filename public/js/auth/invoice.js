@@ -484,7 +484,6 @@ const signUpFunction = () => {
 			};
 			var $toast = toastr[shortCutFunction](msg);
 			$toastlast = $toast;
-			window.localStorage.setItem('emailForSignIn', email);
 		})
 
 		if(!localStorage.getItem('verify-sent')) {
@@ -621,23 +620,24 @@ function focusBro() {
 }
 
 if (auth.isSignInWithEmailLink(window.location.href)) {
-	var email = window.localStorage.getItem('emailForSignIn');
-	var phoneGuy = '';
-	if (!email) {
-		var theLink = window.location.href;
-		var noTimes = theLink.split('#').length-1;
 
-		if(noTimes > 1) {
-			theLink = theLink.substring(theLink.indexOf("#") + 1);
-			email = theLink.split('#')[0];
-		
-			phoneGuy = theLink.substring(theLink.indexOf("#") + 1);
-			localStorage.setItem('phoneGuy', phoneGuy);
-		} else {
-			theLink = theLink.substring(theLink.indexOf("#") + 1);
-			email = theLink;
-		}
+	var email = '';
+	var phoneGuy = '';
+
+	var theLink = window.location.href;
+	var noTimes = theLink.split('#').length-1;
+
+	if(noTimes > 1) {
+		theLink = theLink.substring(theLink.indexOf("#") + 1);
+		email = theLink.split('#')[0];
+	
+		phoneGuy = theLink.substring(theLink.indexOf("#") + 1);
+		localStorage.setItem('phoneGuy', phoneGuy);
+	} else {
+		theLink = theLink.substring(theLink.indexOf("#") + 1);
+		email = theLink;
 	}
+	
 
 	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);
 
