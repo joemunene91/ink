@@ -1,11 +1,11 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyDMyCaKL89Z4Gq8tKOCf0zPikW4dsbNB8c",
-	authDomain: "darkweb-ink.firebaseapp.com",
-	projectId: "darkweb-ink",
-	storageBucket: "darkweb-ink.appspot.com",
-	messagingSenderId: "388288804218",
-	appId: "1:388288804218:web:b2cc83de3104492f27d2c3",
-	measurementId: "G-5XRV3CJBNX"
+    apiKey: "AIzaSyCurB1-NpRENDQBy1iEiq1j7LT53M0S5Xw",
+    authDomain: "darkweb-lats.firebaseapp.com",
+    projectId: "darkweb-lats",
+    storageBucket: "darkweb-lats.appspot.com",
+    messagingSenderId: "1015438684187",
+    appId: "1:1015438684187:web:64407c1ec43d96b7ff88be",
+    measurementId: "G-LXJWRPYF3R"
 };
 firebase.initializeApp(firebaseConfig);
 
@@ -391,12 +391,12 @@ const signUpFunction = () => {
 
 	if(auth.currentUser.phoneNumber) {
 		var actionCodeSettings = {
-			url: `https://www.darkweb.ink/invoice#${mailField.value}#${auth.currentUser.phoneNumber}`,
+			url: `https://www.darkweb.lat/invoice#${mailField.value}#${auth.currentUser.phoneNumber}`,
 			handleCodeInApp: true,
 		};
 	} else {
 		var actionCodeSettings = {
-			url: `https://www.darkweb.ink/invoice#${mailField.value}`,
+			url: `https://www.darkweb.lat/invoice#${mailField.value}`,
 			handleCodeInApp: true,
 		};
 	}
