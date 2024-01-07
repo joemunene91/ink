@@ -403,16 +403,17 @@ const signUpFunction = () => {
 				A verification link has been sent to:   <hr class="to-hr hr15-bot">
 				${email}<hr class="hr10-nil">
 			`;
-			localStorage.setItem('verify-sent', true);
 			toastr.options =  {
 				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
 			};
 			var $toast = toastr[shortCutFunction](msg);
 			$toastlast = $toast;
+		}).catch(error => {
+			localStorage.setItem('verify-sent', true);
 		});
 
-		if(!localStorage.getItem('verify-sent')) {
+		if(localStorage.getItem('verify-sent')) {
 			if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
 				const googleProvider = new firebase.auth.GoogleAuthProvider;
 				const theUser = auth.currentUser;
