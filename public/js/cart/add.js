@@ -224,6 +224,10 @@ function addItemToCart(price, balance, account,website, image,info1,info2,info3,
         website1,      
     ]).draw();
 
+
+    setBtn.removeAttribute('href');
+    setBtn.setAttribute('data-bs-toggle', 'modal');
+
     updateCartTotal();
 
     var removeFromCartButtons = document.getElementsByClassName('btn-remove');

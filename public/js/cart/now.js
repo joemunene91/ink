@@ -262,7 +262,6 @@ if (document.getElementById('boa01')) {
     (document.getElementById("truist9").innerHTML = "$" + (15764).toLocaleString()),
     (document.getElementById("truist10").innerHTML = "$" + (16403).toLocaleString()),
     (document.getElementById("truist11").innerHTML = "$" + (17129).toLocaleString()),
-    (document.getElementById("truist12").innerHTML = "$" + (17943).toLocaleString()),
 
     (document.getElementById("truist01").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist1").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString()),
     (document.getElementById("truist02").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist2").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString()),
@@ -274,9 +273,7 @@ if (document.getElementById('boa01')) {
     (document.getElementById("truist08").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist8").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString()),
     (document.getElementById("truist09").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist9").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString()),
     (document.getElementById("truist010").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist10").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString()),
-    (document.getElementById("truist011").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist11").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString()),
-    (document.getElementById("truist012").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist12").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString());
-
+    (document.getElementById("truist011").innerHTML = "Buy: $" + parseFloat((document.getElementById("truist11").innerHTML.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString())
 } else if (document.getElementById('wells01')) {
     (document.getElementById("wells1").innerHTML = "$" + (5479).toLocaleString()),
     (document.getElementById("wells2").innerHTML = "$" + (6270).toLocaleString()),

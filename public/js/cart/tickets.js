@@ -77,9 +77,9 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     }
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    setBtn.innerHTML = `Ticket ID <img src="img/partners/bitcoin.png" style="margin-left: 3px !important">`;
+    setBtn.innerHTML = `Home ID <img src="img/partners/house.png" style="margin-left: 7px !important">`;
     setBtn.removeAttribute('data-bs-toggle');
-    setBtn.setAttribute('href', 'tickets');
+    setBtn.setAttribute('href', 'home');
 
     if (window.innerWidth > 1092) {
         modalDialog.style.top = '7vh';

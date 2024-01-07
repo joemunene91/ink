@@ -67,7 +67,6 @@ header.scrollHeader .navbar-default {
   padding: 0;
 }
 #canvas2,
-#canvas3,
 #canvas {
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 1) !important;
 }
@@ -212,7 +211,7 @@ header.scrollHeader .navbar-default {
     display: inline-block;
  }
   .attr-nav > ul > li.dropdown ul.dropdown-menu {
-    top: 61px;
+    top: 75px;
     display: none !important;
  }
   .attr-nav > ul > li.dropdown ul.dropdown-menu.show{

@@ -454,11 +454,6 @@ select {
     width: auto;
     border-radius: 7px;
 }
-.letsgo {
-    border-radius: 0;
-    border: 1.4px solid rgba(135, 206, 235, 0.3);
-    width: 50px;
-}
 .modal-title {
     font-size: 20px;
     font-weight: 600;
@@ -528,7 +523,7 @@ select {
     height: 300vh !important;
     overflow: hidden;
     outline: 0;
-    background: rgba(0, 0, 0, 0.7) !important;
+    background: rgba(0, 0, 0, 0.75) !important;
 }
 .modal-dialog {
     position: relative;
@@ -2210,7 +2205,6 @@ td {
     margin: -5px auto -3px 3px !important;
     border-radius: 3px;
 }
-#canvas3,
 #canvas2 {
     border-radius: 50%;
     float: right !important;
@@ -2644,8 +2638,8 @@ ul.countdown li p {
 #load-3,
 #load-2 {
     text-align: center !important;
-    font-size: 20px !important;
-    line-height: 55px !important;
+    font-size: 20.5px !important;
+    line-height: 57px !important;
 }
 #get-p3,
 #get-p1,
@@ -2759,8 +2753,8 @@ ul.countdown li p {
     #get-p1,
     #get-p2 {
         text-align: center !important;
-        font-size: 19px !important;
-        line-height: 52px !important;
+        font-size: 19.5px !important;
+        line-height: 54px !important;
     }
 }
 #money-p1,
@@ -4101,6 +4095,7 @@ img.levt-10 {
       right:-82vw;
       width:82vw;
       padding:10px 10px;
+      top: 50%;
     }
     #style-switcher .switcher-setting{
       right:calc(82vw - 1px)
