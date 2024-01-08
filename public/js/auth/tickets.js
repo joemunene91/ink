@@ -335,10 +335,22 @@ function sendEmail() {
 	toastr.options =  {
 		closeButton: true, debug: false, newestOnTop: true, progressBar: true,
 		positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, 
-		timeOut: 7000
+		timeOut: 5000
 	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
+	
+	setTimeout(() => {
+		var themail = auth.currentUser.email;
+		var theaddress = themail.substring(0, themail.indexOf('@'));
+		if (auth.currentUser.displayName) {
+			theaddress = auth.currentUser.displayName + 'Heldod';
+		} 
+
+		showLink.innerHTML = `${theaddress.substring(0, 9)}.. <img src="img/partners/check.png">`;
+		showLink.setAttribute('data-bs-target', '#discountModal');
+		showLink.addEventListener('click', phoneShow);
+	}, 3000);
 }
 
 const signUpFunction = () => {
