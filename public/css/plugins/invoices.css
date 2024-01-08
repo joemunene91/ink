@@ -371,43 +371,29 @@ blink.oisc {
     }
 }
 
-
+blink.wisc,
 blink.tisc {
     position: relative !important;
     top: -70px !important;
-    left: 112px !important;
+    left: 120px !important;
     z-index: 999 !important;
 }
 @media screen and (max-width: 500px) {
+    blink.wisc,
     blink.tisc {
-        left: 107px !important;
+        left: 115px !important;
     }
 }
 @media screen and (max-width: 390px) {
+    blink.wisc,
     blink.tisc {
-        left: 97px !important;
+        left: 105px !important;
     }
 }
 @media screen and (max-width: 380px) {
+    blink.wisc,
     blink.tisc {
-        left: 95px !important;
-    }
-}
-
-blink.wisc {
-    position: relative !important;
-    top: -70px !important;
-    left: 112px !important;
-    z-index: 999 !important;
-}
-@media screen and (max-width: 500px) {
-    blink.wisc {
-        left: 107px !important;
-    }
-}
-@media screen and (max-width: 390px) {
-    blink.wisc {
-        left: 102px !important;
+        left: 100px !important;
     }
 }
 
