@@ -387,8 +387,7 @@ function phoneShow() {
 				totali = totali + (price4 * 1);
 			});
 		
-			heySave3.innerHTML = `
-				Bank logs can also be sent via <br> <span>SMS</span> to your phone.`;
+			heySave3.innerHTML = ` Bank log files can also be <br> sent via <span>SMS</span>.`;
 		
 			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
 				const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
@@ -454,8 +453,8 @@ function emailShow() {
 				totali = totali + (price4 * 1);
 			});
 		
-			heySave3.innerHTML = ` Bank logs can also be sent via <br> <span>email</span> to your inbox.`;
-		
+			heySave3.innerHTML = ` Bank log files can also be <br> sent via <span>email</span>.`;
+			
 			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
 				const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
 				const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);		
