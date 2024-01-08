@@ -1193,16 +1193,9 @@ td {
     }
 }
 #name-on-table0,
-#name-on-table1,
-#name-on-table2,
-#name-on-table3,
-#name-on-table4,
-#name-on-table5,
-#name-on-table6,
-#name-on-table7,
-#name-on-table8,
-#name-on-table9 {
+#name-on-table1 {
     text-transform: capitalize !important;
+    white-space: nowrap !important;
 }
 #example1 {
     font-weight: 600;
