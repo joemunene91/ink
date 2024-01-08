@@ -93,31 +93,24 @@ auth.onAuthStateChanged(user => {
 		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
 		verCheck.addEventListener('click', sendEmail);
 
-		if (user.displayName && user.email) {
-			verifyH4.innerHTML = user.displayName;
-		} else if (!user.displayName && user.email) {
-			var themail = user.email;
-			var theaddress = themail.substring(0, themail.indexOf('@'));
-
-			verifyH4.innerHTML = theaddress;
+		var themail = user.email;
+		var theaddress = themail.substring(0, themail.indexOf('@'));
+		if (user.displayName) {
+			theaddress = user.displayName;
 		} 
+
+		jinaHolder.value = theaddress;
+		jinaHolder3.value = theaddress;
+		verifyH4.innerHTML = theaddress;
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
-				if(user.displayName) {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML =  `
-						${user.displayName} 
-						<hr id="hr-table">
-						${thePhoneNo.slice(0, -3)}...
-					`;
-				} else {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						${theaddress} 
-						<hr id="hr-table">
-						${thePhoneNo.slice(0, -3)}...
-					`;
-				}
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					${theaddress} 
+					<hr id="hr-table">
+					${thePhoneNo.slice(0, -3)}...
+				`;
 			}
 		}
 
@@ -128,24 +121,18 @@ auth.onAuthStateChanged(user => {
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
 
-		jinaHolder.value = thePhoneNo;
-		jinaHolder3.value = thePhoneNo;
-
 		jinaHolder2.innerHTML = user.email;
 
 	} else if(user.email && !user.phoneNumber) {
-		if (user.displayName && user.email) {
-			jinaHolder.value = user.displayName;
-			jinaHolder3.value = user.displayName;
-			verifyH4.innerHTML = user.displayName;
-		} else if (!user.displayName && user.email) {
-			var themail = user.email;
-			var theaddress = themail.substring(0, themail.indexOf('@'));
-	
-			jinaHolder.value = theaddress;
-			jinaHolder3.value = theaddress;
-			verifyH4.innerHTML = theaddress;
+		var themail = user.email;
+		var theaddress = themail.substring(0, themail.indexOf('@'));
+		if (user.displayName) {
+			theaddress = user.displayName;
 		} 
+
+		jinaHolder.value = theaddress;
+		jinaHolder3.value = theaddress;
+		verifyH4.innerHTML = theaddress;
 
 		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
 		verCheck.addEventListener('click', sendEmail);
@@ -191,17 +178,23 @@ auth.onAuthStateChanged(user => {
 			jinaHolder2.innerHTML = 'Get Phone Invoice';
 		}
 
-	} else if(!user.email && user.phoneNumber) {
-		jinaHolder.value = user.phoneNumber;
-		jinaHolder3.value = user.phoneNumber;
+	} else if(!user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
+
+		if(!localStorage.getItem('phoneGuy')) {
+			localStorage.setItem('phoneGuy', user.phoneNumber);
+		}
+		var thePhoneNo = localStorage.getItem('phoneGuy');
+
+		jinaHolder.value = thePhoneNo;
+		jinaHolder3.value = thePhoneNo;
 
 		document.getElementById('showtoasts').addEventListener('click', emailShow);
 		document.getElementById('monez').addEventListener('click', emailShow);
 
 		if(user.phoneNumber.length > 10) {
-			showLink.innerHTML = `${user.phoneNumber.substring(0, 10)}.. <img src="img/partners/check.png">`;
+			showLink.innerHTML = `${thePhoneNo.substring(0, 10)}.. <img src="img/partners/check.png">`;
 		} else {
-			showLink.innerHTML = `${user.phoneNumber} <img src="img/partners/check.png">`;
+			showLink.innerHTML = `${thePhoneNo} <img src="img/partners/check.png">`;
 		}
 
 		voiceDiv.innerHTML = 'EMAIL INVOICE';
@@ -211,7 +204,7 @@ auth.onAuthStateChanged(user => {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-					${user.phoneNumber.slice(0, -3) + '...'}
+					${thePhoneNo.slice(0, -3) + '...'}
 					<hr id="hr-table">
 					<button class="butn" id="log-btn" data-bs-toggle="modal" 
 					data-bs-target="#discountModal" onClick="emailShow()">

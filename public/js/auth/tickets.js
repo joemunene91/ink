@@ -107,18 +107,13 @@ auth.onAuthStateChanged(user => {
 	} else if(user.email && !user.phoneNumber) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
-
-		if (user.displayName && user.email) {
-			jinaHolder.value = user.displayName;
-			jinaHolder3.value = user.displayName;
-
-			verifyH4.innerHTML = user.displayName;
-		} else if (!user.displayName && user.email) {	
-			jinaHolder.value = theaddress;
-			jinaHolder3.value = theaddress;
-
-			verifyH4.innerHTML = theaddress;
+		if (user.displayName) {
+			theaddress = user.displayName;
 		} 
+
+		jinaHolder.value = theaddress;
+		jinaHolder3.value = theaddress;
+		verifyH4.innerHTML = theaddress;
 
 		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
@@ -129,17 +124,23 @@ auth.onAuthStateChanged(user => {
 
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
-	} else if(!user.email && user.phoneNumber) {
-		jinaHolder.value = user.phoneNumber;
-		jinaHolder3.value = user.phoneNumber;
+	} else if(!user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
+
+		if(!localStorage.getItem('phoneGuy')) {
+			localStorage.setItem('phoneGuy', user.phoneNumber);
+		}
+		var thePhoneNo = localStorage.getItem('phoneGuy');
+
+		jinaHolder.value = thePhoneNo;
+		jinaHolder3.value = thePhoneNo;
 
 		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
 
 		if(user.phoneNumber.length > 10) {
-			showLink.innerHTML = `${user.phoneNumber.substring(0, 10)}.. <img src="img/partners/check.png">`;
+			showLink.innerHTML = `${thePhoneNo.substring(0, 10)}.. <img src="img/partners/check.png">`;
 		} else {
-			showLink.innerHTML = `${user.phoneNumber} <img src="img/partners/check.png">`;
+			showLink.innerHTML = `${thePhoneNo} <img src="img/partners/check.png">`;
 		}
 
 		showLink.addEventListener('click', emailShow);
