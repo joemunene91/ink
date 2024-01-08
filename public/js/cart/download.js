@@ -6,7 +6,7 @@ var theLogo = document.getElementById('logo');
 var theLogo2 = document.getElementById('vpn-img');
 
 
-if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
+if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
 
 
     items = JSON.parse(localStorage.getItem('banklogs'));
@@ -217,6 +217,11 @@ for(j=0; j< jobs.length; j++) {
 }
 
 
+
+if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 3)){
+    document.getElementsByClassName('dataTables_paginate')[0].style.display = 'block';
+    document.getElementsByClassName('dataTables_length')[0].style.display = 'block'
+}
 
 function removeCartItem(event) {
     var buttonClicked = event.target

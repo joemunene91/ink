@@ -14,7 +14,7 @@ var theLogo2 = document.getElementById('vpn-img');
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
 
-if(((JSON.parse(localStorage.getItem('banklogs')).length) < 1)) {
+if(!localStorage.getItem('banklogs') || ((JSON.parse(localStorage.getItem('banklogs')).length) < 1)) {
     document.getElementById('confirm').style.display = 'flex';
     document.getElementById('logs-invoice').style.display = 'none';
 } else {
@@ -22,7 +22,7 @@ if(((JSON.parse(localStorage.getItem('banklogs')).length) < 1)) {
     document.getElementById('logs-invoice').style.display = 'flex';
 }
 
-if((JSON.parse(localStorage.getItem('banklogs')).length) > 0){
+if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
 
     items = JSON.parse(localStorage.getItem('banklogs'));
     document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
@@ -76,6 +76,10 @@ if((JSON.parse(localStorage.getItem('banklogs')).length) > 0){
     } 
 }
 
+if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 3)){
+    document.getElementsByClassName('dataTables_paginate')[0].style.display = 'block';
+    document.getElementsByClassName('dataTables_length')[0].style.display = 'block'
+}
 
 function removeCartItem(event) {
     var buttonClicked = event.target
