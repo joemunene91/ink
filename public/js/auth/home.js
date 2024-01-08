@@ -49,7 +49,6 @@ const heySave3 = document.getElementById('save-3');
 
 const heyGetFooter = document.getElementById('get-footer');
 const heyTheForm = document.getElementById('the-form');
-const heyInvoiceType = document.getElementById('invoice-type');
 const heyVerifyLi = document.getElementById('verify-li');
 
 const heyGetPhone = document.getElementById('get-phone');
@@ -221,12 +220,6 @@ function phoneShow() {
 		heySave1.innerHTML = ` Bank logs can also be sent via <br> <span>SMS</span> to your phone. `;
 		heySave3.innerHTML = ` Enter your <span>phone number</span> on <br> the input field below. `;
 
-		if(auth.currentUser.displayName) {
-			heyInvoiceType.innerHTML = auth.currentUser.displayName;
-		} else {
-			heyInvoiceType.innerHTML = auth.currentUser.email.substring(0, auth.currentUser.email.indexOf('@'));
-		}
-
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
 			heySave3.innerHTML = ` Bank logs can also be sent via <br> <span>SMS</span> to your phone. `;
 		
@@ -256,7 +249,6 @@ function phoneShow() {
 	} else {
 		heySave1.innerHTML = ` A <span>code</span> will be sent to the <span>phone</span><br> you enter below, `;
 		heySave3.innerHTML = ` Use the code to sign in on this <br> <span>darkweb</span> store. `;
-		heyInvoiceType.innerHTML = 'PHONE INVOICE';
 	}
 	
 	fetch('https://ipapi.co/json/')
@@ -285,9 +277,6 @@ function emailShow() {
 	if(auth.currentUser.phoneNumber) {
 		heySave1.innerHTML = ` Bank logs can also be sent via <br> <span>mail</span> to your inbox. `;
 		heySave3.innerHTML = ` Enter your <span>email address</span> on <br> the input field below. `;
-
-		heyInvoiceType.innerHTML = (auth.currentUser.phoneNumber).replace('+', ' ');
-		heyInvoiceType.style.letterSpacing = '0.3px';
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
 			heySave3.innerHTML = ` Bank logs can also be sent via <br> <span>email</span> to your inbox. `;
@@ -318,7 +307,6 @@ function emailShow() {
 	} else {
 		heySave1.innerHTML = ` A <span>link</span> will be sent to the <span>email</span><br> you enter below, `;
 		heySave3.innerHTML = ` Use the link to sign in on this <br> <span>darkweb</span> store. `;
-		heyInvoiceType.innerHTML = 'EMAIL INVOICE';
 	}
 
 	theFlag7.style.display = 'none';
