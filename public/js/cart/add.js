@@ -6,7 +6,7 @@ var setBtn = document.getElementById('settings');
 var profileModal = document.getElementById('profileModal');
 var modalDialog = profileModal.getElementsByClassName('modal-dialog')[0];
 
-if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
+if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
     items = JSON.parse(localStorage.getItem('banklogs'));
     document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
 
@@ -58,10 +58,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     } 
 }
 
-if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 3)){
-    document.getElementsByClassName('dataTables_paginate')[0].style.display = 'block';
-    document.getElementsByClassName('dataTables_length')[0].style.display = 'block'
-}
 
 var addToCartButtons = document.getElementsByClassName('money');
 for(var i = 0; i <addToCartButtons.length; i++){
@@ -178,7 +174,7 @@ function addItemToCart(price, balance, account,website, image,info1,info2,info3,
     var info51 = `<td>${info5}</td>`
     var info61 = `<td>${info6}</td>`
 
-    if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
+    if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         var cartItemNames = JSON.parse(localStorage.getItem('banklogs'));
         for(var i = 0; i < cartItemNames.length; i++) {
             if(cartItemNames.length > 1.5) {

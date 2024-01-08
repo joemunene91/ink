@@ -2,7 +2,7 @@ var j = true;
 
 var coastNumber = '';
 
-if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
+if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
     if((JSON.parse(localStorage.getItem('banklogs')).length) == 1){
         coastNumber = localStorage.getItem('banktotal');
     } else if((JSON.parse(localStorage.getItem('banklogs')).length) > 1){
@@ -374,6 +374,6 @@ auth.onAuthStateChanged(user => {
     }     
 });  
 
-if(!localStorage.getItem('banklogs') || ((JSON.parse(localStorage.getItem('banklogs')).length) < 1)) {
+if((JSON.parse(localStorage.getItem('banklogs')).length) < 1) {
     document.getElementById('predat').style.display = 'flex';
 }

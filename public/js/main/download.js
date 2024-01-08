@@ -102,7 +102,7 @@ e("#preloader").fadeOut("normall", function() {
     let coWells = "rgba(148, 235, 148, 0.85)";
     let coWood = "rgba(209, 50, 48, 0.85)";
 
-    if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) == 1)) {
+    if ((JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
 
       itemz = JSON.parse(localStorage.getItem('banklogs'));
 
@@ -163,7 +163,7 @@ e("#preloader").fadeOut("normall", function() {
         numz2.push(percBa);
       }
 
-    } else if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 1)) {
+    } else if ((JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
       itemz = JSON.parse(localStorage.getItem('banklogs'));
 
       var arg = [];
@@ -413,9 +413,9 @@ let bitcoin = document.getElementById("the-one");
 
 binance.onmessage = event => {
   let confirm = JSON.parse(event.data);
-  if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length == 1)) {
+  if (JSON.parse(localStorage.getItem('banklogs')).length == 1) {
     bitcoin.innerHTML = (localStorage.getItem('banktotal') / parseFloat(confirm.k.c)).toFixed(5)
-  } else if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length > 1)) {
+  } else if (JSON.parse(localStorage.getItem('banklogs')).length > 1) {
     bitcoin.innerHTML = (localStorage.getItem('divtotal') / parseFloat(confirm.k.c)).toFixed(5)
   }
 }

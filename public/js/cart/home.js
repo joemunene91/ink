@@ -25,7 +25,7 @@ var n = month[d.getMonth()];
 var y = d.getFullYear();
 var m = d.getDate();
 
-if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
+if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 
     items = JSON.parse(localStorage.getItem('banklogs'));
     document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);

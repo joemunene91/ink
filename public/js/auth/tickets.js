@@ -229,7 +229,7 @@ function phoneShow() {
 			heyInvoiceType.innerHTML = auth.currentUser.email.substring(0, auth.currentUser.email.indexOf('@'));
 		}
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			heySave3.innerHTML = ` Bank logs can also be sent via <br> <span>SMS</span> to your phone. `;
 		
 			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
@@ -290,7 +290,7 @@ function emailShow() {
 		heyInvoiceType.innerHTML = (auth.currentUser.phoneNumber).replace('+', ' ');
 		heyInvoiceType.style.letterSpacing = '0.3px';
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			heySave3.innerHTML = ` Bank logs can also be sent via <br> <span>email</span> to your inbox. `;
 		
 			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {

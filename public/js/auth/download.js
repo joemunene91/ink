@@ -103,7 +103,7 @@ auth.onAuthStateChanged(user => {
 			verifyH4.innerHTML = theaddress;
 		} 
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				if(user.displayName) {
@@ -158,7 +158,7 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				if(user.displayName) {
@@ -188,7 +188,7 @@ auth.onAuthStateChanged(user => {
 
 		showToth.addEventListener('click', phoneShow);
 
-		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			jinaHolder2.innerHTML = 'Get Phone Invoice';
 		}
 
@@ -208,7 +208,7 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
@@ -227,13 +227,13 @@ auth.onAuthStateChanged(user => {
 		showLink.addEventListener('click', emailShow);
 		voiceDiv.addEventListener('click', emailShow);
 
-		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			jinaHolder2.innerHTML = 'Get Email Invoice';
 		}
 
 	} else if(user.isAnonymous) {
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
@@ -385,7 +385,7 @@ function phoneShow() {
 			heyInvoiceType.innerHTML = auth.currentUser.email.substring(0, auth.currentUser.email.indexOf('@'));
 		}
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			let items4 = (JSON.parse(localStorage.getItem('banklogs')));
 			var totali = 0;
 			items4.map(data=>{
@@ -455,7 +455,7 @@ function emailShow() {
 		heyInvoiceType.innerHTML = (auth.currentUser.phoneNumber).replace('+', ' ');
 		heyInvoiceType.style.letterSpacing = '0.3px';
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+		if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
 			let items4 = (JSON.parse(localStorage.getItem('banklogs')));
 			var totali = 0;
 			items4.map(data=>{
