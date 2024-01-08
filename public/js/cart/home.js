@@ -170,7 +170,7 @@ function updateCartTotal() {
             `;
         }
         theSave2.innerHTML = `
-            15% <span>discount</span> on 2 bank logs.
+            10% <span>discount</span> on 2 bank logs.
         `;
         theSave3.innerHTML = `
             Bank log files can be sent via <br> 

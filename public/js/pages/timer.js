@@ -44,7 +44,7 @@ auth.onAuthStateChanged(user => {
                 localStorage.setItem('seconds-left', p1knoDecimalo);
                 localStorage.setItem('timez-set', true);
             }
-            let width = 900;
+            let width = 600;
 
             function frame(){
 
@@ -54,7 +54,7 @@ auth.onAuthStateChanged(user => {
                 var p1knoDecimal = Math.trunc(p1k);
                 var theTime = localStorage.getItem('seconds-left');
                 var timeDifference = parseFloat(p1knoDecimal) - parseFloat(theTime);
-                width = 900 - timeDifference;
+                width = 600 - timeDifference;
 
                 if(width <= 0){
                     clearInterval(id);
@@ -71,12 +71,12 @@ auth.onAuthStateChanged(user => {
                 else if( width <= 59) {
                     elemj.classList.add("bg-danger");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 60) {
                     elemj.classList.add("bg-danger");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
 
@@ -91,12 +91,12 @@ auth.onAuthStateChanged(user => {
                 else if( width <= 119) {
                     elemj.classList.add("bg-danger");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 120) {
                     elemj.classList.add("bg-danger");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
@@ -109,12 +109,12 @@ auth.onAuthStateChanged(user => {
                 else if( width <= 179) {
                     elemj.classList.add("bg-danger");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 180) {
                     elemj.classList.add("bg-danger");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
@@ -124,17 +124,23 @@ auth.onAuthStateChanged(user => {
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
 
+                else if( width <= 200) {
+                    elemj.classList.add("bg-danger");
+                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                } 
+
 
 
                 else if( width <= 239) {
-                    elemj.classList.add("bg-danger");
+                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 240) {
-                    elemj.classList.add("bg-danger");
+                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
@@ -146,14 +152,14 @@ auth.onAuthStateChanged(user => {
 
 
                 else if( width <= 299) {
-                    elemj.classList.add("bg-danger");
+                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 300) {
-                    elemj.classList.add("bg-danger");
+                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
@@ -168,12 +174,12 @@ auth.onAuthStateChanged(user => {
                 else if( width <= 359) {
                     elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 360) {
                     elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
@@ -183,18 +189,20 @@ auth.onAuthStateChanged(user => {
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
                 } 
 
-
+                else if( width <= 200) {
+                    elemj.classList.add("bg-warning");
+                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                } 
 
 
                 else if( width <= 419) {
-                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 420) {
-                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
@@ -205,17 +213,13 @@ auth.onAuthStateChanged(user => {
                 } 
 
 
-
-
                 else if( width <= 479) {
-                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if( width == 480) {
-                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
@@ -228,108 +232,16 @@ auth.onAuthStateChanged(user => {
 
 
                 else if(width <= 539) {
-                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 } 
                 else if(width == 540) {
-                    elemj.classList.add("bg-warning");
                     var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
+                    elemj.style.width = (width/6) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
 
                     var shortCutFunction = 'success';
                     var msg = `
                         9 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
-                    `; 
-                    toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-                } 
-
-                else if(width <= 599) {
-                    elemj.classList.add("bg-warning");
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                } 
-                else if(width == 600) {
-                    elemj.classList.add("bg-warning");
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-
-                    var shortCutFunction = 'success';
-                    var msg = `
-                        10 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
-                    `; 
-                    toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-                } 
-
-
-
-
-                else if(width <= 659) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                } 
-                else if(width == 660) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                    
-                    var shortCutFunction = 'success';
-                    var msg = `
-                        11 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
-                    `; 
-                    toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-                } 
-
-                
-
-                else if(width <= 719) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                } 
-                else if(width == 720) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                    
-                    var shortCutFunction = 'success';
-                    var msg = `
-                        12 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
-                    `; 
-                    toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-                } 
-
-
-                else if(width <= 779) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                } 
-                else if(width == 780) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                    
-                    var shortCutFunction = 'success';
-                    var msg = `
-                        13 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
-                        Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
-                    `; 
-                    toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-                } 
-
-
-
-                else if(width <= 839) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                } 
-                else if(width == 840) {
-                    var minutes = Math.floor(width/60); var seconds = width - minutes * 60; if(seconds < 10){ seconds = '0'+seconds } 
-                    elemj.style.width = (width/9) + "%"; document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
-                    
-                    var shortCutFunction = 'success';
-                    var msg = `
-                        14 Minutes Left! <br> ${theirName},    <hr class="to-hr hr15-bot"> 
                         Make the payment of $${coastNumber}.       <hr class="hr10-nil"> 
                     `; 
                     toastr.options = {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null};var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
@@ -341,7 +253,7 @@ auth.onAuthStateChanged(user => {
                     var minutes = Math.floor(width/60);
                     var seconds = width - minutes * 60;
                     if(seconds < 10){ seconds = '0'+seconds }
-                    elemj.style.width = (width/9) + "%";
+                    elemj.style.width = (width/6) + "%";
                     document.getElementById('escoz').innerHTML = `Time left: ${minutes}:${seconds}`;
                 }
             }
