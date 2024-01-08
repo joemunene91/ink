@@ -495,7 +495,7 @@ function sendEmail() {
 	auth.currentUser.sendEmailVerification();
 	var shortCutFunction = 'success';
 	var msg = `
-		Verification link sent to your <br> email inbox:  <hr class="to-hr hr15-bot">  
+		Verification link sent to your <br> mailbox:  <hr class="to-hr hr15-bot">  
 		${auth.currentUser.email}                             <hr class="hr10-nil">
 	`;
 	toastr.options =  {
