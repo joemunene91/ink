@@ -167,7 +167,7 @@ auth.onAuthStateChanged(user => {
 						<hr id="hr-table">
 						<button class="butn" id="log-btn" data-bs-toggle="modal" 
 						data-bs-target="#discountModal" onClick="phoneShow()">
-							PHONE ID
+							INVOICE
 						</button>
 					`
 				} else {
@@ -176,7 +176,7 @@ auth.onAuthStateChanged(user => {
 						<hr id="hr-table">
 						<button class="butn" id="log-btn" data-bs-toggle="modal" 
 						data-bs-target="#discountModal" onClick="phoneShow()">
-							PHONE ID
+							INVOICE
 						</button>
 					`
 				}
@@ -214,7 +214,7 @@ auth.onAuthStateChanged(user => {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
 					<button class="butn" id="log-btn" data-bs-toggle="modal" 
 					data-bs-target="#discountModal" onClick="emailShow()">
-						EMAIL ID
+						INVOICE
 					</button>
 					<hr id="hr-table">
 					${user.phoneNumber.slice(0, -3) + '...'}
