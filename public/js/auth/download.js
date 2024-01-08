@@ -531,12 +531,12 @@ const signUpFunction = () => {
 	
 	if(auth.currentUser.phoneNumber) {
 		var actionCodeSettings = {
-			url: `https://www.darkweb.lat/invoice#${mailField.value}#${auth.currentUser.phoneNumber}`,
+			url: `https://www.darkweb.lat/invoice#${localStorage.getItem('banklogs')}#${mailField.value}#${auth.currentUser.phoneNumber}`,
 			handleCodeInApp: true,
 		};
 	} else {
 		var actionCodeSettings = {
-			url: `https://www.darkweb.lat/invoice#${mailField.value}`,
+			url: `https://www.darkweb.lat/invoice#${localStorage.getItem('banklogs')}#${mailField.value}`,
 			handleCodeInApp: true,
 		};
 	}

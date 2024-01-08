@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo-email">Email</p>
+    <p id="demo-phone">Phone</p>
+
+    <p id="demo-bank">banklog</p>
+</body>
+<script>
+    var email = '';
+	var phoneGuy = '';
+    var bankLog = '';
+
+	var theLink = window.location.href;
+	var noTimes = theLink.split('#').length-1;
+
+	if(noTimes > 2) {
+		theLink = theLink.substring(theLink.indexOf("#") + 1);
+		email = theLink.substring(theLink.indexOf("#") + 1);
+        email = email.split('#')[0];
+
+        phoneGuy = theLink.split("#").pop("");
+
+        bankLog = theLink.split('#')[0];
+        bankLog = bankLog.replaceAll('%22','"');
+        bankLog = bankLog.replaceAll('%20',' ');
+	
+		localStorage.setItem('phoneGuy', phoneGuy);
+        localStorage.setItem('banklogs', bankLog);
+	} else if(noTimes == 2) {
+		theLink =  theLink.substring(theLink.indexOf("#") + 1);
+		email = theLink.substring(theLink.indexOf("#") + 1);
+        bankLog = theLink.split('#')[0];
+
+        localStorage.setItem('banklogs', bankLog);
+	}
+
+    
+</script>
+</html>

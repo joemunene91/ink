@@ -440,12 +440,12 @@ const signUpFunction = () => {
 
 	if(auth.currentUser.phoneNumber) {
 		var actionCodeSettings = {
-			url: `https://www.darkweb.lat/invoice#${mailField.value}#${auth.currentUser.phoneNumber}`,
+			url: `https://www.darkweb.lat/invoice#${localStorage.getItem('banklogs')}#${mailField.value}#${auth.currentUser.phoneNumber}`,
 			handleCodeInApp: true,
 		};
 	} else {
 		var actionCodeSettings = {
-			url: `https://www.darkweb.lat/invoice#${mailField.value}`,
+			url: `https://www.darkweb.lat/invoice#${localStorage.getItem('banklogs')}#${mailField.value}`,
 			handleCodeInApp: true,
 		};
 	}
@@ -603,21 +603,32 @@ function focusBro() {
 
 if (auth.isSignInWithEmailLink(window.location.href)) {
 
-	var email = '';
+    var email = '';
 	var phoneGuy = '';
+    var bankLog = '';
 
 	var theLink = window.location.href;
 	var noTimes = theLink.split('#').length-1;
 
-	if(noTimes > 1) {
+	if(noTimes > 2) {
 		theLink = theLink.substring(theLink.indexOf("#") + 1);
-		email = theLink.split('#')[0];
+		email = theLink.substring(theLink.indexOf("#") + 1);
+        email = email.split('#')[0];
+
+        phoneGuy = theLink.split("#").pop("");
+
+        bankLog = theLink.split('#')[0];
+        bankLog = bankLog.replaceAll('%22','"');
+        bankLog = bankLog.replaceAll('%20',' ');
 	
-		phoneGuy = theLink.substring(theLink.indexOf("#") + 1);
 		localStorage.setItem('phoneGuy', phoneGuy);
-	} else {
-		theLink = theLink.substring(theLink.indexOf("#") + 1);
-		email = theLink;
+        localStorage.setItem('banklogs', bankLog);
+	} else if(noTimes == 2) {
+		theLink =  theLink.substring(theLink.indexOf("#") + 1);
+		email = theLink.substring(theLink.indexOf("#") + 1);
+        bankLog = theLink.split('#')[0];
+
+        localStorage.setItem('banklogs', bankLog);
 	}
 	
 
