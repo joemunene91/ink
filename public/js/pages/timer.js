@@ -2,7 +2,7 @@ var j = true;
 
 var coastNumber = '';
 
-if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
+if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
     if((JSON.parse(localStorage.getItem('banklogs')).length) == 1){
         coastNumber = localStorage.getItem('banktotal');
     } else if((JSON.parse(localStorage.getItem('banklogs')).length) > 1){
@@ -61,28 +61,10 @@ auth.onAuthStateChanged(user => {
                     i = false;
                     localStorage.removeItem('timez-set');
                     localStorage.setItem('banklogs',[]);
-                    document.getElementById('predat').style.display = 'flex';
-                    document.getElementById('logsection').style.display = 'none';
-                    document.getElementById('logsection2').style.display = 'none';
-                    document.getElementById('cartlength').style.display = 'none';
 
-                    document.getElementById('thetot').innerHTML = `View Cart: $0`;
-
-                    document.getElementById('down-file').innerHTML = 'Empty Cart';
-                    document.getElementById('anon-check').innerHTML = `Banklogs <img src="img/partners/home.png">`;
-                    document.getElementById('anon-check').setAttribute('href', 'home');
-                    document.getElementById('anon-p').innerHTML = `
-                        Your cart is currently empty, <br>
-                        add some bank logs to cart. 
-                    `;
-                    document.getElementById('save-1').innerHTML = `
-                        Your cart is currently empty, <br>
-                        add some logs to cart. 
-                    `;
-                    document.getElementById('usage-p').innerHTML = `
-                        Cart: $0, Total: $0.
-                    `;
-                    document.getElementById('jinaHolder2').innerHTML = 'Shopping Cart: $0';
+                    setTimeout(() => {
+                        window.location.assign('invoice');
+                    }, 1500);
                 } 
 
                 
@@ -355,8 +337,6 @@ auth.onAuthStateChanged(user => {
 
 
 
-
-
                 else {
                     var minutes = Math.floor(width/60);
                     var seconds = width - minutes * 60;
@@ -366,14 +346,6 @@ auth.onAuthStateChanged(user => {
                 }
             }
 
-        } else {
-            console.log('No items are in cart');
-        }
-    } else {
-        console.log('No bank logs selected')
-    }     
+        } 
+    } 
 });  
-
-if((JSON.parse(localStorage.getItem('banklogs')).length) < 1) {
-    document.getElementById('predat').style.display = 'flex';
-}

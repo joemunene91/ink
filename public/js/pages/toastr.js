@@ -13,7 +13,7 @@ auth.onAuthStateChanged(user => {
 
     var biden = false;
 
-    if ((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
+    if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
             toast = localStorage.getItem('banktotal');
             toastz = toast.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

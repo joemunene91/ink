@@ -156,13 +156,16 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     document.getElementById('logsection2').style.display = 'none';
     document.getElementById('cartlength').style.display = 'none';
 
+    document.getElementById('predat').style.display = 'flex';
+
     document.getElementById('down-file').innerHTML = 'Empty Cart';
     document.getElementById('anon-check').innerHTML = `Banklogs <img src="img/partners/home.png">`;
     document.getElementById('anon-check').setAttribute('href', 'home');
     document.getElementById('save-1').innerHTML = `
         Your cart is currently empty, <br>
-        add some logs to cart. 
+        get some logs. 
     `;
+    document.getElementById('invoice-type').innerHTML = `YOUR CART: $0`;
     document.getElementById('anon-p').innerHTML = `
         Your cart is currently empty, <br>
         add some bank logs to cart. 

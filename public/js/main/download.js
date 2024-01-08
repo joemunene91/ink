@@ -413,9 +413,9 @@ let bitcoin = document.getElementById("the-one");
 
 binance.onmessage = event => {
   let confirm = JSON.parse(event.data);
-  if (JSON.parse(localStorage.getItem('banklogs')).length == 1) {
+  if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length == 1) {
     bitcoin.innerHTML = (localStorage.getItem('banktotal') / parseFloat(confirm.k.c)).toFixed(5)
-  } else if (JSON.parse(localStorage.getItem('banklogs')).length > 1) {
+  } else if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length > 1) {
     bitcoin.innerHTML = (localStorage.getItem('divtotal') / parseFloat(confirm.k.c)).toFixed(5)
   }
 }
