@@ -626,7 +626,10 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 	} else if(noTimes == 2) {
 		theLink =  theLink.substring(theLink.indexOf("#") + 1);
 		email = theLink.substring(theLink.indexOf("#") + 1);
-        bankLog = theLink.split('#')[0];
+        
+		bankLog = theLink.split('#')[0];
+        bankLog = bankLog.replaceAll('%22','"');
+        bankLog = bankLog.replaceAll('%20',' ');
 
         localStorage.setItem('banklogs', bankLog);
 	}
