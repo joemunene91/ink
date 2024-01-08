@@ -102,7 +102,7 @@ e("#preloader").fadeOut("normall", function() {
     let coWells = "rgba(148, 235, 148, 0.85)";
     let coWood = "rgba(209, 50, 48, 0.85)";
 
-    if ((JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
+    if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
 
       itemz = JSON.parse(localStorage.getItem('banklogs'));
 
@@ -163,7 +163,7 @@ e("#preloader").fadeOut("normall", function() {
         numz2.push(percBa);
       }
 
-    } else if ((JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
+    } else if ( localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
       itemz = JSON.parse(localStorage.getItem('banklogs'));
 
       var arg = [];
@@ -315,7 +315,7 @@ e("#preloader").fadeOut("normall", function() {
 
 
     window.addEventListener("load", () => {
-
+    if ( localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) { 
       const tooltip2 = chart2.tooltip;
       tooltip2.setActiveElements([{
           datasetIndex: 0,
@@ -345,6 +345,7 @@ e("#preloader").fadeOut("normall", function() {
           index: 1
       }]);
       chart1.update();
+    }
 
   });
 

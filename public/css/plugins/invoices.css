@@ -310,6 +310,10 @@
 #yourEmail {
     opacity: 0.85 !important;
 }
+#thanPhone,
+#yourPhone {
+    letter-spacing: 1.3px !important;
+}
 .invoice {
     display: flex;
     margin-left: -14px !important;

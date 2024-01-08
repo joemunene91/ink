@@ -211,12 +211,12 @@ auth.onAuthStateChanged(user => {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
 			for (var i = 0; i < goodies.length; i++) {
 				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					${user.phoneNumber.slice(0, -3) + '...'}
+					<hr id="hr-table">
 					<button class="butn" id="log-btn" data-bs-toggle="modal" 
 					data-bs-target="#discountModal" onClick="emailShow()">
 						INVOICE
 					</button>
-					<hr id="hr-table">
-					${user.phoneNumber.slice(0, -3) + '...'}
 				`
 			}
 		}
@@ -628,9 +628,6 @@ const signUpFunction = () => {
 			$('#verifyModal').modal('show');
 			$('#discountModal').modal('hide');
 		})
-		.catch(error => {
-			console.log('hello');
-		});
 
 
 	} else {
