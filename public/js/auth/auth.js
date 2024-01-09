@@ -104,12 +104,12 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
-		if(localStorage.getItem('lat-sent') && !localStorage.getItem('phoneGuy')) {
-			showLink.innerHTML = `${theaddress.substring(0, 9)}.. <img src="img/partners/check.png">`;
+		showLink.innerHTML = `${theaddress.substring(0, 9)}.. <img src="img/partners/check.png">`;
+
+		if(!localStorage.getItem('phoneGuy')) {
 			showLink.setAttribute('data-bs-target', '#discountModal');
 			showLink.addEventListener('click', phoneShow);
 		} else {
-			showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		}
 		

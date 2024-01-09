@@ -58,10 +58,10 @@
     padding: 7.8px 16.5px;
 }
 .butn#than-verify {
-    padding: 7.8px 12px;
+    padding: 7.8px 11.5px;
 }
 .butn#email-verify {
-    padding: 7.5px 13px;
+    padding: 7.8px 11.5px;
 }
 .butn.ver-btn#anon-link {
     padding: 7.8px 15.7px;
@@ -81,7 +81,7 @@
   
 .butn.home-btn#than-check,
 .butn.home-btn.link-btn#email-check {
-    padding: 7.8px 12px !important;
+    padding: 7.8px 13px !important;
 }
 .butn.home-btn.link-btn#phone-check {
     padding: 7.8px 10px !important;
@@ -139,16 +139,16 @@
     }
     .butn.home-btn#than-check,
     .butn.home-btn.link-btn#email-check {
-        padding: 7.5px 10px !important;
+        padding: 7.5px 11px !important;
     }
     .butn.home-btn.link-btn#phone-check {
         padding: 7.5px 9px !important;
     }
     .butn#than-verify {
-        padding: 7.5px 12px;
+        padding: 7.5px 11px;
     }
     .butn#email-verify {
-        padding: 7.5px 12px;
+        padding: 7.5px 11px;
     }
    .invoice img {
         width: 49px !important;
@@ -308,7 +308,7 @@
     color: #121d33 !important;
 }
 #yourEmail {
-    opacity: 0.9 !important;
+    opacity: 0.95 !important;
 }
 #thanPhone,
 #yourPhone {
