@@ -399,42 +399,6 @@ blink {
 }
 
 
-.lesnar {
-    padding: 0 !important;
-    color: #121d33;
-    font-size: 19px !important;
-    text-transform: uppercase !important;
-    font-weight: 700;
-    float: right;
-    width: 100% !important;
-    cursor: pointer !important;
-}
-.thegold {
-    display: flex !important;
-    padding-top: 7px !important;
-    padding-bottom: 7px !important;
-}
-.thegold img {
-    height: 49px !important;
-    margin-right: 20px !important;
-    border: none !important;
-}
-.gold {
-    color: #121d33;
-    font-size: 17px;
-    font-weight: 700;
-    text-align: center !important;
-    text-transform: uppercase !important;
-    float: right;
-    white-space: nowrap !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    cursor: pointer !important;
-}
-.gold:hover {
-    color: #121d33 !important;
-}
 .border p:first-child {
     font-size: 35px;
     font-weight: 700;
@@ -1422,6 +1386,41 @@ td {
     }
 }
 
+.lesnar {
+    padding: 0 !important;
+    color: #121d33;
+    font-size: 19px !important;
+    text-transform: uppercase !important;
+    font-weight: 700;
+    float: right;
+    width: 100% !important;
+    cursor: pointer !important;
+}
+.thegold {
+    display: flex !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    width: 100% !important;
+}
+.thegold img {
+    height: 50px !important;
+    width: 50px !important;
+    margin-right: 20px !important;
+    border: none !important;
+}
+.gold {
+    color: #121d33;
+    font-weight: 700;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    float: right;
+    white-space: nowrap !important;
+    width: 100% !important;
+    cursor: pointer !important;
+}
+.gold:hover {
+    color: #121d33 !important;
+}
 .attr-nav > ul > li.dropdown ul.dropdown-menu li:last-child {
     border-bottom: none !important;
 }
@@ -1434,16 +1433,17 @@ td {
         margin-right: 0 !important;
     }
     .thegold img {
-        height: 49px !important;
-        margin-right: 23px !important;
-        border: none !important;
+        height: 55px !important;
+        width: 55px !important;
+        margin-right: 25px !important;
     }
     .thegold a {
-        padding: 14px 0 !important;
+        padding: 15px 0 !important;
+        font-size: 20px !important;
+        letter-spacing: 1px !important;
     }
     .thegold {
-        display: flex !important;
-        padding: 26px 14px !important;
+        padding: 25px 15px !important;
     }
 }
 @media (max-width: 1092px) {
@@ -1457,6 +1457,7 @@ td {
     .thegold {
         padding-top: 10px !important;
         padding-bottom: 10px !important;
+        letter-spacing: 0.7px !important;
     }
 }
 @media (max-width: 892px) {
@@ -1467,23 +1468,19 @@ td {
     .attr-nav {
         margin-right: 60px !important;
     }
-    .thegold a {
-        font-size: 22px;
-        padding: 17px 0 !important;
-    }
-    #vpn-nav {
-        font-size: 23px !important;
-    }
-    #thetot {
-        font-size: 24px !important;
-    }
+
     .thegold img {
-        height: 60px !important;
-        width: 60px !important;
-        margin-right: 7px !important;
+        height: 55px !important;
+        width: 55px !important;
+        margin-right: 25px !important;
+    }
+    .thegold a {
+        padding: 15px 0 !important;
+        font-size: 20px !important;
+        letter-spacing: 1px !important;
     }
     .thegold {
-        padding: 20px 5px !important;
+        padding: 21px 10px !important;
     }
 }
 @media (max-width: 792px) {
@@ -1492,46 +1489,27 @@ td {
         width: 280%;
     }
     .attr-nav {
-        margin-right: 60px !important;
-    }
-    .thegold a {
-        font-size: 18.5px;
-        padding: 14px 0 !important;
-    }
-    #vpn-nav {
-        font-size: 19.5px !important;
-    }
-    #thetot {
-        font-size: 20.5px !important;
-    }
-    .thegold img {
-        height: 56px !important;
-        width: 56px !important;
-        margin-right: 7px !important;
+        margin-right: 55px !important;
     }
 }
 @media (max-width: 526px) {
     .attr-nav > ul > li.dropdown ul.dropdown-menu {
-        left: -120%;
-        width: 257%;
+        left: -110%;
+        width: 245%;
     }
-    .attr-nav {
-        margin-right: 50px !important;
+
+    .thegold img {
+        height: 52px !important;
+        width: 52px !important;
+        margin-right: 17px !important;
     }
     .thegold a {
-        font-size: 17px;
-        padding: 12.5px 0 !important;
-    }
-    #vpn-nav {
+        padding: 11px 0 !important;
         font-size: 18px !important;
+        letter-spacing: 0.85px !important;
     }
-    #thetot {
-        font-size: 19px !important;
-    }
-    .thegold img {
-        height: 51px !important;
-        width: 51px !important;
-        margin-right: 10px !important;
+    .thegold {
+        padding: 20px 10px !important;
     }
 }
 @media (max-width: 370px) {
@@ -1539,26 +1517,18 @@ td {
         left: -110%;
         width: 255%;
     }
-    .attr-nav {
-        margin-right: 50px !important;
+    .thegold img {
+        height: 50px !important;
+        width: 50px !important;
+        margin-right: 15px !important;
     }
     .thegold a {
-        font-size: 16.5px;
-        padding: 8px 0 !important;
-    }
-    #vpn-nav {
+        padding: 10px 0 !important;
         font-size: 17.5px !important;
-    }
-    #thetot {
-        font-size: 18px !important;
-    }
-    .thegold img {
-        height: 47px !important;
-        width: 47px !important;
-        margin-right: 7px !important;
+        letter-spacing: 0.8px !important;
     }
     .thegold {
-        padding: 17px 5px !important;
+        padding: 18px 8px !important;
     }
 }
 .scroll-down {
@@ -2195,7 +2165,7 @@ td {
 #settings img {
     width: 33px !important;
     height: 33px !important;
-    margin: -5px auto -3px 3px !important;
+    margin: -5px auto -3px 5px !important;
     border-radius: 3px;
 }
 #canvas2 {

@@ -46,35 +46,11 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 
     for(var i = 0; i < items.length; i++) {
 
-        var cartRow = document.createElement('tr');
         var cartRow2 = document.createElement('li');
-        cartRow.classList.add('table-warning');
 
         cartRow2.classList.add('total','bg-black');
-        var cartItems =  document.getElementsByClassName('champez3')[0];
 
-        var cartRowContents = `
-            <td><img src=${items[i].image}></td>       
-            <td>
-                PENDING
-                <i class="fas fa-spin fa-sync-alt spinner-bordez"></i>
-                <hr id="hr-pend">
-                <span>${(items[i].balance).replace('Balance: ','')}</span> 
-            </td>
-            <td id=${'name-on-table' + items.indexOf(items[i])} style="filter: blur(0px);"></td>  
-            <td>${items[i].account}</td>
-            <td>${(items[i].price).replace('Price: ', '')}</td>
-            <td>${items[i].info1}</td>
-            <td>${items[i].info2}</td>
-            <td>${items[i].info3}</td>
-            <td>${items[i].info4}</td>
-            <td>${items[i].info5}</td>
-            <td>${items[i].info6}</td>
-            <td>${items[i].website}</td>
-        `;
-        cartRow.innerHTML = cartRowContents;
 
-        cartItems.prepend(cartRow);
 
         if((items[i].account).includes('CHECKING') || (items[i].account).includes('SPENDING') || (items[i].account).includes('ULTIMATE') || (items[i].account).includes('CURRENT') || (items[i].account).includes('CHEQUING')){
             var cartRow3 = document.createElement('div');
@@ -177,54 +153,7 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
 }
 
 
-document.getElementById('balance1').innerHTML = '$5,425';
-document.getElementById('balance2').innerHTML = '$7,382';
-document.getElementById('balance3').innerHTML = '$7,290';
-document.getElementById('balance4').innerHTML = '$3,261';
-document.getElementById('balance5').innerHTML = '$3,402';
-document.getElementById('balance6').innerHTML = '$5,940';
-document.getElementById('balance7').innerHTML = '$5,087';
-document.getElementById('balance8').innerHTML = '$7,259';
-document.getElementById('balance9').innerHTML = '$5,820';
 
-document.getElementById('balance10').innerHTML = '$3,705';
-document.getElementById('balance11').innerHTML = '$5,214';
-document.getElementById('balance12').innerHTML = '$5,390';
-document.getElementById('balance13').innerHTML = '$5,832';
-document.getElementById('balance14').innerHTML = '$3,439';
-document.getElementById('balance15').innerHTML = '$7,228';
-document.getElementById('balance16').innerHTML = '$3,910';
-document.getElementById('balance17').innerHTML = '$5,104';
-document.getElementById('balance18').innerHTML = '$5,724';
-document.getElementById('balance19').innerHTML = '$7,825';
-
-document.getElementById('balance20').innerHTML = '$5,270';
-document.getElementById('balance21').innerHTML = '$3,309';
-document.getElementById('balance22').innerHTML = '$5,183';
-document.getElementById('balance23').innerHTML = '$5,704';
-document.getElementById('balance24').innerHTML = '$3,860';
-document.getElementById('balance25').innerHTML = '$5,904';
-document.getElementById('balance26').innerHTML = '$3,329';
-document.getElementById('balance27').innerHTML = '$5,608';
-
-
-
-var jobs = document.getElementsByClassName('prized');
-for(j=0; j< jobs.length; j++) {
-    var theJob = jobs[j];
-    var thePrize = theJob.parentElement.children[1].children[2].innerText;
-    
-    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 50).toFixed(0)).toLocaleString();
-
-    theJob.innerHTML = '$'+ thePr;
-}
-
-
-
-if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 3)){
-    document.getElementsByClassName('dataTables_paginate')[0].style.display = 'block';
-    document.getElementsByClassName('dataTables_length')[0].style.display = 'block'
-}
 
 function removeCartItem(event) {
     var buttonClicked = event.target
@@ -291,7 +220,7 @@ function updateCartTotal() {
     var modalAmount = document.getElementById('modal-amount');
     var jinaHolder2 = document.getElementById('jinaHolder2');
 
-    document.getElementById('thetot').innerHTML = `View Cart: $${total.toLocaleString()}`;
+    document.getElementById('thetot').innerHTML = `My Cart: $${total.toLocaleString()}`;
 
 
     var discountTotal = parseInt((total * 0.9).toFixed(0));

@@ -145,7 +145,54 @@ auth.onAuthStateChanged(user => {
 
 		showLink.addEventListener('click', emailShow);
 		voiceDiv.addEventListener('click', emailShow);
-	} 
+	} else if(user.isAnonymous) {
+
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+				Anonymous 
+				<hr id="hr-table">
+				<button class="butn" id="log-btn" data-bs-toggle="modal" 
+				data-bs-target="#discountModal">
+				Invoice 
+				</button>
+				`;
+			}
+
+			let items4 = (JSON.parse(localStorage.getItem('banklogs')));
+			var totali = 0;
+			items4.map(data=>{
+				var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
+				totali = totali + (price4 * 1);
+			});
+
+			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
+				const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
+				const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);		
+		
+				if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
+					heySave1.innerHTML = ` ${bankLog} <br> <span>${bankBal}</span>. `;
+				} else {
+					heySave1.innerHTML = ` ${bankLog} with <br> <span>${bankBal}</span>.`;
+				}
+			} else {
+				heySave2.style.display = 'block';
+				heyPending2.style.display = 'block';
+
+				heySave1.innerHTML = `
+					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
+					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)} </span>. 
+					<hr class="hr-logins">
+				`;
+				heySave2.innerHTML = `
+					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
+					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)} </span>. <hr class="hr-logins">
+				`;
+			}
+		}
+	
+	}
 
 	showLink.addEventListener('click', () => {
 		if(user.email) {

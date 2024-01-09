@@ -126,7 +126,7 @@
         padding: 7.5px 16.5px;
    }
    .butn.ver-btn#anon-link {
-       padding: 7.5px 10px;
+       padding: 7.5px 13px;
     }
    .butn.home-btn.check {
         padding: 7.5px 13.5px;
@@ -375,25 +375,25 @@ blink.wisc,
 blink.tisc {
     position: relative !important;
     top: -70px !important;
-    left: 120px !important;
+    left: 110px !important;
     z-index: 999 !important;
 }
 @media screen and (max-width: 500px) {
     blink.wisc,
     blink.tisc {
-        left: 115px !important;
+        left: 105px !important;
     }
 }
 @media screen and (max-width: 390px) {
     blink.wisc,
     blink.tisc {
-        left: 105px !important;
+        left: 100px !important;
     }
 }
 @media screen and (max-width: 380px) {
     blink.wisc,
     blink.tisc {
-        left: 100px !important;
+        left: 95px !important;
     }
 }
 

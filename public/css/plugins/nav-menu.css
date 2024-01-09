@@ -137,18 +137,7 @@ header.scrollHeader .navbar-default {
   opacity: 1;
   visibility: visible;
 }
-.thegold img {
-  width: 50px;
-  height: 50px;
-}
-.thegold {
-  padding: 4px;
-  width: 100%;
-}
 @media screen and (min-width: 1092px) {
-  .thegold {
-    padding: 4.2px;
- }
   .header-style2 {
     position: absolute;
     width: 100%;
@@ -294,6 +283,7 @@ header.scrollHeader .navbar-default {
     width: 70px !important;
     height: 70px !important;
     margin: auto 0 !important;
+    border-radius: 5px !important;
  }
   .navbar-nav li.nav-small a {
     width: 100% !important;
@@ -348,81 +338,46 @@ header.scrollHeader .navbar-default {
     background: rgb(137, 15, 26)
   }
 }
+
+
 @media screen and (max-width: 1092px) {
-  .navbar-nav li.nav-small img {
-    width: 54px !important;
-    height: 54px !important;
- }
-  .navbar-nav li.nav-small a {
-    font-size: 17px !important;
-    padding: 10px 7px;
- }
-}
-@media screen and (max-width: 821px) {
-  .navbar-nav li.nav-small img {
-    width: 70px !important;
-    height: 70px !important;
- }
-  .navbar-nav li.nav-small a {
-    font-size: 23px !important;
-    padding: 15px 7px;
- }
-}
-@media screen and (max-width: 769px) {
-  .navbar-nav li.nav-small img {
-    width: 61px !important;
-    height: 61px !important;
- }
+ .navbar-nav li.nav-small img {
+    width: 65px !important;
+    height: 65px !important;
+    margin: 10px 5px 0 !important;
+  }
   .navbar-nav li.nav-small a {
     font-size: 20px !important;
-    padding: 14px 7px;
- }
+    margin: 10px 10px !important;
+    padding: 15px 20px !important;
+  }
 }
 @media screen and (max-width: 550px) {
   .navbar-nav li.nav-small img {
-    width: 53px !important;
-    height: 53px !important;
+    width: 57px !important;
+    height: 57px !important;
+    margin: 9px 5px 0 !important;
  }
   .navbar-nav li.nav-small a {
-    font-size: 17.5px !important;
-    margin: 10px 5px !important;
-    padding: 12px 7px;
- }
-}
-@media screen and (max-width: 420px) {
-  .navbar-nav li.nav-small img {
-    width: 52.5px !important;
-    height: 52.5px !important;
- }
-  .navbar-nav li.nav-small a {
-    font-size: 17.2px !important;
-    margin: 9.5px 5px !important;
-    padding: 11px 7px;
+    font-size: 18px !important;
+    margin: 10px 10px !important;
+    padding: 12px 17px !important;
  }
 }
 @media screen and (max-width: 395px) {
   .navbar-nav li.nav-small img {
-    width: 52px !important;
-    height: 52px !important;
+    width: 55px !important;
+    height: 55px !important;
+    margin: 7px 5px 0 !important;
  }
   .navbar-nav li.nav-small a {
-    font-size: 17.1px !important;
-    margin: 9px 5px !important;
-    padding: 11px 7px;
+    font-size: 17.5px !important;
+    margin: 10px 10px !important;
+    padding: 11px 15px !important;
  }
 }
-@media screen and (max-width: 380px) {
-  .navbar-nav li.nav-small img {
-    width: 50px !important;
-    height: 50px !important;
- }
-  .navbar-nav li.nav-small a {
-    font-size: 16.6px !important;
-    margin: 8px 5px !important;
-    padding: 10px 7px;
- }
-}
-@media screen and (max-width: 370px) {
+
+@media screen and (max-width: 375px) {
   .navbar-nav li.nav-small img {
     width: 50px !important;
     height: 50px !important;
@@ -431,6 +386,17 @@ header.scrollHeader .navbar-default {
     font-size: 16.1px !important;
     padding: 8px 4px;
  }
+
+ .navbar-nav li.nav-small img {
+  width: 52px !important;
+  height: 52px !important;
+  margin: 7px 5px 0 !important;
+}
+.navbar-nav li.nav-small a {
+  font-size: 17.2px !important;
+  margin: 10px 10px !important;
+  padding: 10px 15px !important;
+}
 }
 #jinaHolder {
   font-weight: 700;

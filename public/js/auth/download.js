@@ -226,17 +226,6 @@ auth.onAuthStateChanged(user => {
 	} else if(user.isAnonymous) {
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-				Anonymous 
-				<hr id="hr-table">
-				<button class="butn" id="log-btn" data-bs-toggle="modal" 
-				data-bs-target="#discountModal">
-				Invoice 
-				</button>
-				`;
-			}
 
 			let items4 = (JSON.parse(localStorage.getItem('banklogs')));
 			var totali = 0;

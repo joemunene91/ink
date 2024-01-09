@@ -48,9 +48,9 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     updateCartTotal();
 } else {
     document.getElementById('cartlength').style.display = 'none';
-    setBtn.innerHTML = `Ticket ID <img src="img/partners/bitcoin.png" style="margin-left: 3px !important">`;
+    setBtn.innerHTML = `Bank Log <img src="img/partners/bitcoin.png">`;
     setBtn.removeAttribute('data-bs-toggle');
-    setBtn.setAttribute('href', 'tickets');
+    setBtn.setAttribute('href', 'banklogs');
 
     if (window.innerWidth > 1092) {
         modalDialog.style.top = '7vh';
@@ -58,10 +58,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     } 
 }
 
-if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 3)){
-    document.getElementsByClassName('dataTables_paginate')[0].style.display = 'block';
-    document.getElementsByClassName('dataTables_length')[0].style.display = 'block'
-}
 
 var addToCartButtons = document.getElementsByClassName('money');
 for(var i = 0; i <addToCartButtons.length; i++){
@@ -100,8 +96,6 @@ function addToCartClicked(event) {
     $('#profileModal').modal('show');
     $('#exampleModal').modal('hide');
     event.preventDefault();
-
-    document.getElementById('thetot').setAttribute('data-bs-target', '#profileModal');
 
     setBtn.removeAttribute('href');
     setBtn.setAttribute('data-bs-toggle', 'modal');
@@ -290,7 +284,7 @@ function updateCartTotal() {
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
         total = total + (price4 * 1);
     });
-    document.getElementById('thetot').innerHTML = `View Cart: $${total.toLocaleString()}`;
+    document.getElementById('thetot').innerHTML = `My Cart: $${total.toLocaleString()}`;
     setBtn.innerHTML = `Cart: $${total.toLocaleString()} <img src="img/partners/bitcoin.png">`;
 
     document.getElementById('theno1').innerHTML = 'Cart: ' + JSON.parse(localStorage.getItem('banklogs')).length + ' , Total: $' + total.toLocaleString();
@@ -396,7 +390,7 @@ function updateCartTotal2() {
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
         total = total + (price4 * 1);
     });
-    document.getElementById('thetot').innerHTML = `View Cart: $${total.toLocaleString()}`;
+    document.getElementById('thetot').innerHTML = `My Cart: $${total.toLocaleString()}`;
     setBtn.innerHTML = `Cart: $${total.toLocaleString()} <img src="img/partners/bitcoin.png">`;
     document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
 
