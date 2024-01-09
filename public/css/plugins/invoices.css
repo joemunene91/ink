@@ -425,9 +425,9 @@ blink.verif {
 }
 @media (min-width: 1092px) {
 	.col-lg-5 {
-		-ms-flex: 0 0 39%;
-		flex: 0 0 39%;
-		max-width: 39%;
+		-ms-flex: 0 0 38.5%;
+		flex: 0 0 38.5%;
+		max-width: 38.5%;
    }
 }
 @media (max-width: 500px) {
