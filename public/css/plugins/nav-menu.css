@@ -361,7 +361,7 @@ header.scrollHeader .navbar-default {
   .navbar-nav li.nav-small a {
     font-size: 18px !important;
     margin: 10px 10px !important;
-    padding: 12px 17px !important;
+    padding: 12px 12px !important;
  }
 }
 @media screen and (max-width: 395px) {
@@ -373,20 +373,11 @@ header.scrollHeader .navbar-default {
   .navbar-nav li.nav-small a {
     font-size: 17.5px !important;
     margin: 10px 10px !important;
-    padding: 11px 15px !important;
+    padding: 11px 11px !important;
  }
 }
 
 @media screen and (max-width: 375px) {
-  .navbar-nav li.nav-small img {
-    width: 50px !important;
-    height: 50px !important;
- }
-  .navbar-nav li.nav-small a {
-    font-size: 16.1px !important;
-    padding: 8px 4px;
- }
-
  .navbar-nav li.nav-small img {
   width: 52px !important;
   height: 52px !important;
@@ -395,7 +386,7 @@ header.scrollHeader .navbar-default {
 .navbar-nav li.nav-small a {
   font-size: 17.2px !important;
   margin: 10px 10px !important;
-  padding: 10px 15px !important;
+  padding: 10px 10px !important;
 }
 }
 #jinaHolder {
