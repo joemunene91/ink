@@ -36,8 +36,8 @@
         "destination": "/chime.html"
       },
       {
-        "source": "/tickets",
-        "destination": "/tickets.html"
+        "source": "/banklogs",
+        "destination": "/banklogs.html"
       },
       {
         "source": "/citi",
@@ -117,8 +117,8 @@
         "type": 301
       },
       {
-        "source": "/tickets.html",
-        "destination": "/tickets",
+        "source": "/banklogs.html",
+        "destination": "/banklogs",
         "type": 301
       },
       {

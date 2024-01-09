@@ -36,7 +36,7 @@
     });
 
     $(document).ready(function() {
-
+        
         $('#services-carousel').owlCarousel({
             loop: true,
             responsiveClass: true,

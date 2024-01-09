@@ -1,5 +1,6 @@
 let items = [];
 var table1 = jQuery('#example1').DataTable();
+var table2 = jQuery('#example').DataTable();
 var setBtn = document.getElementById('settings');
 
 var profileModal = document.getElementById('profileModal');
