@@ -325,7 +325,7 @@ section .dataTables_wrapper dataTables_length {
 
 
 .burro {
-    filter: blur(2.4px) !important;
+    filter: blur(2.5px) !important;
 }
 #log-btn {
     text-transform: uppercase !important;
