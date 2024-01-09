@@ -101,6 +101,8 @@ auth.onAuthStateChanged(user => {
 		verCheck.addEventListener('click', sendEmail);
 
 		voiceDiv.innerHTML = 'VERIFY EMAIL';
+		voiceDiv.classList.add('lesnar');
+		voiceDiv.classList.remove('gold');
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
@@ -124,6 +126,8 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = thePhoneNo;
 
 		voiceDiv.innerHTML = 'EMAIL INVOICE';
+		voiceDiv.classList.add('lesnar');
+		voiceDiv.classList.remove('gold');
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
 
 		if(user.phoneNumber.length > 10) {
@@ -326,20 +330,6 @@ function sendEmail() {
 	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
-
-	localStorage.setItem('lat-sent', true);
-	
-	setTimeout(() => {
-		var themail = auth.currentUser.email;
-		var theaddress = themail.substring(0, themail.indexOf('@'));
-		if (auth.currentUser.displayName) {
-			theaddress = auth.currentUser.displayName;
-		} 
-
-		showLink.innerHTML = `${theaddress.substring(0, 9)}.. <img src="img/partners/check.png">`;
-		showLink.setAttribute('data-bs-target', '#discountModal');
-		showLink.addEventListener('click', phoneShow);
-	}, 1000);
 }
 
 const signUpFunction = () => {
