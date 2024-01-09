@@ -80,7 +80,7 @@ auth.onAuthStateChanged(user => {
 
 		var thePhoneNo = localStorage.getItem('phoneGuy');
 
-		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
+		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
@@ -113,7 +113,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = theaddress;
 		verifyH4.innerHTML = theaddress;
 
-		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
+		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 

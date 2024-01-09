@@ -103,7 +103,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = theaddress;
 		verifyH4.innerHTML = theaddress;
 
-		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
+		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
@@ -129,7 +129,7 @@ auth.onAuthStateChanged(user => {
 		document.getElementById('showtoasts').addEventListener('click', phoneShow);
 		document.getElementById('monez').addEventListener('click', phoneShow);
 
-		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
+		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 

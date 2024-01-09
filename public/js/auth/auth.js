@@ -94,7 +94,7 @@ auth.onAuthStateChanged(user => {
 		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
 		verCheck.addEventListener('click', sendEmail);
 
-		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
+		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
@@ -114,7 +114,7 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = theaddress;
 		verifyH4.innerHTML = theaddress;
 
-		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
+		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
