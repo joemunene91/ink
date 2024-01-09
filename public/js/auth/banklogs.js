@@ -127,6 +127,12 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = thePhoneNo;
 			jinaHolder3.value = thePhoneNo;
 
+			heyName1.innerHTML = `Bank log files will be sent <br> via email to:`;
+			heyName2.innerHTML = `<span>${user.email}</span>`;
+			heyName3.innerHTML = `Logs will also be sent to: <br> <span>${thePhoneNo}</span>`;
+
+			heyGetFooter2.style.display = 'none';
+
 			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
 				goodies = JSON.parse(localStorage.getItem('banklogs'));
 				for (var i = 0; i < goodies.length; i++) {
@@ -140,6 +146,8 @@ auth.onAuthStateChanged(user => {
 		} else {
 			jinaHolder.value = theaddress;
 			jinaHolder3.value = theaddress;
+
+			phoneShow2();
 
 			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
 				goodies = JSON.parse(localStorage.getItem('banklogs'));
@@ -174,8 +182,6 @@ auth.onAuthStateChanged(user => {
 			showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		}
-
-		phoneShow2();
 
 	} else if(user.phoneNumber && !user.email) {
 		if(!localStorage.getItem('phoneGuy')) {
@@ -934,7 +940,6 @@ const signUpFunction2 = () => {
 			$toastlast = $toast;
 
 			$('#verifyModal').modal('show');
-			$('#discountModal').modal('hide');
 		})
 		
 	} else {
