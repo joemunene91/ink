@@ -659,15 +659,7 @@ fetch('https://ipapi.co/json/')
 	document.getElementById('the-ip').innerHTML = ` ${data.region},  ${data.org}.`;
 });
 
-jinaHolder3.addEventListener("change", () => {
-	auth.currentUser.updateProfile({
-		displayName: jinaHolder3.value
-	})
-	.then(() => {
-		alert('Display Name Updated Successfully !');
-		jinaHolder.value = jinaHolder3.value;
-	})
-});
+
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {

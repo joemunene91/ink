@@ -896,6 +896,8 @@ td {
     margin: 0;
     padding: 3px 0 !important;
 }
+
+
 #titlelogs2 {
     font-size: 30px;
     font-weight: 600;
@@ -913,19 +915,32 @@ td {
 }
 @media (max-width: 576px) {
     #titlelogs2 {
-        font-size: 28px;
+        font-size: 27.5px;
     }
 }
-@media (max-width: 376px) {
-    #titlelogs2 {
-        font-size: 27px;
+
+
+#name-logs {
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+@media (max-width: 1276px) {
+    #name-logs {
+        font-size: 32px;
+        font-weight: 600;
+        color: white;
     }
 }
-@media (max-width: 374px) {
-    #titlelogs2 {
-        font-size: 26px;
+#name-logs span {
+    font-weight: 700 !important;
+}
+@media (max-width: 576px) {
+    #name-logs {
+        font-size: 27.5px;
     }
 }
+
 #titlelogs3 {
     font-size: 30px;
     font-weight: 600;
@@ -3709,7 +3724,32 @@ blink.nav-blink {
     margin-top: -9px !important;
     margin-bottom: -9px !important;
 }
-#get-email-2,
+#get-email-2 {
+    margin: 20px !important;
+    cursor: pointer !important;
+    margin-right: 30px !important;
+
+    font-size: 24px;
+    line-height: 35px;
+    white-space: nowrap !important;
+    padding: 7px 14px;
+
+    left: 0 !important;
+    bottom: 0 !important;
+}
+
+#get-phone-2 {
+    margin: 20px !important;
+    cursor: pointer !important;
+    margin-left: 30px !important;
+
+    font-size: 24px;
+    line-height: 35px;
+    white-space: nowrap !important;
+    padding: 7px 12px;
+}
+
+
 #get-email {
     margin: 15px !important;
     cursor: pointer !important;
@@ -3724,7 +3764,6 @@ blink.nav-blink {
     bottom: 0 !important;
 }
 
-#get-phone-2,
 #get-phone {
     margin: 15px !important;
     cursor: pointer !important;
@@ -3735,6 +3774,8 @@ blink.nav-blink {
     white-space: nowrap !important;
     padding: 7px 12px;
 }
+
+
 #get-email-2 img,
 #get-phone-2 img,
 #get-email img,
@@ -3772,12 +3813,18 @@ blink.nav-blink {
     }
 }
 @media screen and (max-width: 1200px) {
-    #get-email-2,
+    #get-email-2 {
+        margin-right: 33px !important;    
+    }
+    
+    #get-phone-2 {
+        margin-left: 33px !important;
+    }
+
     #get-email {
         margin-right: 25px !important;    
     }
     
-    #get-phone-2,
     #get-phone {
         margin-left: 25px !important;
     }
@@ -3785,7 +3832,25 @@ blink.nav-blink {
 
 
 @media screen and (max-width: 500px) {
-    #get-email-2,
+    #get-email-2 {
+        margin: 23px !important;
+        margin-right: 30px !important;
+    
+        font-size: 23.5px;
+        line-height: 37px;
+        padding: 7px 16px;
+    }
+    
+    #get-phone-2 {
+        margin: 23px !important;
+        margin-left: 30px !important;
+    
+        font-size: 23.5px;
+        line-height: 37px;
+        padding: 7px 14px;
+    }
+
+
     #get-email {
         margin: 15px !important;
         margin-right: 20px !important;
@@ -3795,7 +3860,6 @@ blink.nav-blink {
         padding: 6px 12px;
     }
     
-    #get-phone-2,
     #get-phone {
         margin-left: 20px !important;
     
@@ -3806,7 +3870,23 @@ blink.nav-blink {
 }
 
 @media screen and (max-width: 400px) {
-    #get-email-2,
+    #get-email-2 {
+        margin: 20px !important;
+        margin-right: 25px !important;
+    
+        font-size: 23px;
+        line-height: 37px;
+        padding: 6.5px 14px;
+    }
+    #get-phone-2 {
+        margin: 20px !important;
+        margin-left: 25px !important;
+    
+        font-size: 23px;
+        line-height: 37px;
+        padding: 6.5px 12px;
+    }
+
     #get-email {
         margin: 13px !important;
         margin-right: 17px !important;
@@ -3815,7 +3895,6 @@ blink.nav-blink {
         line-height: 35px;
         padding: 6px 12px;
     }
-    #get-phone-2,
     #get-phone {
         margin: 13px !important;
         margin-left: 17px !important;

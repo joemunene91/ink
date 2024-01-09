@@ -21,6 +21,7 @@ const jinaHolder = document.getElementById("jinaHolder");
 
 const jinaHolder3 = document.getElementById('jinaHolder3');
 
+
 const theFlag7 = document.getElementById('the-flag7');
 
 
@@ -57,6 +58,43 @@ const heyGetEmail = document.getElementById('get-email');
 
 const emailClose = document.getElementById('email-close');
 const dataVoice = document.getElementById('data-voice');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const mailField2 = document.getElementById('nameLife');
+const signUp2 = document.getElementById('email-phone-2');
+
+const nameFlag7 = document.getElementById('name-flag7');
+
+const phoneNumberField2 = document.getElementById('nameLife');
+const codeField2 = document.getElementById('code');
+const signInWithPhoneButton2 = document.getElementById('signInWithPhone');
+
+const heyName1 = document.getElementById('name-1');
+const heyName2 = document.getElementById('name-2');
+const heyNaming2 = document.getElementsByClassName('naming-2')[0];
+const heyName3 = document.getElementById('name-3');
+
+const heyGetFooter2 = document.getElementById('get-footer-2');
+const heyNameForm = document.getElementById('name-form');
+const heyNameLi = document.getElementById('name-li');
+
+const heyGetPhone2 = document.getElementById('get-phone-2');
+const heyGetEmail2 = document.getElementById('get-email-2');
+
+
 
 const auth = firebase.auth();
 
@@ -610,6 +648,7 @@ fetch('https://ipapi.co/json/')
 	var newCode = countyCode.toLowerCase();
 
 	document.getElementById('the-flag7').src = `https://flagcdn.com/144x108/${newCode}.png`;
+	document.getElementById('name-flag7').src = `https://flagcdn.com/144x108/${newCode}.png`;
 
 	document.getElementById('label-ip').innerHTML = `
 		IP Address: (<span>${data.ip}</span>)
@@ -617,18 +656,156 @@ fetch('https://ipapi.co/json/')
 	document.getElementById('the-ip').innerHTML = ` ${data.region},  ${data.org}.`;
 });
 
-jinaHolder3.addEventListener("change", () => {
-	auth.currentUser.updateProfile({
-		displayName: jinaHolder3.value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function phoneShow2() {
+	heyGetFooter2.style.display = 'none';
+	heyName2.style.display = 'none';
+	heyNaming2.style.display = 'none';
+	heyNameForm.style.display = 'block';
+	heyName1.classList.add('smoll');
+	heyName3.classList.add('smoll');
+	heyNameLi.style.display = 'block';
+
+	if(auth.currentUser.email) {
+		heyName1.innerHTML = ` Bank logs can also be sent via <br> <span>SMS</span> to your phone. `;
+		heyName3.innerHTML = ` Enter your <span>phone number</span> on <br> the input field below. `;
+
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			heyName3.innerHTML = ` Bank log files can also be <br> sent via <span>SMS</span>.`;
+
+			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
+				const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
+				const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);		
+		
+				if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
+					heyName1.innerHTML = `${bankLog} <br> <span>${bankBal}</span>.`;
+				} else {
+					heyName1.innerHTML = `${bankLog} with <br> <span>${bankBal}</span>.`;
+				}
+			} else {
+				heyName1.innerHTML = `
+					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
+					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)} </span>. <hr class="hr-logins">
+				`;
+				heyName2.style.display = 'block';
+				heyNaming2.style.display = 'block';
+				heyName3.innerHTML = ` Logs can be sent via <span>SMS</span> `;
+				heyName2.innerHTML = `
+					${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
+					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)} </span>. <hr class="hr-logins">
+				`;
+			}
+		} 
+	} else {
+		heyName1.innerHTML = ` A <span>code</span> will be sent to the <span>phone</span><br> you enter below, `;
+		heyName3.innerHTML = ` Use the code to sign in on this <br> <span>darkweb</span> store. `;
+	}
+	
+	fetch('https://ipapi.co/json/')
+	.then(function(response) {
+		return response.json();
 	})
-	.then(() => {
-		alert('Display Name Updated Successfully !');
-		jinaHolder.value = jinaHolder3.value;
-	})
-	.catch(error => {
-		jinaHolder3.focus();
-	})
-});
+	.then(function(data) {
+		phoneNumberField2.value = data.country_calling_code;
+		phoneNumberField2.setAttribute('type', 'tel');
+		phoneNumberField2.style.textAlign = 'left';
+		nameFlag7.style.display = 'flex';
+		phoneNumberField2.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
+		signUp2.innerHTML = `Verify Now <img src="img/partners/phone.png">`;
+	});
+}
+
+function emailShow2() {
+	heyGetFooter2.style.display = 'none';
+	heyName2.style.display = 'none';
+	heyNaming2.style.display = 'none';
+	heyNameForm.style.display = 'block';
+	heyName1.classList.add('smoll');
+	heyName3.classList.add('smoll');
+
+	if(auth.currentUser.phoneNumber) {
+		heyName1.innerHTML = ` Bank logs can also be sent via <br> <span>mail</span> to your inbox. `;
+		heyName3.innerHTML = ` Enter your <span>email address</span> on <br> the input field below. `;
+
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			heyName3.innerHTML = ` Bank log files can also be <br> sent via <span>email</span>.`;
+
+			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
+				const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
+				const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);		
+		
+				if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
+					heyName1.innerHTML = `${bankLog} <br> <span>${bankBal}</span>.`;
+				} else {
+					heyName1.innerHTML = `${bankLog} with <br> <span>${bankBal}</span>.`;
+				}
+			} else {
+				heyName1.innerHTML = `
+					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
+					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)} </span>. <hr class="hr-logins">
+				`;
+				heyName2.style.display = 'block';
+				heyNaming2.style.display = 'block';
+				heyName3.innerHTML = ` Logs can be sent via <span>mail</span> `;
+				heyName2.innerHTML = `
+					${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
+					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)} </span>. <hr class="hr-logins">
+				`;
+			}
+		} 
+	} else {
+		heyName1.innerHTML = ` A <span>link</span> will be sent to the <span>email</span><br> you enter below, `;
+		heyName3.innerHTML = ` Use the link to sign in on this <br> <span>darkweb</span> store. `;
+	}
+
+	nameFlag7.style.display = 'none';
+	mailField2.setAttribute('type', 'email');
+	mailField2.value = '';
+	phoneNumberField2.style.textAlign = 'center';
+	mailField2.setAttribute('placeholder', 'Enter your Email...');
+	signUp2.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
+}
+
+
+document.getElementById('get-phone-2').addEventListener('click', phoneShow2);
+document.getElementById('get-email-2').addEventListener('click', emailShow2);
+
+
+
+
+
+
+
+
+
+
 
 
 var d = new Date();

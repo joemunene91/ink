@@ -560,18 +560,7 @@ fetch('https://ipapi.co/json/')
 });
 
 
-jinaHolder3.addEventListener("change", () => {
-	auth.currentUser.updateProfile({
-		displayName: jinaHolder3.value
-	})
-	.then(() => {
-		alert('Display Name Updated Successfully !');
-		jinaHolder.value = jinaHolder3.value;
-	})
-	.catch(error => {
-		jinaHolder3.focus();
-	})
-});
+
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {

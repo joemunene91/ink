@@ -216,6 +216,7 @@ function updateCartTotal() {
         const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);
 
         const invoiceType = document.getElementById('invoice-type');
+        const nameLogs = document.getElementById('name-logs');
         const theSave1 = document.getElementById('save-1');
         const theSave2 = document.getElementById('save-2');
         const theSave3 = document.getElementById('save-3');
@@ -223,16 +224,19 @@ function updateCartTotal() {
 
         if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
             invoiceType.innerHTML = bankLog.split('Bank')[0];
+            nameLogs.innerHTML = bankLog.split('Bank')[0];
             theSave1.innerHTML = `
                 ${bankLog} <br> <span>${bankBal}</span>.
             `;
         } else if(bankLog.includes('America')) {
             invoiceType.innerHTML = 'BankofAmerica';
+            nameLogs.innerHTML = 'BankofAmerica';
             theSave1.innerHTML = `
                 ${bankLog} <br> <span>${bankBal}</span>.
             `;
         } else {
             invoiceType.innerHTML = bankLog.split('[')[0];
+            nameLogs.innerHTML = bankLog.split('[')[0];
             theSave1.innerHTML = `
                 ${bankLog} with <br> <span>${bankBal}</span>.
             `;
@@ -253,6 +257,7 @@ function updateCartTotal() {
 
         theSave1.innerHTML = '';
         document.getElementById('invoice-type').innerHTML = '2 Bank Logs';
+        document.getElementById('name-logs').innerHTML = '2 Bank Logs';
 
         for(var i = 0; i < Loginz.length; i++) {
             var logRow = document.createElement('p');
