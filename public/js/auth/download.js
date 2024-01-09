@@ -464,6 +464,7 @@ const signUpFunction = () => {
 				const googleProvider = new firebase.auth.GoogleAuthProvider;
 				const theUser = auth.currentUser;
 				theUser.linkWithPopup(googleProvider).then(() => {
+					auth.currentUser.sendEmailVerification();
 					theUser.updateProfile({
 						displayName: theUser.providerData[0].displayName, 
 						photoURL: theUser.providerData[0].photoURL,
@@ -476,6 +477,7 @@ const signUpFunction = () => {
 				const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
 				const theUser = auth.currentUser;
 				theUser.linkWithPopup(yahooProvider).then(() => {
+					auth.currentUser.sendEmailVerification();
 					theUser.updateProfile({
 						displayName: theUser.providerData[0].displayName, 
 						photoURL: theUser.providerData[0].photoURL,

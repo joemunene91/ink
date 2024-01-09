@@ -452,6 +452,7 @@ const signUpFunction = () => {
 				const theUser = auth.currentUser;
 
 				theUser.linkWithPopup(googleProvider).then(() => {
+					auth.currentUser.sendEmailVerification();
 					theUser.updateProfile({
 						displayName: theUser.providerData[0].displayName, 
 						photoURL: theUser.providerData[0].photoURL,
@@ -465,6 +466,7 @@ const signUpFunction = () => {
 				const theUser = auth.currentUser;
 
 				theUser.linkWithPopup(yahooProvider).then(() => {
+					auth.currentUser.sendEmailVerification();
 					theUser.updateProfile({
 						displayName: theUser.providerData[0].displayName, 
 						photoURL: theUser.providerData[0].photoURL,
@@ -620,6 +622,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		if(!user1) {
 			auth.signInWithEmailLink(email, window.location.href)
 			.then(() => {
+				auth.currentUser.sendEmailVerification();
 				var shortCutFunction = 'success';
 				var msg = `
 					Login Success: <br> <hr class="to-hr hr15-bot">  
@@ -636,7 +639,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 			.then(() => {
 				auth.currentUser.updateProfile({
 					phoneNumber: localStorage.getItem('phoneGuy')
-				})
+				});
 			})
 			.then(() => {
 				setTimeout(() => {
@@ -658,6 +661,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		} else if(user1) {
 			auth.currentUser.linkWithCredential(credential)
 			.then(() => {
+				auth.currentUser.sendEmailVerification();
 				var shortCutFunction = 'success';
 				var msg = `
 					Login Success: <br> <hr class="to-hr hr15-bot">  
