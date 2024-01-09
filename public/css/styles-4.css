@@ -16,7 +16,7 @@
 .form-control::placeholder{
   color: rgb(31, 44, 74, 0.9)
 }
-
+#email-phone-2,
 #email-phone {
   color: rgb(31, 44, 74) !important;
 }
@@ -26,6 +26,7 @@
 }
 #phoneNumber,
 #code,
+#nameLife,
 #inputLife,
 #inputEmail {
   color: rgb(30, 43, 72) !important;
@@ -243,6 +244,7 @@ blink {
   border: 1.4px solid rgb(29, 41, 69) !important;
   color: rgb(117, 130, 171) !important;
 }
+#name-life,
 #the-life {
   box-shadow: 1px 1px 2px 1px rgba(71, 88, 143, 0.5) !important;
 }
@@ -306,6 +308,8 @@ blink {
 .modal-btn,
 #get-email,
 #get-phone,
+#get-email-2,
+#get-phone-2,
 #log-btn,
 .lesnar,
 .gold,

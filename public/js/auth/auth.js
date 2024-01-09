@@ -112,6 +112,7 @@ auth.onAuthStateChanged(user => {
 			showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		}
+		
 	} else if(user.phoneNumber && !user.email) {
 		if(!localStorage.getItem('phoneGuy')) {
 			localStorage.setItem('phoneGuy', user.phoneNumber);

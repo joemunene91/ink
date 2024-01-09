@@ -2604,6 +2604,13 @@ ul.countdown li p {
     font-size: 20.5px !important;
     line-height: 57px !important;
 }
+#name-3,
+#name-1, 
+#name-2 {
+    text-align: center !important;
+    font-size: 20.5px !important;
+    line-height: 57px !important;
+}
 #get-p3,
 #get-p1,
 #get-p2 {
@@ -2622,6 +2629,7 @@ ul.countdown li p {
     font-size: 19.3px !important;
     line-height: 50px !important;
 }
+
 #save-3,
 #save-1, 
 #save-2 {
@@ -2715,6 +2723,13 @@ ul.countdown li p {
     #get-p3,
     #get-p1,
     #get-p2 {
+        text-align: center !important;
+        font-size: 19.5px !important;
+        line-height: 54px !important;
+    }
+    #name-3,
+    #name-1, 
+    #name-2 {
         text-align: center !important;
         font-size: 19.5px !important;
         line-height: 54px !important;
@@ -2947,6 +2962,7 @@ ul.countdown li p {
 #code {
     letter-spacing: 1.4px !important;
 }
+#nameLife,
 #inputLife {
     border-radius: 0 !important;
     font-size: 22px !important;
@@ -2960,24 +2976,27 @@ ul.countdown li p {
     margin: auto 7px !important;
     letter-spacing: 1.4px !important;
 }
+#nameLife::placeholder,
 #inputLife::placeholder {
     letter-spacing: 1.4px !important;
 }
 @media screen and (max-width: 767px) {
     #inputLife::placeholder {
-        letter-spacing: 0.3px !important;
+        letter-spacing: 0.5px !important;
     }
+    #nameLife,
     #inputLife {
         letter-spacing: 1.3px !important;
     }
 }
+#name-life,
 #the-life {
     display: flex !important;
     height: 57px !important;
     margin-top: 10px !important;
     margin-bottom: 0 !important;
 }
-
+#name-flag7,
 #the-flag7 {
     width: 15%;
     border: none !important;
@@ -2985,12 +3004,14 @@ ul.countdown li p {
     margin: auto 5px !important;
 }
 @media screen and (min-width: 767px) {
+    #name-flag7,
     #the-flag7 {
         width: 15%;
         height: 47px !important;
         border: none !important;
         margin: auto 5px !important;
     }
+    #nameLife,
     #inputLife {
         border-radius: 0 !important;
         font-size: 22px !important;
@@ -3602,17 +3623,19 @@ button.toast-close-button {
     }
 }
 
-
+.thehr.naming-1,
 .thehr.pending-1 {
     margin-top: -5px !important;
     margin-bottom: 13px !important;
     opacity: 0.375 !important;
 }
+.thehr.naming-2,
 .thehr.pending-2 {
     margin-top: 13px !important;
     margin-bottom: -5px !important;
     opacity: 0.375 !important;
 }
+.thehr.naming-3,
 .thehr.pending-3 {
     margin-top: -1px !important;
     margin-bottom: -1px !important;
@@ -3657,14 +3680,17 @@ blink.nav-blink {
         font-size: 25px !important;
     }
 }
+#nameLife,
 #inputLife {
     border-radius: 0.1px !important;
     margin: auto 3px !important;
     font-size: 22px !important;
 }
+#nameLife::placeholder,
 #inputLife::placeholder {
     letter-spacing: 1.4px !important;
 }
+#name-life,
 #the-life {
     background: rgba(255, 255, 255, 0.3) !important;
     border-radius: 1px !important;
@@ -3683,7 +3709,7 @@ blink.nav-blink {
     margin-top: -9px !important;
     margin-bottom: -9px !important;
 }
-
+#get-email-2,
 #get-email {
     margin: 15px !important;
     cursor: pointer !important;
@@ -3698,6 +3724,7 @@ blink.nav-blink {
     bottom: 0 !important;
 }
 
+#get-phone-2,
 #get-phone {
     margin: 15px !important;
     cursor: pointer !important;
@@ -3708,6 +3735,8 @@ blink.nav-blink {
     white-space: nowrap !important;
     padding: 7px 12px;
 }
+#get-email-2 img,
+#get-phone-2 img,
 #get-email img,
 #get-phone img {
     width: 27px;
@@ -3715,6 +3744,7 @@ blink.nav-blink {
 }
 
 @media screen and (min-width: 1370px) {
+    #get-email-2,
     #get-email {
         margin: 20px !important;
         cursor: pointer !important;
@@ -3728,6 +3758,8 @@ blink.nav-blink {
         left: 0 !important;
         bottom: 0 !important;
     }
+
+    #get-phone-2,
     #get-phone {
         margin: 20px !important;
         cursor: pointer !important;
@@ -3740,9 +3772,12 @@ blink.nav-blink {
     }
 }
 @media screen and (max-width: 1200px) {
+    #get-email-2,
     #get-email {
         margin-right: 25px !important;    
     }
+    
+    #get-phone-2,
     #get-phone {
         margin-left: 25px !important;
     }
@@ -3750,6 +3785,7 @@ blink.nav-blink {
 
 
 @media screen and (max-width: 500px) {
+    #get-email-2,
     #get-email {
         margin: 15px !important;
         margin-right: 20px !important;
@@ -3758,6 +3794,8 @@ blink.nav-blink {
         line-height: 35px;
         padding: 6px 12px;
     }
+    
+    #get-phone-2,
     #get-phone {
         margin-left: 20px !important;
     
@@ -3768,6 +3806,7 @@ blink.nav-blink {
 }
 
 @media screen and (max-width: 400px) {
+    #get-email-2,
     #get-email {
         margin: 13px !important;
         margin-right: 17px !important;
@@ -3776,6 +3815,7 @@ blink.nav-blink {
         line-height: 35px;
         padding: 6px 12px;
     }
+    #get-phone-2,
     #get-phone {
         margin: 13px !important;
         margin-left: 17px !important;

@@ -528,9 +528,9 @@ blink.disc {
 
 @media (min-width: 1092px) {
 	.col-lg-5 {
-		-ms-flex: 0 0 39.5%;
-		flex: 0 0 39.5%;
-		max-width: 39.5%;
+		-ms-flex: 0 0 39%;
+		flex: 0 0 39%;
+		max-width: 39%;
    }
 }
 @media (max-width: 500px) {
