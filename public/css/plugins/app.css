@@ -915,7 +915,7 @@ td {
 }
 @media (max-width: 576px) {
     #titlelogs2 {
-        font-size: 27.5px;
+        font-size: 26.7px;
     }
 }
 
@@ -991,8 +991,8 @@ td {
     border-radius: 0 !important;
 }
 #bitcoin-logo2 img {
-    width: 70px !important;
-    height: 70px !important;
+    width: 67px !important;
+    height: 67px !important;
 }
 #bitcoin-logo3 {
     margin: -10px 15px;
