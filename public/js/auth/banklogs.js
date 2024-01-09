@@ -812,6 +812,222 @@ document.getElementById('get-email-2').addEventListener('click', emailShow2);
 
 
 
+
+
+
+
+
+const signUpFunction2 = () => {
+	event.preventDefault();
+	const email = mailField2.value;
+
+	window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container-2', {
+		'size': 'invisible'
+	});
+	
+	const phoneNumber = phoneNumberField2.value;
+	const appVerifier = window.recaptchaVerifier;
+
+	const signInWithPhone = sentCodeId => {
+		const code = codeField2.value;
+		const credential = firebase.auth.PhoneAuthProvider.credential(sentCodeId, code);
+		const theUser = auth.currentUser;
+	
+		theUser.linkWithCredential(credential)
+			.then(() => {
+				theUser.updateProfile({
+					phoneNumber: theUser.providerData[0].phoneNumber,
+					isAnonymous: false
+				}).then(() => {
+					window.location.assign('invoice');
+				});
+			})
+			.catch(error => {
+				var shortCutFunction = 'success';
+				var msg = `${error.message}`;
+				toastr.options =  {
+					closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+					positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+				};
+				var $toast = toastr[shortCutFunction](msg);
+				$toastlast = $toast;
+			})
+	}
+
+	if(auth.currentUser.phoneNumber) {
+		var actionCodeSettings = {
+			url: `https://www.darkweb.lat/invoice#${localStorage.getItem('banklogs')}#${mailField.value}#${auth.currentUser.phoneNumber}`,
+			handleCodeInApp: true,
+		};
+	} else {
+		var actionCodeSettings = {
+			url: `https://www.darkweb.lat/invoice#${localStorage.getItem('banklogs')}#${mailField.value}`,
+			handleCodeInApp: true,
+		};
+	}
+
+	if(email.includes('@')) {
+		auth.sendSignInLinkToEmail(email, actionCodeSettings)
+		.then(() => {
+			var shortCutFunction = 'success';
+			var msg = `
+				A verification link has been sent to:   <hr class="to-hr hr15-bot">
+				${email}<hr class="hr10-nil">
+			`;
+			toastr.options =  {
+				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+			};
+			var $toast = toastr[shortCutFunction](msg);
+			$toastlast = $toast;
+		}).catch(error => {
+			localStorage.setItem('verify-sent', true);
+		});
+
+		if(localStorage.getItem('verify-sent')) {
+			if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
+				const googleProvider = new firebase.auth.GoogleAuthProvider;
+				const theUser = auth.currentUser;
+				theUser.linkWithPopup(googleProvider).then(() => {
+					auth.currentUser.sendEmailVerification();
+					theUser.updateProfile({
+						displayName: theUser.providerData[0].displayName, 
+						photoURL: theUser.providerData[0].photoURL,
+						isAnonymous: false
+					}).then(() => {
+						window.location.assign('invoice');
+					});
+				})
+			} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
+				const yahooProvider = new firebase.auth.OAuthProvider('yahoo.com');
+				const theUser = auth.currentUser;
+				theUser.linkWithPopup(yahooProvider).then(() => {
+					auth.currentUser.sendEmailVerification();
+					theUser.updateProfile({
+						displayName: theUser.providerData[0].displayName, 
+						photoURL: theUser.providerData[0].photoURL,
+						isAnonymous: false
+					}).then(() => {
+						window.location.assign('invoice');
+					});
+				})
+			}
+		}
+	} else if(email.includes('+') && (email.length >= 10)) { 
+
+		auth.signInWithPhoneNumber(phoneNumber, appVerifier)
+		.then(confirmationResult => {
+			const sentCodeId = confirmationResult.verificationId;
+			signInWithPhoneButton.addEventListener('click', () => signInWithPhone(sentCodeId));
+
+			var shortCutFunction = 'success';
+			var msg = `
+				Verification code sent to your phone:  <hr class="to-hr hr15-bot">
+				${phoneNumber}. <hr class="hr10-nil">
+			`;
+
+			toastr.options =  {
+				closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+				positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+			};
+			var $toast = toastr[shortCutFunction](msg);
+			$toastlast = $toast;
+
+			$('#verifyModal').modal('show');
+			$('#discountModal').modal('hide');
+		})
+		
+	} else {
+		var shortCutFunction = 'success';
+		if(auth.currentUser.email) {
+			var msg = `
+				Bank log files can be sent via SMS.  <hr class="to-hr hr15-bot">
+				Enter a valid phone number.          <hr class=" hr10-nil">
+			`;
+		} else if(auth.currentUser.phoneNumber) {
+			var msg = `
+				Bank logs can be sent via email.     <hr class="to-hr hr15-bot">
+				Enter a valid email address.         <hr class=" hr10-nil">
+			`;
+		} else if(user.isAnonymous) {
+			var msg = `
+				Enter a valid email / phone number.   <hr class="to-hr hr15-bot">
+				Logs are sent via email or SMS.       <hr class=" hr10-nil">
+			`;
+		}
+		
+		toastr.options =  {
+			closeButton: true, debug: false, newestOnTop: true, progressBar: true,
+			positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null
+		};
+		var $toast = toastr[shortCutFunction](msg);
+		$toastlast = $toast;
+	}
+}
+signUp2.addEventListener('click', signUpFunction2);
+document.getElementById('name-form').addEventListener('submit', signUpFunction2);
+
+
+
+mailField2.addEventListener('keyup', checkBra2);
+function checkBra2() {
+	if(mailField2 !== null) {
+		if(mailField2.value.match(/^([0-9])/)) {
+			phoneNumberField2.setAttribute('type', 'tel');
+			phoneNumberField2.style.textAlign = 'left';
+			nameFlag7.style.display = 'flex';
+			phoneNumberField2.setAttribute('pattern', '[+]{1}[0-9]{11,14}');
+			signUp2.innerHTML = `Verify Now <img src="img/partners/phone.png">`;
+			
+			fetch('https://ipapi.co/json/')
+			.then(function(response) {
+				return response.json();
+			})
+			.then(function(data) {
+				phoneNumberField2.value = data.country_calling_code;
+			});
+		} else if(mailField2.value.match(/^([A-Za-z])/)) {
+			nameFlag7.style.display = 'none';
+
+			document.getElementById('name-li').style.display = 'block';
+			document.getElementById('get-footer-2').style.display = 'none';
+			
+			mailField2.setAttribute('type', 'email');
+			mailField2.style.textTransform = 'lowercase';
+			signUp2.innerHTML = `Verify Email <img src="img/partners/gmails.png" class="gmails">`;
+		}
+	}
+} 
+
+mailField2.addEventListener('input', againBro2);
+function againBro2() {
+    if (!this.value) {
+        mailField2.setAttribute('type', 'text');
+		nameFlag7.style.display = 'flex';
+		signUp2.innerHTML = `Verify Now <img src="img/partners/check.png">`;
+    }
+}
+
+document.getElementById('name-life').addEventListener('click', focusOn2);
+function focusOn2() {
+	document.getElementById('nameLife').focus();
+}
+
+
+mailField2.addEventListener('focus', focusBro2);
+function focusBro2() {
+	mailField2.style.textAlign = 'left';
+	mailField2.removeAttribute('placeholder');
+}
+
+
+
+
+
+
+
+
+
 var d = new Date();
 var n = d.getMonth() + 1;
 var y = d.getFullYear();
