@@ -87,81 +87,61 @@ auth.onAuthStateChanged(user => {
 		vpnHolder.setAttribute("src", user.photoURL);
 		vpnHolder.classList.add('logo-50');
 	} 
-	if(user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
-		if(!localStorage.getItem('phoneGuy')) {
-			localStorage.setItem('phoneGuy', user.phoneNumber);
-		}
-		var thePhoneNo = localStorage.getItem('phoneGuy');
-
-		voiceDiv.innerHTML = 'VERIFY EMAIL';
-		voiceDiv.setAttribute('data-bs-target', '#emailModal');
-		voiceImg.setAttribute('src', 'img/partners/check.png');
-
-		if (user.displayName && user.email) {
-			verifyH4.innerHTML = user.displayName;
-		} else if (!user.displayName && user.email) {
-			var themail = user.email;
-			var theaddress = themail.substring(0, themail.indexOf('@'));
-
-			verifyH4.innerHTML = theaddress;
-		} 
-
-		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
-		verCheck.addEventListener('click', sendEmail);
-
-		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
-		showLink.setAttribute('data-bs-target', '#emailModal');
-
-		jinaHolder.value = thePhoneNo;
-		jinaHolder3.value = thePhoneNo;
-
-		thanInvoice.style.display = 'flex';
-		thanEmail.innerText = user.email;
-		thanPhone.innerText = thePhoneNo;
-
-		jinaHolder2.innerHTML = user.email;
-
-	} else if(user.email && !user.phoneNumber) {
+	if(user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) {
 			theaddress = user.displayName;
 		} 
 
-		jinaHolder.value = theaddress;
-		jinaHolder3.value = theaddress;
+		if (user.phoneNumber || localStorage.getItem('phoneGuy')) {
+			if(!localStorage.getItem('phoneGuy')) {
+				localStorage.setItem('phoneGuy', user.phoneNumber);
+			}
+	
+			var thePhoneNo = localStorage.getItem('phoneGuy');
+			jinaHolder.value = thePhoneNo;
+			jinaHolder3.value = thePhoneNo;
+
+			jinaHolder.value = thePhoneNo;
+			jinaHolder3.value = thePhoneNo;
+			thanInvoice.style.display = 'flex';
+			thanEmail.innerText = user.email;
+			thanPhone.innerText = thePhoneNo;
+			jinaHolder2.innerHTML = user.email;
+		} else {
+			jinaHolder.value = theaddress;
+			jinaHolder3.value = theaddress;
+	
+			emailInvoice.style.display = 'flex';
+			yourEmail.innerText = user.email;
+		
+			jinaHolder2.innerHTML = 'Get Phone Invoice';
+		}
+
 		verifyH4.innerHTML = theaddress;
+
+		
+		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
+		verCheck.addEventListener('click', sendEmail);
 
 		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
-		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
-		verCheck.addEventListener('click', sendEmail);
-
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
+
 		
-		emailInvoice.style.display = 'flex';
-		yourEmail.innerText = user.email;
-
-		document.getElementById('email-verify').addEventListener('click', phoneShow);
-
-		if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)){
-			jinaHolder2.innerHTML = 'Get Phone Invoice';
-		}
-	} else if(!user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
-
+	} else if(user.phoneNumber && !user.email) {
 		if(!localStorage.getItem('phoneGuy')) {
 			localStorage.setItem('phoneGuy', user.phoneNumber);
 		}
+		
 		var thePhoneNo = localStorage.getItem('phoneGuy');
 
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
-
-		phoneInvoice.style.display = 'flex';
-		yourPhone.innerText = thePhoneNo;
 
 		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
@@ -174,6 +154,9 @@ auth.onAuthStateChanged(user => {
 
 		showLink.addEventListener('click', emailShow);
 		voiceDiv.addEventListener('click', emailShow);
+
+		phoneInvoice.style.display = 'flex';
+		yourPhone.innerText = thePhoneNo;
 
 		document.getElementById('code-verify').addEventListener('click', emailShow);
 

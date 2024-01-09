@@ -72,62 +72,44 @@ auth.onAuthStateChanged(user => {
 		vpnHolder.classList.add('logo-50');
 	} 
 
-	if(user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
-
-		if(!localStorage.getItem('phoneGuy')) {
-			localStorage.setItem('phoneGuy', user.phoneNumber);
-		}
-
-		var thePhoneNo = localStorage.getItem('phoneGuy');
-
-		voiceDiv.innerHTML = 'VERIFY EMAIL';
-		voiceDiv.setAttribute('data-bs-target', '#emailModal');
-		voiceImg.setAttribute('src', 'img/partners/check.png');
-
-		if (user.displayName && user.email) {
-			verifyH4.innerHTML = user.displayName;
-		} else if (!user.displayName && user.email) {
-			var themail = user.email;
-			var theaddress = themail.substring(0, themail.indexOf('@'));
-
-			verifyH4.innerHTML = theaddress;
-		} 
-
-		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
-		verCheck.addEventListener('click', sendEmail);
-
-		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
-		showLink.setAttribute('data-bs-target', '#emailModal');
-
-		jinaHolder.value = thePhoneNo;
-		jinaHolder3.value = thePhoneNo;
-
-	} else if(user.email && !user.phoneNumber) {
+	if(user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) {
 			theaddress = user.displayName;
 		} 
 
-		jinaHolder.value = theaddress;
-		jinaHolder3.value = theaddress;
+		if (user.phoneNumber || localStorage.getItem('phoneGuy')) {
+			if(!localStorage.getItem('phoneGuy')) {
+				localStorage.setItem('phoneGuy', user.phoneNumber);
+			}
+	
+			var thePhoneNo = localStorage.getItem('phoneGuy');
+			jinaHolder.value = thePhoneNo;
+			jinaHolder3.value = thePhoneNo;
+		} else {
+			jinaHolder.value = theaddress;
+			jinaHolder3.value = theaddress;
+		}
+
 		verifyH4.innerHTML = theaddress;
+
+		
+		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
+		verCheck.addEventListener('click', sendEmail);
 
 		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
-		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
-		verCheck.addEventListener('click', sendEmail);
-
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
 
-	} else if(!user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
-
+	} else if(user.phoneNumber && !user.email) {
 		if(!localStorage.getItem('phoneGuy')) {
 			localStorage.setItem('phoneGuy', user.phoneNumber);
 		}
+		
 		var thePhoneNo = localStorage.getItem('phoneGuy');
 
 		jinaHolder.value = thePhoneNo;

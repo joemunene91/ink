@@ -73,90 +73,87 @@ auth.onAuthStateChanged(user => {
 		vpnHolder.classList.add('logo-50');
 	} 
 
-	if(user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
-
-		if(!localStorage.getItem('phoneGuy')) {
-			localStorage.setItem('phoneGuy', user.phoneNumber);
-		}
-
-		var thePhoneNo = localStorage.getItem('phoneGuy');
-
-		voiceDiv.innerHTML = 'VERIFY EMAIL';
-		voiceDiv.setAttribute('data-bs-target', '#emailModal');
-		voiceImg.setAttribute('src', 'img/partners/check.png');
-
-		if (user.displayName && user.email) {
-			verifyH4.innerHTML = user.displayName;
-		} else if (!user.displayName && user.email) {
-			var themail = user.email;
-			var theaddress = themail.substring(0, themail.indexOf('@'));
-
-			verifyH4.innerHTML = theaddress;
-		} 
-
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-					${theaddress} 
-					<hr id="hr-table">
-					${thePhoneNo.slice(0, -3)}...
-				`;
-			}
-		}
-
-		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
-		verCheck.addEventListener('click', sendEmail);
-
-		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
-		showLink.setAttribute('data-bs-target', '#emailModal');
-
-		jinaHolder.value = thePhoneNo;
-		jinaHolder3.value = thePhoneNo;
-
-	} else if(user.email && !user.phoneNumber) {
+	if(user.email) {
 		var themail = user.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (user.displayName) {
 			theaddress = user.displayName;
 		} 
 
-		jinaHolder.value = theaddress;
-		jinaHolder3.value = theaddress;
-		verifyH4.innerHTML = theaddress;
+		if (user.phoneNumber || localStorage.getItem('phoneGuy')) {
+			if(!localStorage.getItem('phoneGuy')) {
+				localStorage.setItem('phoneGuy', user.phoneNumber);
+			}
+	
+			var thePhoneNo = localStorage.getItem('phoneGuy');
+			jinaHolder.value = thePhoneNo;
+			jinaHolder3.value = thePhoneNo;
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-				${theaddress}
-					<hr id="hr-table">
-					<button class="butn" id="log-btn" data-bs-toggle="modal" 
-					data-bs-target="#discountModal" onClick="phoneShow()">
-						INVOICE
-					</button>
-				`;
+			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+				goodies = JSON.parse(localStorage.getItem('banklogs'));
+				for (var i = 0; i < goodies.length; i++) {
+					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+						${theaddress} 
+						<hr id="hr-table">
+						${thePhoneNo.slice(0, -3)}...
+					`;
+				}
+			}
+		} else {
+			jinaHolder.value = theaddress;
+			jinaHolder3.value = theaddress;
+
+			if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+				goodies = JSON.parse(localStorage.getItem('banklogs'));
+				for (var i = 0; i < goodies.length; i++) {
+					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					${theaddress}
+						<hr id="hr-table">
+						<button class="butn" id="log-btn" data-bs-toggle="modal" 
+						data-bs-target="#discountModal" onClick="phoneShow()">
+							INVOICE
+						</button>
+					`;
+				}
 			}
 		}
+
+		verifyH4.innerHTML = theaddress;
+
+		
+		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
+		verCheck.addEventListener('click', sendEmail);
 
 		voiceDiv.innerHTML = 'VERIFY EMAIL';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
-		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
-		verCheck.addEventListener('click', sendEmail);
-
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
-	} else if(!user.email && (user.phoneNumber || localStorage.getItem('phoneGuy'))) {
 
+
+	} else if(user.phoneNumber && !user.email) {
 		if(!localStorage.getItem('phoneGuy')) {
 			localStorage.setItem('phoneGuy', user.phoneNumber);
 		}
+		
 		var thePhoneNo = localStorage.getItem('phoneGuy');
 
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
+
+		voiceDiv.innerHTML = 'EMAIL INVOICE';
+		voiceImg.setAttribute('src', 'img/partners/emails.png');
+
+		if(user.phoneNumber.length > 10) {
+			showLink.innerHTML = `${thePhoneNo.substring(0, 10)}.. <img src="img/partners/check.png">`;
+		} else {
+			showLink.innerHTML = `${thePhoneNo} <img src="img/partners/check.png">`;
+		}
+
+		showLink.addEventListener('click', emailShow);
+		voiceDiv.addEventListener('click', emailShow);
+
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
 			goodies = JSON.parse(localStorage.getItem('banklogs'));
@@ -171,18 +168,6 @@ auth.onAuthStateChanged(user => {
 				`
 			}
 		}
-
-		voiceDiv.innerHTML = 'EMAIL INVOICE';
-		voiceImg.setAttribute('src', 'img/partners/emails.png');
-
-		if(user.phoneNumber.length > 10) {
-			showLink.innerHTML = `${thePhoneNo.substring(0, 10)}.. <img src="img/partners/check.png">`;
-		} else {
-			showLink.innerHTML = `${thePhoneNo} <img src="img/partners/check.png">`;
-		}
-
-		showLink.addEventListener('click', emailShow);
-		voiceDiv.addEventListener('click', emailShow);
 	} else if(user.isAnonymous) {
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
@@ -195,37 +180,6 @@ auth.onAuthStateChanged(user => {
 				data-bs-target="#discountModal">
 				Invoice 
 				</button>
-				`;
-			}
-
-			let items4 = (JSON.parse(localStorage.getItem('banklogs')));
-			var totali = 0;
-			items4.map(data=>{
-				var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
-				totali = totali + (price4 * 1);
-			});
-
-			if(JSON.parse(localStorage.getItem('banklogs')).length == 1) {
-				const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
-				const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);		
-		
-				if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
-					heySave1.innerHTML = ` ${bankLog} <br> <span>${bankBal}</span>. `;
-				} else {
-					heySave1.innerHTML = ` ${bankLog} with <br> <span>${bankBal}</span>.`;
-				}
-			} else {
-				heySave2.style.display = 'block';
-				heyPending2.style.display = 'block';
-
-				heySave1.innerHTML = `
-					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[0].account)}  <br> 
-					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[0].balance)} </span>. 
-					<hr class="hr-logins">
-				`;
-				heySave2.innerHTML = `
-					<hr class="thehr thezoo">  ${(JSON.parse(localStorage.getItem('banklogs'))[1].account)}  <br> 
-					<span> ${(JSON.parse(localStorage.getItem('banklogs'))[1].balance)} </span>. <hr class="hr-logins">
 				`;
 			}
 		}
