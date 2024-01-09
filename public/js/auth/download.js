@@ -103,17 +103,6 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = theaddress;
 		verifyH4.innerHTML = theaddress;
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-					${theaddress} 
-					<hr id="hr-table">
-					${thePhoneNo.slice(0, -3)}...
-				`;
-			}
-		}
-
 		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
@@ -144,30 +133,6 @@ auth.onAuthStateChanged(user => {
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
 
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				if(user.displayName) {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						${user.displayName} 
-						<hr id="hr-table">
-						<button class="butn" id="log-btn" data-bs-toggle="modal" 
-						data-bs-target="#discountModal" onClick="phoneShow()">
-							INVOICE
-						</button>
-					`
-				} else {
-					document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-						${theaddress}
-						<hr id="hr-table">
-						<button class="butn" id="log-btn" data-bs-toggle="modal" 
-						data-bs-target="#discountModal" onClick="phoneShow()">
-							INVOICE
-						</button>
-					`
-				}
-			}
-		}
 
 		showLink.innerHTML = `Verify Mail <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#emailModal');
@@ -199,20 +164,6 @@ auth.onAuthStateChanged(user => {
 
 		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
-
-		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
-			goodies = JSON.parse(localStorage.getItem('banklogs'));
-			for (var i = 0; i < goodies.length; i++) {
-				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
-					${thePhoneNo.slice(0, -3) + '...'}
-					<hr id="hr-table">
-					<button class="butn" id="log-btn" data-bs-toggle="modal" 
-					data-bs-target="#discountModal" onClick="emailShow()">
-						INVOICE
-					</button>
-				`
-			}
-		}
 
 		showToth.addEventListener('click', emailShow);
 

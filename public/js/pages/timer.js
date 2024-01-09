@@ -63,8 +63,8 @@ auth.onAuthStateChanged(user => {
                     localStorage.setItem('banklogs',[]);
 
                     setTimeout(() => {
-                        window.location.assign('invoice');
-                    }, 1500);
+                        window.location.assign('banklogs');
+                    }, 1000);
                 } 
 
                 

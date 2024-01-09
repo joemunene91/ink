@@ -81,7 +81,6 @@ auth.onAuthStateChanged(user => {
 
 		var thePhoneNo = localStorage.getItem('phoneGuy');
 
-
 		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
@@ -94,6 +93,17 @@ auth.onAuthStateChanged(user => {
 
 			verifyH4.innerHTML = theaddress;
 		} 
+
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					${theaddress} 
+					<hr id="hr-table">
+					${thePhoneNo.slice(0, -3)}...
+				`;
+			}
+		}
 
 		verCheck.innerHTML = `Verify Email <img src="img/partners/gmails.png">`;
 		verCheck.addEventListener('click', sendEmail);
@@ -115,6 +125,20 @@ auth.onAuthStateChanged(user => {
 		jinaHolder3.value = theaddress;
 		verifyH4.innerHTML = theaddress;
 
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+				${theaddress}
+					<hr id="hr-table">
+					<button class="butn" id="log-btn" data-bs-toggle="modal" 
+					data-bs-target="#discountModal" onClick="phoneShow()">
+						INVOICE
+					</button>
+				`;
+			}
+		}
+
 		voiceDiv.innerHTML = 'VERIFY EMAIL ID';
 		voiceDiv.setAttribute('data-bs-target', '#emailModal');
 		voiceImg.setAttribute('src', 'img/partners/check.png');
@@ -133,6 +157,20 @@ auth.onAuthStateChanged(user => {
 
 		jinaHolder.value = thePhoneNo;
 		jinaHolder3.value = thePhoneNo;
+
+		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {
+			goodies = JSON.parse(localStorage.getItem('banklogs'));
+			for (var i = 0; i < goodies.length; i++) {
+				document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `
+					${thePhoneNo.slice(0, -3) + '...'}
+					<hr id="hr-table">
+					<button class="butn" id="log-btn" data-bs-toggle="modal" 
+					data-bs-target="#discountModal" onClick="emailShow()">
+						INVOICE
+					</button>
+				`
+			}
+		}
 
 		voiceDiv.innerHTML = 'EMAIL INVOICE';
 		voiceImg.setAttribute('src', 'img/partners/emails.png');
