@@ -364,18 +364,20 @@ function sendEmail() {
 	};
 	var $toast = toastr[shortCutFunction](msg);
 	$toastlast = $toast;
+
+	localStorage.setItem('lat-sent', true);
 	
 	setTimeout(() => {
 		var themail = auth.currentUser.email;
 		var theaddress = themail.substring(0, themail.indexOf('@'));
 		if (auth.currentUser.displayName) {
-			theaddress = auth.currentUser.displayName + 'Heldod';
+			theaddress = auth.currentUser.displayName;
 		} 
 
 		showLink.innerHTML = `${theaddress.substring(0, 9)}.. <img src="img/partners/check.png">`;
 		showLink.setAttribute('data-bs-target', '#discountModal');
 		showLink.addEventListener('click', phoneShow);
-	}, 3000);
+	}, 1000);
 }
 
 
