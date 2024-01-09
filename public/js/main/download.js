@@ -392,12 +392,12 @@ e("#preloader").fadeOut("normall", function() {
               margin: 13
           },
           992: {
-              items: 1.1,
+              items: 2.2,
               margin: 13
           },
           1200: {
-              items: 1.1,
-              margin: 13
+              items: 2.4,
+              margin: 15
           }
       }
   });

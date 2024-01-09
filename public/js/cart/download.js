@@ -45,7 +45,6 @@ if(localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklo
     });
 
     for(var i = 0; i < items.length; i++) {
-
         var cartRow2 = document.createElement('li');
 
         cartRow2.classList.add('total','bg-black');
@@ -238,22 +237,38 @@ function updateCartTotal() {
         const banking2 = (JSON.parse(localStorage.getItem('banklogs'))[0].info2);
         const banking3 = (JSON.parse(localStorage.getItem('banklogs'))[0].info3);
 
+        const theBanklog = document.getElementsByClassName('the-banklog')[0];
+
 
         if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
             downFile.innerHTML = bankLog.split('Bank')[0];
+            theBanklog.innerHTML = bankLog.split('Bank')[0];
             anonP.innerHTML = `
                 ${bankLog} <br> <span>${bankBal}</span>.
             `;
+
+            anonB.innerHTML = `
+            ${bankLog} <br> <span>${bankBal}</span>.
+        `;
         } else if(bankLog.includes('America')) {
             downFile.innerHTML = 'BankofAmerica';
+            theBanklog.innerHTML = 'BankofAmerica';
             anonP.innerHTML = `
                 ${bankLog} <br> <span>${bankBal}</span>.
             `;
+
+            anonB.innerHTML = `
+            ${bankLog} <br> <span>${bankBal}</span>.
+        `;
         } else {
             downFile.innerHTML = bankLog.split('[')[0];
+            theBanklog.innerHTML = bankLog.split('[')[0];
             anonP.innerHTML = `
                 ${bankLog} with <br> <span>${bankBal}</span>.
             `;
+            anonB.innerHTML = `
+            ${bankLog} with <br> <span>${bankBal}</span>.
+        `;
         }
 
         theLogo.src = `${(JSON.parse(localStorage.getItem('banklogs'))[0].image)}`;
@@ -263,6 +278,12 @@ function updateCartTotal() {
             anonCheck.innerHTML = `
                 Download <img style="border-radius: 50% !important" src=${bankImg}>
             `;
+            anonCheck2.innerHTML = `
+                Download <img style="border-radius: 50% !important" src=${bankImg}>
+            `;
+            document.getElementById('the-image').src = bankImg;
+            document.getElementById('the-image').classList.add('bit-img');
+
             theLogo.classList.add('bit-img');
             theLogo2.classList.add('bit-img');
 
@@ -272,6 +293,10 @@ function updateCartTotal() {
             anonCheck.innerHTML = `
                 Download <img src=${bankImg}>
             `;
+            anonCheck2.innerHTML = `
+                Download <img src=${bankImg}>
+            `;
+            document.getElementById('the-image').src = bankImg;
         }
 
         jinaHolder2.innerHTML = bankLog;

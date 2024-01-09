@@ -56,11 +56,7 @@ auth.onAuthStateChanged(user => {
                 var timeDifference = parseFloat(p1knoDecimal) - parseFloat(theTime);
                 width = 600 - timeDifference;
 
-                if(width <= 0){
-                    clearInterval(id);
-                    i = false;
-                    localStorage.removeItem('timez-set');
-                    localStorage.setItem('banklogs',[]);
+                if(width <= 15){
 
                     setTimeout(() => {
                         window.location.assign('banklogs');
