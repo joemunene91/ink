@@ -1509,8 +1509,8 @@ td {
 }
 @media (max-width: 526px) {
     .attr-nav > ul > li.dropdown ul.dropdown-menu {
-        left: -110%;
-        width: 255%;
+        left: -115%;
+        width: 260%;
     }
 
     .thegold img {
