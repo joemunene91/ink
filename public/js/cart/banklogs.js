@@ -221,11 +221,18 @@ function updateCartTotal() {
         const theSave2 = document.getElementById('save-2');
         const theSave3 = document.getElementById('save-3');
 
+        const theName1 = document.getElementById('name-1');
+        const theName2 = document.getElementById('name-2');
+        const theName3 = document.getElementById('name-3');
+
 
         if(bankLog.includes('Huntington') || bankLog.includes('Woodforest')) {
             invoiceType.innerHTML = bankLog.split('Bank')[0];
             nameLogs.innerHTML = bankLog.split('Bank')[0];
             theSave1.innerHTML = `
+                ${bankLog} <br> <span>${bankBal}</span>.
+            `;
+            theName1.innerHTML = `
                 ${bankLog} <br> <span>${bankBal}</span>.
             `;
         } else if(bankLog.includes('America')) {
@@ -234,17 +241,30 @@ function updateCartTotal() {
             theSave1.innerHTML = `
                 ${bankLog} <br> <span>${bankBal}</span>.
             `;
+            theName1.innerHTML = `
+                ${bankLog} <br> <span>${bankBal}</span>.
+            `;
         } else {
             invoiceType.innerHTML = bankLog.split('[')[0];
             nameLogs.innerHTML = bankLog.split('[')[0];
             theSave1.innerHTML = `
                 ${bankLog} with <br> <span>${bankBal}</span>.
             `;
+            theName1.innerHTML = `
+                ${bankLog} with <br> <span>${bankBal}</span>.
+            `;
         }
         theSave2.innerHTML = `
             10% <span>discount</span> on 2 bank logs.
         `;
+        theName2.innerHTML = `
+            10% <span>discount</span> on 2 bank logs.
+        `;
         theSave3.innerHTML = `
+            Bank log files can be sent via <br> 
+            <span>email</span> or <span>SMS</span>.
+        `;
+        theName3.innerHTML = `
             Bank log files can be sent via <br> 
             <span>email</span> or <span>SMS</span>.
         `;
@@ -255,7 +275,12 @@ function updateCartTotal() {
         const theSave2 = document.getElementById('save-2');
         const theSave3 = document.getElementById('save-3');
 
+        const theName1 = document.getElementById('name-1');
+        const theName2 = document.getElementById('name-2');
+        const theName3 = document.getElementById('name-3');
+
         theSave1.innerHTML = '';
+        theName1.innerHTML = '';
         document.getElementById('invoice-type').innerHTML = '2 Bank Logs';
         document.getElementById('name-logs').innerHTML = '2 Bank Logs';
 
@@ -268,11 +293,27 @@ function updateCartTotal() {
                 <hr style="opacity: 0 !important; margin-bottom: -10px !important; margin-top: -7px !important">
             `;
             logItems.prepend(logRow);
+
+
+            var logRow2 = document.createElement('p');
+            var logItems2 = document.getElementById('name-1');
+            logRow2.innerHTML = `
+                <hr class="thehr thezoo"> 
+                ${Loginz[i].account}  <br> <span>${Loginz[i].balance}</span>. 
+                <hr style="opacity: 0 !important; margin-bottom: -10px !important; margin-top: -7px !important">
+            `;
+            logItems2.prepend(logRow2);
         }
 
         theSave2.style.display = 'none';
+        theName2.style.display = 'none';
 		document.getElementsByClassName('pending-2')[0].style.display = 'none';
+        document.getElementsByClassName('naming-2')[0].style.display = 'none';
         theSave3.innerHTML = `
+            Bank log files can be sent via <br> 
+            <span>email</span> or <span>SMS</span>.
+        `;
+        theName3.innerHTML = `
             Bank log files can be sent via <br> 
             <span>email</span> or <span>SMS</span>.
         `;
