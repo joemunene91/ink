@@ -175,6 +175,8 @@ auth.onAuthStateChanged(user => {
 			showLink.setAttribute('data-bs-target', '#emailModal');
 		}
 
+		phoneShow2();
+
 	} else if(user.phoneNumber && !user.email) {
 		if(!localStorage.getItem('phoneGuy')) {
 			localStorage.setItem('phoneGuy', user.phoneNumber);
@@ -211,6 +213,8 @@ auth.onAuthStateChanged(user => {
 				`
 			}
 		}
+
+		emailShow2();
 	} else if(user.isAnonymous) {
 
 		if (localStorage.getItem('banklogs') && ((JSON.parse(localStorage.getItem('banklogs')).length) > 0)) {

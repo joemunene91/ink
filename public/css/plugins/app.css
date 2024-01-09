@@ -2991,6 +2991,7 @@ ul.countdown li p {
     margin: auto 7px !important;
     letter-spacing: 1.4px !important;
 }
+
 #nameLife::placeholder,
 #inputLife::placeholder {
     letter-spacing: 1.4px !important;
@@ -3011,34 +3012,35 @@ ul.countdown li p {
     margin-top: 10px !important;
     margin-bottom: 0 !important;
 }
-#name-flag7,
+#name-flag7 {
+    width: 17%;
+    border: none !important;
+    height: 90% !important;
+    margin: auto 10px !important;
+}
 #the-flag7 {
     width: 15%;
     border: none !important;
-    height: 45px !important;
+    height: 90% !important;
     margin: auto 5px !important;
 }
-@media screen and (min-width: 767px) {
-    #name-flag7,
-    #the-flag7 {
-        width: 15%;
-        height: 47px !important;
-        border: none !important;
-        margin: auto 5px !important;
-    }
-    #nameLife,
-    #inputLife {
-        border-radius: 0 !important;
-        font-size: 22px !important;
-        font-weight: 600 !important;
-        text-align: center;
-        margin: 6px auto !important;
-        width: 100% !important;
-    
-        padding: 0 10px !important;
-        margin: auto 6px !important;
-    }
+
+
+
+
+
+
+#inputLife {
+    border-radius: 0.1px !important;
+    margin: auto 3px !important;
+    font-size: 22px !important;
 }
+#nameLife {
+    border-radius: 0.1px !important;
+    margin: auto 3px !important;
+    font-size: 24px !important;
+}
+
 #phoneNumber {
     border-radius: 0 !important;
     font-size: 21px !important;
@@ -3695,16 +3697,7 @@ blink.nav-blink {
         font-size: 25px !important;
     }
 }
-#nameLife,
-#inputLife {
-    border-radius: 0.1px !important;
-    margin: auto 3px !important;
-    font-size: 22px !important;
-}
-#nameLife::placeholder,
-#inputLife::placeholder {
-    letter-spacing: 1.4px !important;
-}
+
 #name-life,
 #the-life {
     background: rgba(255, 255, 255, 0.3) !important;
